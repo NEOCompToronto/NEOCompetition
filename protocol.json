@@ -1,0 +1,24 @@
+﻿{
+  "ProtocolConfiguration": {
+    "Magic": 1231781004,
+    "AddressVersion": 23,
+    "StandbyValidators": [
+      "0332283be8f44067c9fd52f62ce542af885f37bb025ea8d75bb9e49920998ba188",
+      "02eeff3a810c0fb3c3d16305666f8294db1d4258b36d767ad78498ae5f7149dbd0",
+      "03354db4ff06d98ebef4b597d5fe235392d3c4e4143e67972c3646860ec3b2c4c1",
+      "039486b0ffd6f704bd435bbcf7eaa62ab66a1740cf92c6cfe1b4502b117bcbdfd0"
+    ],
+    "SeedList": [
+      "40.71.188.29:10333",
+      "52.191.197.121:10333",
+      "40.70.14.223:10333",
+      "40.79.38.178:10333"
+    ],
+    "SystemFee": {
+      "EnrollmentTransaction": 0,
+      "IssueTransaction": 0,
+      "PublishTransaction": 0,
+      "RegisterTransaction": 0
+    }
+  }
+}
