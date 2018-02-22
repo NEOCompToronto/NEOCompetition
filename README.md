@@ -65,7 +65,7 @@ See following table comparing Ethereum, IOTA and NEO, by the means of IoT applic
 | Bookkeeper Incentive                   | Mining/Transaction reward                                    | No Incentive                                                 | Most by Dev team           | Incentive makes the network more stable                      |
 |                                        | SHA-256                                                      | Curl/SHA-3                                                   | SHA256/RIPEMD160           |                                                              |
 
-As a conclusion, we see {TODO}
+As a conclusion, we see {TODO: A summary of the table above }. There are also other concerns we can see from [HERE](https://hackernoon.com/why-i-find-iota-deeply-alarming-934f1908194b)
 
 
 
