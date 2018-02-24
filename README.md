@@ -10,7 +10,7 @@ The IoT Infrastracture powered by NEO
 
 ## 0. Abstract
 
-
+The project of NEO of Things (a.k.a NEOT ) initiated by [Norchain](www.norchain.io) team aimed to … {TODO}
 
 ## 1. Challenges of IoT
 
@@ -48,9 +48,7 @@ Blockchain tech provides a chance to make message level standardization. {TODO}
 
 
 
-## 2. Introducing NEOT
-
-### 2.1 IoT blockchain: Why NEO?
+## 2. IoT blockchain: Why NEO
 
 See following table comparing Ethereum, IOTA and NEO, by the means of IoT application.
 
@@ -63,11 +61,17 @@ See following table comparing Ethereum, IOTA and NEO, by the means of IoT applic
 | TPS                                    | 15                                                           | 1000                                                         | 1000                       | IoT requires quicker transaction network                     |
 | Number System                          | Binary                                                       | Ternary                                                      | Binary                     | Ternary could be the future of computing [LINK](https://iota.stackexchange.com/questions/8/why-does-iota-use-a-ternary-number-system) rather than just extra computational overhead, only if manifacturers rewrite their binary architectures. However, even the IoT communication standardization couldn't get aligned in the past decades. |
 | Bookkeeper Incentive                   | Mining/Transaction reward                                    | No Incentive                                                 | Most by Dev team           | Incentive makes the network more stable                      |
-|                                        | SHA-256                                                      | Curl/SHA-3                                                   | SHA256/RIPEMD160           |                                                              |
 
-As a conclusion, we see {TODO: A summary of the table above }. There are also other concerns we can see from [HERE](https://hackernoon.com/why-i-find-iota-deeply-alarming-934f1908194b)
-
+As a conclusion, we see NEO has the advantages as...{TODO: A summary of the table above to describe NEO's advantage in implementing IOT}. There are also other concerns of IOTA that we can see from [HERE](https://hackernoon.com/why-i-find-iota-deeply-alarming-934f1908194b)
 
 
-### 2.2 NEOT: NEO of Things
 
+## 3 NEOT: Realisable IoT solution powered by Blockchain
+
+
+
+### 3.1 Basic Structure
+
+![Basic Structure](pics/terms.JPG)
+
+###3.2  
