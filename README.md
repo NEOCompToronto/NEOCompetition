@@ -70,8 +70,24 @@ As a conclusion, we see NEO has the advantages as...{TODO: A summary of the tabl
 
 
 
-### 3.1 Basic Structure
+### 3.1 Basic NEOT Node Structure
 
-![Basic Structure](pics/terms.JPG)
+![struBasic](pics/struBasic.JPG "Picture 3-1 NEOT Network Basic Node Structure")
+
+Key components in NEOT node includes following:
+
+**Sensor** is the terminal and ultimate information provider of existing IoT networks. Sensors usually exchange information with the network in two ways:
+
+1. I/O commands with its controller. We call these commands **Raw Command**. 
+
+2. Outputs data such as video, audio, accleration, Magnetic, etc. We call these data **Raw Data**. 
+
+   The reason why we call them "Raw" is because lack of standardization has become a  serious problem industrial wise.
+
+In NEOT's IoT architecture, 
+
+**Tunneo (TN): ** The adapable layer in NEOT's node logic. *Tunneo* layer 
+
+
 
 ###3.2  
