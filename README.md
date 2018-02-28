@@ -48,7 +48,7 @@ Blockchain tech provides a chance to make message level standardization. {TODO}
 
 
 
-###1.5 Challenges of recent IoT blockchain projects  
+### 1.5 Challenges of recent IoT blockchain projects  
 
 Some IoT projects are experimenting other decentralized topology. The most famous one is IOTA. However, its light nodes rely on [manual assigning public nodes as servers](https://www.iotasupport.com/lightwallet.shtml), which recently practially failed to resist DDoS attacks {TODO} [LINK](https://freedman.club/en/cryptocurrency-iota-ddos-attack-revealed-the-problem-of-network-scalability/) 
 
