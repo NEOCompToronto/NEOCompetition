@@ -108,10 +108,20 @@ In the world of untrustful internet, HTTPS/SSL is widely used to verify the iden
 * Everytime to establish a new secured connection, a complex procedure comprised of 3 main phases is mandatory -  Hello, Certificate Exchange and Key Exchange.
 * The security relies on Certificate Authorities (CAs).
 
-By leverage the power of distributed ledger, this protocol can be drastically simplified. With the support of NEOT, in order to establish secured connection between node A and B with the public key and private key to be (PU<sub>A</sub>,PV<sub>A</sub>) and (PU<sub>B</sub>, PV<sub>B</sub>) respectively,  the below steps are only required to be excuted once for all.  
+By leverage the power of distributed ledger, this protocol can be drastically simplified. With the support of NEOT, in order to establish secured connection between node N<sub>A</sub> and N<sub>B</sub> with the public key and private key to be (PU<sub>A</sub>,PV<sub>A</sub>) and (PU<sub>B</sub>, PV<sub>B</sub>) respectively,  the below steps are only required to be excuted once for all. 
 
-1. Node A generate a symmetric key Ks. 
-2.  with asymmetric encryption algorthim E
+1. N<sub>A</sub> generate a symmetric key Ks. 
+2. N<sub>A</sub> uses PU<sub>B</sub> and asymmetric encoding algorithm *E* and some other necessary metadata *Meta* (NEOT version, which decides the supported cypher sets, etc.) to generate and signiture the message *Mk = E(PU<sub>B</sub>, Meta)* , then boardcasts *Mk* to blockchain. The service of N<sub>B</sub> doesn't have to be live at this moment.
+
+
+That's all. 
+
+*NEOT Tunneo* helps N<sub>B</sub> to retrieve Ks from the blockchain. From then on, whenever N<sub>A</sub> and N<sub>B</sub> are trying to talk, no matter the connection is onchain or offchain, they can directly use Ks to encrypt/decrypt their traffic. We call Ks the **Sustainable Symmetric Key** (SSK)
+
+CA is no longer needed. 
+
+If node wants to regenerate SSK, it can repeat above steps.
+
 
 
 
