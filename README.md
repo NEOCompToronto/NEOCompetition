@@ -68,23 +68,45 @@ Steemr, providing beautiful user interface, is targeted to provide a market for 
 
 Key components in NEOT's network includes following:
 
-**Sensor** is the ultimate information capturer of the really world and the terminal of existing IoT networks. A typical *sensor*:
+####Sensor 
+
+*Sensor* is the ultimate information capturer of the really world and the terminal of existing IoT networks. A typical *sensor*:
 
 2. has unidirectional **Data** output, with the form of pulsing, streaming, etc. The encoding of *data* may or may not conform to international standards. 
 2. has an instruction set for remote configuration and controlling. Some also implement the status query functionalities and the feedback/acknowledge machanism. We define this set as bidirectional **Signals**. 
 3. is not designed to handle heavy computational work or persist huge volume of data, in order to reduce the battery consumption and hardware cost.
 4. in many scenarios, is exposed in unstable communication environment. 
-5. in many scenarios, pair with, or as an element of a *sensor* cluster connect with a **Sensor Delegate**. The *delegate*, which can be a specialized hardware, or an API mounted in a common device, also provides *data* and *signal* interfaces.
+6. in many scenarios, pair with, or as an element of a *sensor* cluster connect with a **Sensor Delegate**. The *delegate*, which can be a specialized hardware, or an API mounted in a common device, also provides *data* and *signal* interfaces.
 
-**Nest** is a device equiped with significant computational power (a.k.a. **Computation Nest**) or data storage capacity (a.k.a. **Storage Nest**), or simply providing human-computer interface (a.k.a **HCI Nest**). *Nest* interact 
+NEOT node can attach multiple *sensors* or *sensor delegates*. A node with more than one 
 
-**Adapter** is a customizable component connecting *sensor*/*delegate* and NEOT node. *Adapter* should confirm to **NEOT Protocol** to provide a standard *data* and *signal* interface to NEOT node via *Tunneo*.
+#### Nest
 
-**Tunneo (TN) ** as a part of NEOT node. 
+*Nest* is a device equiped with significant computational power (a.k.a. **Computation Nest**) or data storage capacity (a.k.a. **Storage Nest**), or simply providing human-computer interface (a.k.a **HCI Nest**). *Nest* interact with NEOT node with the very similar way of *sensor*/*delegate*. It acts as the service provider in *Private Data* user cases, while the consumer in *Public Data* user cases. Check session 2.2 for these user cases.
+
+####Adapter
+
+*Adapter* is a customizable component connecting *sensor*/*delegate* and NEOT node. *Adapter* confirms **NEOT Protocol** with a standardized *data* and *signal* interface to communicate with NEOT node via *Tunneo*.
+
+*NEOT Protocol* is open to 3rd party, such as sensor manufacturers and indie developers. Everyone who is willing to connect their IoT devices to NEOT to leverage the power of blockchain is free to join in, no permission necessary. We call these Developers as **Adapter Devs**.
+
+Once released, *NEOT Protocol* will be updated very occasionally, in order to reduce the re-development and re-deployment cost of *adapter devs*. However, *adapter devs* are always free to update and deploy their *adatper* anytime.
+
+#### Tunneo
+
+*Tunneo* (a.k.a TN) as a part of NEOT node, provides following functionalities:
+
+* Realize *lifetime trnasport layer security*. Refer to session 2.2 for more details. 
+* Encrypt the data and *signal*
+* Realize the offchain channel between *Nest* and *Sensor* nodes.
 
 
 
-###2.2   
+###2.2 Lifetime Transport Layer Security   
+
+###2.3  
+
+
 
 
 
