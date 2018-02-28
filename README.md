@@ -68,7 +68,7 @@ Steemr, providing beautiful user interface, is targeted to provide a market for 
 
 Key components in NEOT's network includes following:
 
-####Sensor 
+#### Sensor 
 
 *Sensor* is the ultimate information capturer of the really world and the terminal of existing IoT networks. A typical *sensor*:
 
@@ -84,7 +84,7 @@ NEOT node can attach multiple *sensors* or *sensor delegates*. A node with more 
 
 *Nest* is a device equiped with significant computational power (a.k.a. **Computation Nest**) or data storage capacity (a.k.a. **Storage Nest**), or simply providing human-computer interface (a.k.a **HCI Nest**). *Nest* interact with NEOT node with the very similar way of *sensor*/*delegate*. It acts as the service provider in *Private Data* user cases, while the consumer in *Public Data* user cases. Check session 2.2 for these user cases.
 
-####Adapter
+#### Adapter
 
 *Adapter* is a customizable component connecting *sensor*/*delegate* and NEOT node. *Adapter* confirms **NEOT Protocol** with a standardized *data* and *signal* interface to communicate with NEOT node via *Tunneo*.
 
@@ -102,9 +102,9 @@ Once released, *NEOT Protocol* will be updated very occasionally, in order to re
 
 
 
-###2.2 Lifetime Transport Layer Security   
+### 2.2 Lifetime Transport Layer Security   
 
-###2.3  
+### 2.3  
 
 
 
