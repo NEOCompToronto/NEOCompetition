@@ -111,7 +111,7 @@ In the world of untrustful internet, HTTPS/SSL is widely used to verify the iden
 By leverage the power of distributed ledger, this protocol can be drastically simplified. With the support of NEOT, in order to establish secured connection between node N<sub>A</sub> and N<sub>B</sub> with the public key and private key to be (PU<sub>A</sub>,PV<sub>A</sub>) and (PU<sub>B</sub>, PV<sub>B</sub>) respectively,  the below steps are only required to be excuted once for all. 
 
 1. N<sub>A</sub> generate a symmetric key Ks. 
-2. N<sub>A</sub> uses PU<sub>B</sub> and asymmetric encoding algorithm *E* and some other necessary metadata *Meta* (NEOT version, which decides the supported cypher sets, etc.) to generate and signiture the message *Mk = E(PU<sub>B</sub>, Meta)* , then boardcasts *Mk* to blockchain. The service of N<sub>B</sub> doesn't have to be live at this moment.
+2. N<sub>A</sub> uses PU<sub>B</sub> and asymmetric encoding algorithm *E* and some other necessary metadata *Meta* (NEOT version, which decides the supported cypher sets, etc.) to generate and signiture *S* the message *Mk = S(E(PU<sub>B</sub>, Meta),PV<sub>A</sub>)* , then boardcasts *Mk* to blockchain. The service of N<sub>B</sub> doesn't have to be live at this moment.
 
 
 That's all. 
