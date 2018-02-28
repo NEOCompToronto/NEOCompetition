@@ -70,23 +70,25 @@ As a conclusion, we see NEO has the advantages as...{TODO: A summary of the tabl
 
 
 
-### 3.1 Basic NEOT Node Structure
+### 3.1 NEOT Network Components
 
 ![struBasic](pics/struBasic.JPG "Picture 3-1 NEOT Network Basic Node Structure")
 
-Key components in NEOT node includes following:
+Key components in NEOT's network includes following:
 
-**Sensor** is the terminal and ultimate information provider of existing IoT networks. Sensors usually exchange information with the network in two ways:
+**Sensor** is the ultimate information capturer of the really world and the terminal of existing IoT networks. A typical *sensor*:
 
-1. I/O commands with its controller. We call these commands **Raw Command**. 
+1. is not designed to handle heavy computational work or persist huge volume of data, in order to reduce the battery consumption and hardware cost.
+2. has unidirectional **Data** output, with the form of pulsing, streaming, etc. The encoding of *data* may or may not conform to international standards. 
+3. has an instruction set for remote configuration and controlling. Some also implement the status query functionalities and the feedback/acknowledge machanism. We define this set as bidirectional **Signals**. 
+4. in many scenarios, is exposed in unstable communication environment. 
+5. in many scenarios, pair with, or as an element of a *sensor* cluster connect with a **Sensor Delegate**. The *delegate*, which can be a specialized hardware, or an API mounted in a common device, also provides *data* and *signal* interfaces.
 
-2. Outputs data such as video, audio, accleration, Magnetic, etc. We call these data **Raw Data**. 
+**Nest** is a device equiped with significant computational power (a.k.a. **Computation Nest**) or data storage capacity (a.k.a. **Storage Nest**), or simply providing human-computer interface (a.k.a **HCI Nest**).
 
-   The reason why we call them "Raw" is because lack of standardization has become a  serious problem industrial wise.
+**Adapter** is a customizable component laying between the *sensor*/*delegate* and a NEOT node. An *Adapter* should confirm to **NEOT Protocol** to provide a standard *data* and *signal* interface to the *Tunneo* layer of the NEOT Node.
 
-In NEOT's IoT architecture, 
-
-**Tunneo (TN): ** The adapable layer in NEOT's node logic. *Tunneo* layer 
+**Tunneo (TN) ** is  layer in NEOT's node. *Tunneo* layer 
 
 
 
