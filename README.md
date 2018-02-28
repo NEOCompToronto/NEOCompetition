@@ -90,21 +90,32 @@ NEOT node can attach multiple *sensors* or *sensor delegates*. A node with more 
 
 *NEOT Protocol* is open to 3rd party, such as sensor manufacturers and indie developers. Everyone who is willing to connect their IoT devices to NEOT to leverage the power of blockchain is free to join in, no permission necessary. We call these Developers as **Adapter Devs**.
 
-Once released, *NEOT Protocol* will be updated very occasionally, in order to reduce the re-development and re-deployment cost of *adapter devs*. However, *adapter devs* are always free to update and deploy their *adatper* anytime.
+Once released, *NEOT Protocol* will be kept fixed except when serious issue founded, best providing *adapter devs* flexibility and reduce their cost of forced updates or re-deployment of their code.
 
 #### Tunneo
 
 *Tunneo* (a.k.a TN) as a part of NEOT node, provides following functionalities:
 
-* Realize *lifetime trnasport layer security*. Refer to session 2.2 for more details. 
-* Encrypt the data and *signal*
+* Realize the logic of *Sustainable Symmetric Key*. Refer to session 2.2 for more details. 
+* Encrypt the *data* and *signal* 
 * Realize the offchain channel between *Nest* and *Sensor* nodes.
 
 
+### 2.2 Sustainable Symmetric Key   
 
-### 2.2 Lifetime Transport Layer Security   
+In the world of untrustful internet, HTTPS/SSL is widely used to verify the identities of the communication parties and ensure the traffic could not be decrypted by 3rd party. The shortcomings of such protocol are:
 
-### 2.3  
+* Everytime to establish a new secured connection, a complex procedure comprised of 3 main phases is mandatory -  Hello, Certificate Exchange and Key Exchange.
+* The security relies on Certificate Authorities (CAs).
+
+By leverage the power of distributed ledger, this protocol can be drastically simplified. With the support of NEOT, in order to establish secured connection between node A and B with the public key and private key to be (PU<sub>A</sub>,PV<sub>A</sub>) and (PU<sub>B</sub>, PV<sub>B</sub>) respectively,  the below steps are only required to be excuted once for all.  
+
+1. Node A generate a symmetric key Ks. 
+2.  with asymmetric encryption algorthim E
+
+
+
+### 2.3   
 
 
 
