@@ -10,7 +10,32 @@ The IoT Infrastracture powered by NEO
 
 ## 0. Abstract
 
-The project of NEO of Things (a.k.a NEOT ) initiated by [Norchain](www.norchain.io) team aimed to … {TODO}
+As the Submission of NEO's competiton, we have:
+
+### 0.1 The proposal of NEOT 
+This article itself. The project of NEO of Things (a.k.a NEOT ) initiated by [Norchain](www.norchain.io) team aimed to … {TODO}
+### 0.2 A prototype of NEOT NEP-5 smart contract 
+{TODO: Need discribe what's in there}
+
+### 0.3 A demo of NEO based UBI 
+
+{TODO: Build by Unity} the senario …  
+
+### 0.4 A video 
+
+{TODO}
+
+### 0.5 Intro of the team
+
+Norchain team ….
+
+We are contact with Marham government to do ….
+
+We have relationship with Huawei to utilize NB-IoT … 
+
+We contacted with China mobile ...
+
+
 
 ## 1. Challenges of IoT and related projects
 
@@ -50,7 +75,7 @@ Blockchain tech provides a chance to make message level standardization. {TODO}
 
 ### 1.5 Recent IoT distributed ledger projects  
 
-Some IoT projects are experimenting other decentralized topology. The most famous one is IOTA. However, its light nodes rely on [manual assigning public nodes as servers](https://www.iotasupport.com/lightwallet.shtml), which recently practially failed to resist DDoS attacks {TODO} [LINK](https://freedman.club/en/cryptocurrency-iota-ddos-attack-revealed-the-problem-of-network-scalability/) 
+Some IoT projects are experimenting other decentralized topology. The most famous one is IOTA. However, its light nodes rely on [manual assigning public nodes as servers](https://www.iotasupport.com/lightwallet.shtml), which recently practially failed to resist DDoS attacks {TODO} [LINK](https://freedman.club/en/cryptocurrency-iota-ddos-attack-revealed-the-problem-of-network-scalability/) There are also other concerns of IOTA that we can see from [HERE](https://hackernoon.com/why-i-find-iota-deeply-alarming-934f1908194b)
 
 ITC doesn't have much process on their project {TODO} [LINK](https://steemit.com/blockchain/@smcaterpillar/iot-chain-china-s-new-iota-an-easy-investment-or-should-we-set-off-the-alarm-bells-let-s-do-our-homework). It's based on Ethereum, which means low speed and you need to pay gas for every conversation, which is not applicable for most IoT scenarios. 
 
@@ -58,7 +83,7 @@ Steemr, providing beautiful user interface, is targeted to provide a market for 
 
 
 
-## 2 NEOT: The First Practical IoT Solution Powered by Blockchain
+## 2 NEOT: The 1st Practical IoT Blockchain Solution
 
 
 
@@ -114,12 +139,12 @@ In the world of untrustful internet, HTTPS/SSL is widely used to verify the iden
 By leverage the power of distributed ledger, this protocol can be drastically simplified. With the support of *tunneo*, in order to establish secured connection between node N<sub>A</sub> and N<sub>B</sub> with the public key and private key to be (PU<sub>A</sub>,PV<sub>A</sub>) and (PU<sub>B</sub>, PV<sub>B</sub>) respectively,  the below steps are only required to be excuted only once for all. 
 
 1. N<sub>A</sub> generate a symmetric key K<sub>S</sub>. 
-2. N<sub>A</sub> uses PU<sub>B</sub> and asymmetric encoding algorithm *E* and some other necessary metadata *Meta* (NEOT version, which decides the supported cypher sets, etc.) to generate and signiture *S* the message *Mk = S(E(PU<sub>B</sub>, Meta),PV<sub>A</sub>)* , then boardcasts *Mk* to blockchain. The service of N<sub>B</sub> doesn't have to be live at this moment.
+2. N<sub>A</sub> uses PU<sub>B</sub> and asymmetric encoding algorithm *E* and some other necessary metadata *Meta* (NEOT version, which decides the supported cypher sets, etc.) to generate and signiture *S* the message *M = S(E(PU<sub>B</sub>, Meta),PV<sub>A</sub>)* , then boardcasts *M* to blockchain. The service of N<sub>B</sub> doesn't have to be live at this moment.
 
 
 That's all. 
 
-*NEOT Tunneo* helps N<sub>B</sub> to retrieve K<sub>S</sub> from the blockchain. From then on, whenever N<sub>A</sub> and N<sub>B</sub> try to talk, no matter the connection is onchain or offchain, they can directly use K<sub>S</sub> to encrypt/decrypt their traffic. We call K<sub>S</sub> the **Sustainable Symmetric Key** (SSK)
+*NEOT Tunneo* helps N<sub>B</sub> to retrieve K<sub>S</sub> from the blockchain. From then on, whenever N<sub>A</sub> and N<sub>B</sub> try to talk, no matter the connection is onchain or offchain, they can directly use K<sub>S</sub> to encrypt/decrypt their traffic. We call K<sub>S</sub> the **Sustainable Symmetric Key** (SSK).
 
 CA is no longer needed. 
 
@@ -127,21 +152,25 @@ If N<sub>A</sub> wants to regenerate SSK, it can repeat above steps. N<sub>B</su
 
 
 
-### 2.3 On-chain part   
+### 2.3 Tunneo: On-chain part   
 
 Although it's a great aspiration that we put all the *signal* or even *data* generated throughout the network into blockchain, we must admit that it's impratical today due to the reasons discussed in session 1.5, even many chain consensus algorthims partcially sacrifice the character of decentralization to enhance the speed and to reduce the ledger size. The problem is especially serious for IoT applications because of the node capacity limitations.
 
 Nevertheless, we agree that the blockchain performance and IoT node capacity will continue improve in the further. So why not migrate the business onto the chain gradually?
 
-With the approarch, the on-chain  inital versions of Tunneo will focus on recording the less frequent and 
+With this approarch, the work of inital versions of *tunneo* will tend to support the less frequent and small sized user cases. Such as transaction and scoring. 
 
-### 2.4 Off-chain part
+### 2.4 Tunneo: Off-chain part
 
- 
+ Mainly focus on *data*.
 
 
 
-## 3. IoT blockchain: Why NEO
+### 2.5 Scenario: Public data 
+
+### 2.6 Scenario: Private data
+
+### 2.7 Blockchain: Why NEO
 
 See following table comparing Ethereum, IOTA and NEO, by the means of IoT application.
 
@@ -155,4 +184,61 @@ See following table comparing Ethereum, IOTA and NEO, by the means of IoT applic
 | Number System                          | Binary                                                       | Ternary                                                      | Binary                     | Ternary could be the future of computing [LINK](https://iota.stackexchange.com/questions/8/why-does-iota-use-a-ternary-number-system) rather than just extra computational overhead, only if manifacturers rewrite their binary architectures. However, even the IoT communication standardization couldn't get aligned in the past decades. |
 | Bookkeeper Incentive                   | Mining/Transaction reward                                    | No Incentive                                                 | Most by Dev team           | Incentive makes the network more stable                      |
 
-As a conclusion, we see NEO has the advantages as...{TODO: A summary of the table above to describe NEO's advantage in implementing IOT}. There are also other concerns of IOTA that we can see from [HERE](https://hackernoon.com/why-i-find-iota-deeply-alarming-934f1908194b)
+As conclusion, we see NEO has the advantages as...{TODO: A summary of the table above to describe NEO's advantage in implementing IOT}. 
+
+
+
+## 3 Smart Economy User Cases 
+
+### 3.1 Usage-based insurance 
+
+Intro of conventional UBI {TODO} [LINK](https://en.wikipedia.org/wiki/Usage-based_insurance) 
+
+
+
+Brief user case decription {TODO: Describe the user case in below picture}
+
+1. NEOT node is embeded in the car hooking with sensor 1,2,3,...
+2. Algorthim of scoring is coded in Tunneo, the calculation process...
+3. Charge through blockchain
+
+![carSensors](/Users/danielpan/Projects/CryptoProjects/NEOCompetition/NEOCompetition/pics/carSensors.JPG)
+
+Technique explaination of how blockchain works in these scenario {TODO: Describe the below picture}
+
+1. Multiple nodes via vehicle, mobile, difficult carrier provider, insurance company
+2. Use bluetooth, LTE network, NB-IoT chip, fiber network,etc.. 
+
+![charge](/Users/danielpan/Projects/CryptoProjects/NEOCompetition/NEOCompetition/pics/charge.JPG)
+
+Further expansion {TODO: Describe the below picture}
+
+1. Sensors can be outside of the vehicle. eg. POS machines of repair shop, NFC with traffic camera, etc.
+2. Following above bullet, auto payment of the bill and tickets.
+
+![incentive](/Users/danielpan/Projects/CryptoProjects/NEOCompetition/NEOCompetition/pics/incentive.JPG)
+
+
+
+
+
+### 3.2 Smart Traffic
+
+3.1 is just one corner of the picture. 
+
+{TODO: Tiger, retrieve some idea from the article I shared to you on weChat}
+
+Further, we can  {TODO: Tiger can refer to our wechat conversation to complete this part}
+
+1. The scoring and incident history of the addresses are public on blockchain with standard format. big data experts can use these data for free and help improve our traffic system. 
+2. Meanwhile, since the relationship between the blockchain node and real world car is confidential, it will be transparent that individuals' privacy is ensured. 
+3. It'll also be a huge save of mantainance cost for the KYC based services, such as banks, insurance company etc. who need to check individual's related history. They just need to temporary ask users to provide the prove of the ownership of the account and retrieve information from blockchain.
+4. …. 
+
+{TODO: Tiger, add more content if necessary}
+
+
+
+## 
+
+1. ​
