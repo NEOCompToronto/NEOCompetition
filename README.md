@@ -202,21 +202,21 @@ Brief user case decription {TODO: Describe the user case in below picture}
 2. Algorthim of scoring is coded in Tunneo, the calculation process...
 3. Charge through blockchain
 
-![carSensors](/Users/danielpan/Projects/CryptoProjects/NEOCompetition/NEOCompetition/pics/carSensors.JPG)
+![carSensors](pics/carSensors.JPG)
 
 Technique explaination of how blockchain works in these scenario {TODO: Describe the below picture}
 
 1. Multiple nodes via vehicle, mobile, difficult carrier provider, insurance company
 2. Use bluetooth, LTE network, NB-IoT chip, fiber network,etc.. 
 
-![charge](/Users/danielpan/Projects/CryptoProjects/NEOCompetition/NEOCompetition/pics/charge.JPG)
+![charge](pics/charge.JPG)
 
 Further expansion {TODO: Describe the below picture}
 
 1. Sensors can be outside of the vehicle. eg. POS machines of repair shop, NFC with traffic camera, etc.
 2. Following above bullet, auto payment of the bill and tickets.
 
-![incentive](/Users/danielpan/Projects/CryptoProjects/NEOCompetition/NEOCompetition/pics/incentive.JPG)
+![incentive](pics/incentive.JPG)
 
 
 
