@@ -12,21 +12,21 @@ The IoT Infrastracture powered by NEO
 
 The project of NEO of Things (a.k.a NEOT ) initiated by [Norchain](www.norchain.io) team aimed to … {TODO}
 
-## 1. Challenges of IoT
+## 1. Challenges of IoT and related projects
 
 {TODO: To finish this section, can mainly cite the following two aricles coming from IEEE IoT}
 
 	1. [IoT+BlockChain: Benefits and Challenges](https://iot.ieee.org/newsletter/january-2017/iot-and-blockchain-convergence-benefits-and-challenges.html)
 	2. [IoT Trends 2018](https://iot.ieee.org/newsletter/january-2018/iot-trends-in-2018-ai-blockchain-and-the-edge.html?highlight=WyJibG9ja2NoYWluIl0=)
 
-### 1.1 Device capability limitation
+### 1.1 Node capability
 
 Most IoT nodes have limited storage and calculation power. The consensus algorithms
 employed in BC (POW or POS) require significant computational resources which are far beyond the capabilities of most IoT devices. {TODO. NOTE: Can also cite some ideas from these two articles in other sessions.} [LINK1](https://arxiv.org/pdf/1712.02969.pdf), [LINK2](https://arxiv.org/pdf/1608.05187.pdf)
 
 Ethereum's light client protocol is still under development [LINK](https://github.com/ethereum/wiki/wiki/Light-client-protocol). 
 
-### 1.2 DDoS attack resistant
+### 1.2 DDoS attack
 
 IoT has already turned into a serious security concern that hackers can produce DDoS attacks.  {TODO}  [LINK1 ](https://www.iotforall.com/5-worst-iot-hacking-vulnerabilities/) 
 
@@ -48,7 +48,7 @@ Blockchain tech provides a chance to make message level standardization. {TODO}
 
 
 
-### 1.5 Challenges of recent IoT blockchain projects  
+### 1.5 Recent IoT distributed ledger projects  
 
 Some IoT projects are experimenting other decentralized topology. The most famous one is IOTA. However, its light nodes rely on [manual assigning public nodes as servers](https://www.iotasupport.com/lightwallet.shtml), which recently practially failed to resist DDoS attacks {TODO} [LINK](https://freedman.club/en/cryptocurrency-iota-ddos-attack-revealed-the-problem-of-network-scalability/) 
 
@@ -62,7 +62,7 @@ Steemr, providing beautiful user interface, is targeted to provide a market for 
 
 
 
-### 2.1 NEOT network components
+### 2.1 Key components
 
 ![struBasic](pics/struBasic.JPG "Picture 3-1 NEOT Network Basic Node Structure")
 
@@ -96,19 +96,22 @@ Once released, *NEOT Protocol* will be kept fixed except when serious issue foun
 
 *Tunneo* (a.k.a TN) as a part of NEOT node, provides following functionalities:
 
-* Realize the logic of *Sustainable Symmetric Key*. Refer to session 2.2 for more details. 
-* Encrypt the *data* and *signal* 
+* Implement the encryption/decryption of *Sustainable Symmetric Key*. See session 2.2 for more details. 
+* Provide *data* and *signal* I/O to *Sensors* and *Delegates*
 * Realize the offchain channel between *Nest* and *Sensor* nodes.
+* ​
 
 
-### 2.2 Sustainable Symmetric Key   
+NEOT developer team is responsible for upgrading Tunneo regularly to fix the defects and enhance it's functionality. 
+
+### 2.2 Sustainable symmetric key (SSK)   
 
 In the world of untrustful internet, HTTPS/SSL is widely used to verify the identities of the communication parties and ensure the traffic could not be decrypted by 3rd party. The shortcomings of such protocol are:
 
 * Everytime to establish a new secured connection, a complex procedure comprised of 3 main phases is mandatory -  Hello, Certificate Exchange and Key Exchange.
-* The security relies on Certificate Authorities (CAs).
+* The verification of the identities heavily relies on the centralized nodes: Certificate Authorities (CAs).
 
-By leverage the power of distributed ledger, this protocol can be drastically simplified. With the support of NEOT, in order to establish secured connection between node N<sub>A</sub> and N<sub>B</sub> with the public key and private key to be (PU<sub>A</sub>,PV<sub>A</sub>) and (PU<sub>B</sub>, PV<sub>B</sub>) respectively,  the below steps are only required to be excuted once for all. 
+By leverage the power of distributed ledger, this protocol can be drastically simplified. With the support of *tunneo*, in order to establish secured connection between node N<sub>A</sub> and N<sub>B</sub> with the public key and private key to be (PU<sub>A</sub>,PV<sub>A</sub>) and (PU<sub>B</sub>, PV<sub>B</sub>) respectively,  the below steps are only required to be excuted only once for all. 
 
 1. N<sub>A</sub> generate a symmetric key Ks. 
 2. N<sub>A</sub> uses PU<sub>B</sub> and asymmetric encoding algorithm *E* and some other necessary metadata *Meta* (NEOT version, which decides the supported cypher sets, etc.) to generate and signiture *S* the message *Mk = S(E(PU<sub>B</sub>, Meta),PV<sub>A</sub>)* , then boardcasts *Mk* to blockchain. The service of N<sub>B</sub> doesn't have to be live at this moment.
@@ -124,10 +127,17 @@ If node wants to regenerate SSK, it can repeat above steps.
 
 
 
+### 2.3 On-chain part   
 
-### 2.3   
+Although it's a great aspiration that we put all the *signal* or even *data* generated throughout the network into blockchain, we must admit that it's impratical today due to the reasons discussed in session 1.5, even many chain consensus algorthims partcially sacrifice the character of decentralization to enhance the speed and to reduce the ledger size. The problem is especially serious for IoT applications because of the node capacity limitations.
 
+Nevertheless, we agree that the blockchain performance and IoT node capacity will continue improve in the further. So why not migrate the business onto the chain gradually?
 
+With the approarch, the on-chain  inital versions of Tunneo will focus on recording the less frequent and 
+
+### 2.4 Off-chain part
+
+ 
 
 
 
