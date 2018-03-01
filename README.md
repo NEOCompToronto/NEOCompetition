@@ -97,17 +97,23 @@ Key components in NEOT's network includes following:
 
 *Sensor* is the ultimate information capturer of the really world and the terminal of existing IoT networks. A typical *sensor*:
 
-2. has unidirectional **Data** output, with the form of pulsing, streaming, etc. The encoding of *data* may or may not conform to international standards. 
+1. has unidirectional **Data** output, with the form of pulsing, streaming, etc. The encoding of *data* may or may not conform to international standards. 
 2. has an instruction set for remote configuration and controlling. Some also implement the status query functionalities and the feedback/acknowledge machanism. We define this set as bidirectional **Signals**. 
 3. is not designed to handle heavy computational work or persist huge volume of data, in order to reduce the battery consumption and hardware cost.
 4. in many scenarios, is exposed in unstable communication environment. 
-6. in many scenarios, pair with, or as an element of a *sensor* cluster connect with a **Sensor Delegate**. The *delegate*, which can be a specialized hardware, or an API mounted in a common device, also provides *data* and *signal* interfaces.
+5. in many scenarios, pair with, or as an element of a *sensor* cluster connect with a **Sensor Delegate**. The *delegate*, which can be a specialized hardware, or an API mounted in a common device, also provides *data* and *signal* interfaces. In the NEOT's POV, *sensor delegate* is equivalent to *sensor* in interface. Therefore we'll still call these delegates "sensors" to simplify the description.
 
-NEOT node can attach multiple *sensors* or *sensor delegates*. A node with more than one 
+One NEOT node is capable to attach multiple *sensors*. A node attached with at least one *sensors*  is call a NEOT**Sensor Node (SN)** .
+
+*Sensor nodes* act as the service provider in *Private Data* user cases, while the consumer in *Public Data* user cases. Check session 2.5 for the details of these user cases. 
 
 #### Nest
 
-*Nest* is a device equiped with significant computational power (a.k.a. **Computation Nest**) or data storage capacity (a.k.a. **Storage Nest**), or simply providing human-computer interface (a.k.a **HCI Nest**). *Nest* interact with NEOT node with the very similar way of *sensor*/*delegate*. It acts as the service provider in *Private Data* user cases, while the consumer in *Public Data* user cases. Check session 2.2 for these user cases.
+*Nest* is a device equiped with significant computational power (a.k.a. **Computation Nest**) or data storage capacity (a.k.a. **Storage Nest**), or simply providing human-computer interface (a.k.a **HCI Nest**). *Nest* interact with NEOT node with the very similar way as the *sensors* in *SNs*. 
+
+One NEOT node can append multiple *nests*. A node with at least one *nest* appended is call a NEOT **Nest Node**. In the rest of this article, we'll also call *sensor, sensor delegate* and *nest* the **Attachments**.
+
+*Nest* Nodes acts as the service provider in *Private Data* user cases, while the consumer in *Public Data* user cases. Check session 2.5 for the details of these user cases. 
 
 #### Adapter
 
@@ -237,8 +243,6 @@ Further, we can  {TODO: Tiger can refer to our wechat conversation to complete t
 
 {TODO: Tiger, add more content if necessary}
 
+​**Better Consider as the proposal of "Smart City"** {TODO}
 
-
-## 
-
-1. ​
+1. Use figures to demonstrate the add-on parts upon current system. So city could understand we are trying reduce the cost.  
