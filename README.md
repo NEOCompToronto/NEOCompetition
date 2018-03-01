@@ -113,17 +113,17 @@ In the world of untrustful internet, HTTPS/SSL is widely used to verify the iden
 
 By leverage the power of distributed ledger, this protocol can be drastically simplified. With the support of *tunneo*, in order to establish secured connection between node N<sub>A</sub> and N<sub>B</sub> with the public key and private key to be (PU<sub>A</sub>,PV<sub>A</sub>) and (PU<sub>B</sub>, PV<sub>B</sub>) respectively,  the below steps are only required to be excuted only once for all. 
 
-1. N<sub>A</sub> generate a symmetric key Ks. 
+1. N<sub>A</sub> generate a symmetric key K<sub>S</sub>. 
 2. N<sub>A</sub> uses PU<sub>B</sub> and asymmetric encoding algorithm *E* and some other necessary metadata *Meta* (NEOT version, which decides the supported cypher sets, etc.) to generate and signiture *S* the message *Mk = S(E(PU<sub>B</sub>, Meta),PV<sub>A</sub>)* , then boardcasts *Mk* to blockchain. The service of N<sub>B</sub> doesn't have to be live at this moment.
 
 
 That's all. 
 
-*NEOT Tunneo* helps N<sub>B</sub> to retrieve Ks from the blockchain. From then on, whenever N<sub>A</sub> and N<sub>B</sub> are trying to talk, no matter the connection is onchain or offchain, they can directly use Ks to encrypt/decrypt their traffic. We call Ks the **Sustainable Symmetric Key** (SSK)
+*NEOT Tunneo* helps N<sub>B</sub> to retrieve K<sub>S</sub> from the blockchain. From then on, whenever N<sub>A</sub> and N<sub>B</sub> try to talk, no matter the connection is onchain or offchain, they can directly use K<sub>S</sub> to encrypt/decrypt their traffic. We call K<sub>S</sub> the **Sustainable Symmetric Key** (SSK)
 
 CA is no longer needed. 
 
-If node wants to regenerate SSK, it can repeat above steps.
+If N<sub>A</sub> wants to regenerate SSK, it can repeat above steps. N<sub>B</sub> will take only the latest version.
 
 
 
