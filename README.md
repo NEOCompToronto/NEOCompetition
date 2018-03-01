@@ -230,7 +230,9 @@ Further expansion {TODO: Describe the below picture}
 
 ### 3.2 Smart Traffic
 
-3.1 is just one corner of the picture. 
+3.1 is just one corner of the whole picture. 
+
+{Some people suggests the Smart City and Sharing Economy [LINK](https://www.springeropen.com/track/pdf/10.1186/s40854-016-0040-y?site=jfin-swufe.springeropen.com)}
 
 {TODO: Tiger, retrieve some idea from the article I shared to you on weChat}
 
