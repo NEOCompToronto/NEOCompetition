@@ -10,7 +10,7 @@ In following discussion, we assume *Node* running on a distributed consensus net
 
 The network, since genesis, has a list of the types of predefined **GPoW Tasks**.  Every instance *t* of any GPoW Task *T* is a mathmatic problem, which
 
-1. The initiator of *t* can be any node in the network, normal node or malicious node. For some Ts, input parameter vector \vec(r) is mandatory or optional.
+1. The initiator of *t* can be any node in the network, normal node or malicious node. For some Ts, input parameter vector $\vec(r)$ is mandatory or optional.
 
    ​
 
