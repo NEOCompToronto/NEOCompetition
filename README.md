@@ -103,7 +103,7 @@ Key components in NEOT's network includes following:
 4. in many scenarios, is exposed in unstable communication environment. 
 5. in many scenarios, pair with, or as an element of a *sensor* cluster connect with a **Sensor Delegate**. The *delegate*, which can be a specialized hardware, or an API mounted in a common device, also provides *data* and *signal* interfaces. In the NEOT's POV, *sensor delegate* is equivalent to *sensor* in interface. Therefore we'll still call these delegates "sensors" to simplify the description.
 
-One NEOT node is capable to attach multiple *sensors*. A node attached with at least one *sensors*  is call a NEOT**Sensor Node (SN)** .
+One NEOT node is capable to attach multiple *sensors*. A node attached with at least one *sensors*  is call a NEOT **Sensor Node (SN)** .
 
 *Sensor nodes* act as the service provider in *Private Data* user cases, while the consumer in *Public Data* user cases. Check session 2.5 for the details of these user cases. 
 
@@ -166,17 +166,17 @@ Nevertheless, we agree that the blockchain performance and IoT node capacity wil
 
 With this approarch, the work of inital versions of *tunneo* will tend to support the less frequent and small sized user cases. Such as transaction and scoring. 
 
-### 2.4 Tunneo: Off-chain part
-
- Mainly focus on *data*.
 
 
+### 2.5  Scenario: Nest Rental 
 
-### 2.5 Scenario: Public data 
+Task: Node *A* to find a qualified nest node to finish a particular 
 
-### 2.6 Scenario: Private data
+### 2.6 Scenario: Data Sharing
 
-### 2.7 Blockchain: Why NEO
+### 2.7 Scenario: Remote Access 
+
+### 2.8 Blockchain: Why NEO
 
 See following table comparing Ethereum, IOTA and NEO, by the means of IoT application.
 
