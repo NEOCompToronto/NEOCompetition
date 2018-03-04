@@ -17,8 +17,6 @@ After that, $N_A$ and  $N_B$ can use $K_S$ to secure the traffic for unlimited t
 
 To reset SSK due to key leakage or version upgrade, $N_A$ can simple repeat the above steps. $N_B$ always take the latest one.
 
-
-
 ## 2. Service: Definition, Negotiation and Evaluation 
 
 Any service, no matter the consumer and provider parties comes from human community or computer network, can be incontestably processed only when four predefined interactive components achieved accurate consensus. These components are Definition, Negotiation, Evaluation. 
@@ -85,7 +83,11 @@ A typical life cycle of service instance $s \in S_i$ in a *DNEC network* is desc
 
    Then bookkeepers should check if latest block height is lower than $h_0+ h_e$. If yes, record the message into ledger. Otherwise just ignore it.
 
-   By calculating $(v_s, c_{p_s},c_{a_s} )=E_{S_i}(\vec{d_s},\vec{z_s}, \vec{\alpha_s} ) $, $F(s,p_j)$ is unfrozen, $ c_{p_s}$ and $c_{a_s}$ are transfered to $p$ and $a_i$ respectively. Case closed.
+   By calculating $(v_s, c_{p_s},c_{a_s} )=E_{S_i}(\vec{d_s},\vec{z_s}, \vec{\alpha_s} ) $, $F(s,p_j)$ is unfrozen, $ c_{p_s}$ and $c_{a_s}$ are transfered to $p$ and $a_i$ respectively. 
+
+   ​
+
+   Case closed.
 
 
 
