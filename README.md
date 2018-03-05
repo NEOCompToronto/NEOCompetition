@@ -89,7 +89,7 @@ Steemr, providing beautiful user interface, is targeted to provide a market for 
 
 ### 2.1 Key components
 
-![struBasic](pics/struBasic.JPG "Picture 3-1 NEOT Network Basic Node Structure")
+![struBasic](pics/components.png "Picture 3-1 NEOT Network Basic Node Structure")
 
 Key components in NEOT's network includes following:
 
@@ -115,12 +115,13 @@ One NEOT node can attach multiple *nests*. There could be **Nest Delegates** but
 
 #### Tunneo
 
-*Tunneo* (a.k.a TN) is a layer maintained by NEOT developer team, providing following functionalities:
+*Tunneo* (a.k.a TN) is a PDNE compatible layer open to serivce developers. 
 
-- Provide standalized *data* and *signal* I/O portal to *Adapters*.
-- Much like a SDK, provide *Adapters* the toolsets and encapsulate common on-chain and off-chain tasks. such as generating *Sustainable Symmetric Key*, pushing and fetching offchain encripted data, etc.
+NEOT developer team will participate partially by providing some toolset SDK used for standalized *data* and *signal* I/O portal and encapsulate common on-chain and off-chain tasks. 
 
-NEOT developer team will upgrade Tunneo regularly to fix the defects and enhance it's functionality.
+NEOT developer team will upgrade the SDK regularly to fix the defects and enhance it's functionality.
+
+For more information about what PDNE protocol can do, please refer to {TODO}
 
 #### Adapter
 
@@ -136,7 +137,17 @@ Once released, *NEOT Protocol* will be kept fixed except serious issue founded, 
 
 The structure of NEOT 
 
-#### Open Adapter level API
+#### Motivate all parties
+
+![valueflow](pics/roles.png "Picture 3-1 NEOT Network Basic Node Structure")
+
+
+
+Leveraging the power of PDNE standard, there are mainly four parties in NEOT's network: Providers, Consumers, Adapter Developers, PDNE Developers. Each parties would be motivated to improve the ecosystem. The above figure demonstrates the flow of the value following the arrow's direction:
+
+*Consumers* pays fees for the PDNE services provided by NEOT Node. *PDNE Developers* write 
+
+
 
 Manufacturers and indie developers who want to connect their IoT devices to NEOT can implement the 
 
@@ -148,23 +159,7 @@ Nevertheless, we agree that the blockchain performance and IoT node capacity wil
 
 With this approarch, the work of inital versions of *tunneo* will tend to support the less frequent and small sized user cases. Such as transaction and scoring. 
 
-![Alt text](https://g.gravizo.com/svg?
-  digraph G {
-    aize ="4,4";
-    main [shape=box];
-    main -> parse [weight=8];
-    parse -> execute;
-    main -> init [style=dotted];
-    main -> cleanup;
-    execute -> { make_string; printf}
-    init -> make_string;
-    edge [color=red];
-    main -> printf [style=bold,label="100 times"];
-    make_string [label="make a string"];
-    node [shape=box,style=filled,color=".7 .3 1.0"];
-    execute -> compare;
-  }
-)
+
 
 ### 2.5  Scenario: Nest Rental 
 

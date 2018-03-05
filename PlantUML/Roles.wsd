@@ -1,0 +1,26 @@
+@startuml
+
+title Roles in NEOT/PDNE
+top to bottom direction
+actor TermOwner as "Provider"
+actor AdaDev as "Adapter Dev (Manufacturer)"
+actor SerDev as "PDNE Developer"
+actor User as "Consumer"
+
+usecase NEOT as "Sensor/Nest Node" <<NEOT Node>>
+usecase Service as "Service instance" << PDNE >>
+
+
+AdaDev -left-> NEOT: Develop Adapter
+TermOwner -> AdaDev: Buy devices
+SerDev -> Service: Develop services
+
+Service -right-> SerDev: Royalty
+NEOT -> Service: Resource
+NEOT -left..> TermOwner: Ownership
+Service -up-> TermOwner: Service Fee
+Service -left-> User: Service
+User -> Service: Fee
+
+
+@enduml
