@@ -112,9 +112,11 @@ When consumer $c$ is creating the new service instance $s$, $D_S$ with input  $\
    	3. encrypt $\vec{\tau'} = E(\vec{\tau}, SSK(s,p))$. Post $\vec{\tau'} $ with $p$'s off-chain API, $p$ returns $id'_s$ to track $ \vec{\tau'} $ . If error happens, go to step 1 and another provider will be picked.
    	4. Calculate $\vec{d_s} = \{N'_s(\vec{\gamma}),  id'_s, \epsilon, t\}$.  $N'_s$ is used to process small size parameter $\vec{\gamma}$.  $\epsilon = CS(\vec{\tau'})$ is checksum.
 
-$c$ sends $M_{service}$ out. When bookkeepers verify $M_{service}$, they query $p$'s off-chain API with parameter $id_s'$ and its signiture, and get back  $\vec{\tau'}$, check if the checksum matches with $\epsilon$. Record the $M_{service}$ into blockchain then. If any error, just ignore it. If $c$ cannot find $M_{service}$, it can reinitiate $s$ again.
+$c$ sends $M_{service}$ out. When bookkeepers verify $M_{service}$, they query $p$'s off-chain API with parameter $id_s'$ and its signiture, and get back  $\vec{\tau'}$, check if the checksum matches with $\epsilon$. Record the $M_{service}$ into blockchain then. If any error, just ignore it. The next bookkeepers will try verify $M_{service}$ until $h_0+ h_e$ reached. If so,  $c$ can reinitiate $s$ again.
 
- $p$ only opens the GET API to the chain node (verified via signatures), and limit the number of queries for particular $id'_s$ with the maxmium confirmations necessary (say 6 for Bitcoin and 12 for Ethereum), except $c$. 
+ $p$ only opens the GET API to the chain node (verified via signatures), and limit the number of queries for particular $id'_s$ with the maxmium confirmations necessary (say 6 for Bitcoin and 12 for Ethereum), except $c$.  
+
+
 
 Since $\vec{\tau'}$ is encrypted, bookkeepers can do nothing with it except validation. $p$ can decrypt the data and excute the service.
 
@@ -122,9 +124,13 @@ Since $\vec{\tau'}$ is encrypted, bookkeepers can do nothing with it except vali
 
 From 3.1 we can see SSK can provide good protection from the parites other than $c$ and $p$. But the question is: Is it possible to even protect the privacy from $p$? The answer is yes if the author of the service have a good design to split $\vec{r}$ into subsets, create a set of service instances, and none of the providers can see the whole picture.
 
-### 3.3 Required service duration
+### 3.3 Service endurance
 
-Many services requires the providers to keep serving for a particular long time. e.g. $c$ wants to rent $p$'s storage to hold his video for one month. 
+Many services requires the providers to keep serving for a particular long time. e.g. $c$ wants to rent $p$'s storage to hold his video for one whole month. 
+
+In this case, by defining extra parameter in $E_S$, we can have bookkeepers to
+
+1.  Verify $M_{resolve}$ whenever need to  
 
 
 
