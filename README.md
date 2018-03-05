@@ -99,66 +99,48 @@ Key components in NEOT's network includes following:
 
 1. has unidirectional **Data** output, with the form of pulsing, streaming, etc. The encoding of *data* may or may not conform to international standards. 
 2. has an instruction set for remote configuration and controlling. Some also implement the status query functionalities and the feedback/acknowledge machanism. We define this set as bidirectional **Signals**. 
-3. is not designed to handle heavy computational work or persist huge volume of data, in order to reduce the battery consumption and hardware cost.
+3. is not designed to handle heavy computational work or persist huge volume of data, in order to reduce the manufacture cost and battery consumption.
 4. in many scenarios, is exposed in unstable communication environment. 
-5. in many scenarios, pair with, or as an element of a *sensor* cluster connect with a **Sensor Delegate**. The *delegate*, which can be a specialized hardware, or an API mounted in a common device, also provides *data* and *signal* interfaces. In the NEOT's POV, *sensor delegate* is equivalent to *sensor* in interface. Therefore we'll still call these delegates "sensors" to simplify the description.
+5. in many scenarios, pairs with, or as an element of a *sensor* cluster connects with a **Sensor Delegate**. The *delegate*, which can be a specialized hardware, or an API mounted in a common device, also provides *data* and *signal* interfaces. In the NEOT's point of view, *sensor delegate* is equivalent to *sensor* as they both provide bidirectional signal and unidirectional data interfaces. Therefore we see these delegates as "sensors" to simplify the description.
 
-One NEOT node is capable to attach multiple *sensors*. A node attached with at least one *sensors*  is call a NEOT **Sensor Node (SN)** .
+One NEOT node is capable to attach multiple *sensors*. A node attached with at least one *sensor*  is call a NEOT **Sensor Node (SN)** .
 
 *Sensor nodes* act as the service provider in *Private Data* user cases, while the consumer in *Public Data* user cases. Check session 2.5 for the details of these user cases. 
 
 #### Nest
 
-*Nest* is a device equiped with significant computational power (a.k.a. **Computation Nest**) or data storage capacity (a.k.a. **Storage Nest**), or simply providing human-computer interface (a.k.a **HCI Nest**). *Nest* interact with NEOT node with the very similar way as the *sensors* in *SNs*. 
+*Nest* is a device equiped with significant computational power (a.k.a. **Computation Nest**) or huge storage capacity (a.k.a. **Storage Nest**), or simply providing human-computer interface (a.k.a **HCI Nest**). *Nest* interact with the rest of NEOT node with very similar way as the *sensors* in *Sensor Nodes* except that the data flow can be bidirectional. *Nest* Nodes acts as the service provider in *Private Data* user cases, while the consumer in *Public Data* user cases. Check session 2.5 for the details of these user cases. 
 
-One NEOT node can append multiple *nests*. A node with at least one *nest* appended is call a NEOT **Nest Node**. In the rest of this article, we'll also call *sensor, sensor delegate* and *nest* the **Attachments**.
-
-*Nest* Nodes acts as the service provider in *Private Data* user cases, while the consumer in *Public Data* user cases. Check session 2.5 for the details of these user cases. 
-
-#### Adapter
-
-*Adapter* is a customizable component connecting *sensor*/*delegate* and NEOT node. *Adapter* confirms **NEOT Protocol** with a standardized *data* and *signal* interface to communicate with NEOT node via *Tunneo*.
-
-*NEOT Protocol* is open to 3rd party, such as sensor manufacturers and indie developers. Everyone who is willing to connect their IoT devices to NEOT to leverage the power of blockchain is free to join in, no permission necessary. We call these Developers as **Adapter Devs**.
-
-Once released, *NEOT Protocol* will be kept fixed except when serious issue founded, best providing *adapter devs* flexibility and reduce their cost of forced updates or re-deployment of their code.
+One NEOT node can attach multiple *nests*. There could be **Nest Delegates** but we see them as *nests* with the same reason on *sensor delegates*.  A node with at least one *nest* attached is called a NEOT **Nest Node**. In the rest of this article, we also call *sensor* and *nest* the **Terminals**. 
 
 #### Tunneo
 
-*Tunneo* (a.k.a TN) as a part of NEOT node, provides following functionalities:
+*Tunneo* (a.k.a TN) is a layer maintained by NEOT developer team, providing following functionalities:
 
-* Implement the encryption/decryption of *Sustainable Symmetric Key*. See session 2.2 for more details. 
-* Provide *data* and *signal* I/O to *Sensors* and *Delegates*
-* Realize the offchain channel between *Nest* and *Sensor* nodes.
-* ​
+- Provide standalized *data* and *signal* I/O portal to *Adapters*.
+- Much like a SDK, provide *Adapters* the toolsets and encapsulate common on-chain and off-chain tasks. such as generating *Sustainable Symmetric Key*, pushing and fetching offchain encripted data, etc.
 
+NEOT developer team will upgrade Tunneo regularly to fix the defects and enhance it's functionality.
 
-NEOT developer team is responsible for upgrading Tunneo regularly to fix the defects and enhance it's functionality. 
+#### Adapter
 
-### 2.2 Sustainable symmetric key (SSK)   
+*Adapter* is a customizable component connecting *terminals* and *Tunneo*. *Adapter* implements **NEOT Interfaces**, and provides standardized *data* and *signal* with NEOT node via *Tunneo*.
 
-In the world of untrustful internet, HTTPS/SSL is widely used to verify the identities of the communication parties and ensure the traffic could not be decrypted by 3rd party. The shortcomings of such protocol are:
+*NEOT Protocol* is open to 3rd party, such as terminal manufacturers and indie developers. Everyone who wants to connect their IoT devices to NEOT to leverage the power of blockchain and PDNE service is free to join in, no permission required. We call these developers as **Adapter Developers**.
 
-* Everytime to establish a new secured connection, a complex procedure comprised of 3 main phases is mandatory -  Hello, Certificate Exchange and Key Exchange.
-* The verification of the identities heavily relies on the centralized nodes: Certificate Authorities (CAs).
-
-By leverage the power of distributed ledger, this protocol can be drastically simplified. With the support of *tunneo*, in order to establish secured connection between node N<sub>A</sub> and N<sub>B</sub> with the public key and private key to be (PU<sub>A</sub>,PV<sub>A</sub>) and (PU<sub>B</sub>, PV<sub>B</sub>) respectively,  the below steps are only required to be excuted only once for all. 
-
-1. N<sub>A</sub> generate a symmetric key K<sub>S</sub>. 
-2. N<sub>A</sub> uses PU<sub>B</sub> and asymmetric encoding algorithm *E* and some other necessary metadata *Meta* (NEOT version, which decides the supported cypher sets, etc.) to generate and signiture *S* the message *M = S(E(PU<sub>B</sub>, Meta),PV<sub>A</sub>)* , then boardcasts *M* to blockchain. The service of N<sub>B</sub> doesn't have to be live at this moment.
-
-
-That's all. 
-
-*NEOT Tunneo* helps N<sub>B</sub> to retrieve K<sub>S</sub> from the blockchain. From then on, whenever N<sub>A</sub> and N<sub>B</sub> try to talk, no matter the connection is onchain or offchain, they can directly use K<sub>S</sub> to encrypt/decrypt their traffic. We call K<sub>S</sub> the **Sustainable Symmetric Key** (SSK).
-
-CA is no longer needed. 
-
-If N<sub>A</sub> wants to regenerate SSK, it can repeat above steps. N<sub>B</sub> will take only the latest version.
+Once released, *NEOT Protocol* will be kept fixed except serious issue founded, providing *adapter developers* the best flexibility and reduce their cost of forced updates or re-deployment.
 
 
 
-### 2.3 Tunneo: On-chain part   
+### 2.2 NEOT Features   
+
+The structure of NEOT 
+
+#### Open Adapter level API
+
+Manufacturers and indie developers who want to connect their IoT devices to NEOT can implement the 
+
+
 
 Although it's a great aspiration that we put all the *signal* or even *data* generated throughout the network into blockchain, we must admit that it's impratical today due to the reasons discussed in session 1.5, even many chain consensus algorthims partcially sacrifice the character of decentralization to enhance the speed and to reduce the ledger size. The problem is especially serious for IoT applications because of the node capacity limitations.
 
@@ -166,7 +148,23 @@ Nevertheless, we agree that the blockchain performance and IoT node capacity wil
 
 With this approarch, the work of inital versions of *tunneo* will tend to support the less frequent and small sized user cases. Such as transaction and scoring. 
 
-
+![Alt text](https://g.gravizo.com/svg?
+  digraph G {
+    aize ="4,4";
+    main [shape=box];
+    main -> parse [weight=8];
+    parse -> execute;
+    main -> init [style=dotted];
+    main -> cleanup;
+    execute -> { make_string; printf}
+    init -> make_string;
+    edge [color=red];
+    main -> printf [style=bold,label="100 times"];
+    make_string [label="make a string"];
+    node [shape=box,style=filled,color=".7 .3 1.0"];
+    execute -> compare;
+  }
+)
 
 ### 2.5  Scenario: Nest Rental 
 
