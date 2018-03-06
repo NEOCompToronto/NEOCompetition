@@ -261,13 +261,13 @@ Blockchain will transform the transparency and assurance of transactions, and wh
 
 ### 2.1 Key components
 
-![struBasic](pics/components.png "Picture 3-1 NEOT Network Basic Node Structure")
+![struBasic](PlantUML/out/Components/NEOT Components.png "Picture 3-1 NEOT Network Basic Node Structure")
 
-Key components in NEOT's network includes following:
+Key components in NEOT's network includes:
 
 #### Sensor 
 
-*Sensor* is the ultimate information capturer of the really world and the terminal of existing IoT networks. A typical *sensor*:
+*Sensor* is the ultimate information capturer of the really world and the devices of existing IoT networks. A typical *sensor*:
 
 1. has unidirectional **Data** output, with the form of pulsing, streaming, etc. The encoding of *data* may or may not conform to international standards. 
 2. has an instruction set for remote configuration and controlling. Some also implement the status query functionalities and the feedback/acknowledge machanism. We define this set as bidirectional **Signals**. 
@@ -283,7 +283,7 @@ One NEOT node is capable to attach multiple *sensors*. A node attached with at l
 
 *Nest* is a device equiped with significant computational power (a.k.a. **Computation Nest**) or huge storage capacity (a.k.a. **Storage Nest**), or simply providing human-computer interface (a.k.a **HCI Nest**). *Nest* interact with the rest of NEOT node with very similar way as the *sensors* in *Sensor Nodes* except that the data flow can be bidirectional. *Nest* Nodes acts as the service provider in *Private Data* user cases, while the consumer in *Public Data* user cases. Check session 2.5 for the details of these user cases. 
 
-One NEOT node can attach multiple *nests*. There could be **Nest Delegates** but we see them as *nests* with the same reason on *sensor delegates*.  A node with at least one *nest* attached is called a NEOT **Nest Node**. In the rest of this article, we also call *sensor* and *nest* the **Terminals**. 
+One NEOT node can attach multiple *nests*. There could be **Nest Delegates** but we see them as *nests* with the same reason on *sensor delegates*.  A node with at least one *nest* attached is called a NEOT **Nest Node**. In the rest of this article, we also call *sensor* and *nest* the **Devices**. 
 
 #### Tunneo
 
@@ -297,9 +297,9 @@ For more information about what PDNE protocol can do, please refer to {TODO}
 
 #### Adapter
 
-*Adapter* is a customizable component connecting *terminals* and *Tunneo*. *Adapter* implements **NEOT Interfaces**, and provides standardized *data* and *signal* with NEOT node via *Tunneo*.
+*Adapter* is a customizable component connecting *devices* and *Tunneo*. *Adapter* implements **NEOT Interfaces**, and provides standardized *data* and *signal* with NEOT node via *Tunneo*.
 
-*NEOT Protocol* is open to 3rd party, such as terminal manufacturers and indie developers. Everyone who wants to connect their IoT devices to NEOT to leverage the power of blockchain and PDNE service is free to join in, no permission required. We call these developers as **Adapter Developers**.
+*NEOT Protocol* is open to 3rd party, such as device manufacturers and indie developers. Everyone who wants to connect their IoT devices to NEOT to leverage the power of blockchain and PDNE service is free to join in, no permission required. We call these developers as **Adapter Developers**.
 
 Once released, *NEOT Protocol* will be kept fixed except serious issue founded, providing *adapter developers* the best flexibility and reduce their cost of forced updates or re-deployment.
 
@@ -307,17 +307,30 @@ Once released, *NEOT Protocol* will be kept fixed except serious issue founded, 
 
 ### 2.2 NEOT Features   
 
-The structure of NEOT 
+The structure of NEOT powered by PDNE standard services will have following features:
 
-#### Motivate all parties
+#### 1. Open 3-layer developers
 
-![valueflow](pics/roles.png "Picture 3-1 NEOT Network Basic Node Structure")
+####  
+
+#### 2. Motivate all parties
+
+![valueflow](PlantUML/out/Roles/Value Flow.png "Picture 3-1 NEOT Network Basic Node Structure")
 
 
 
-Leveraging the power of PDNE standard, there are mainly four parties in NEOT's network: Providers, Consumers, Adapter Developers, PDNE Developers. Each parties would be motivated to improve the ecosystem. The above figure demonstrates the flow of the value following the arrow's direction:
+Leveraging the power of PDNE standard, there are mainly four parties in NEOT's network: Providers, Consumers, Adapter Developers, PDNE Developers. All parties are motivated to improve the ecosystem. The above figure demonstrates the flow of the value following the arrow's direction:
 
-*Consumers* pays fees for the PDNE services provided by NEOT Node. *PDNE Developers* write 
+* *Consumers* pay the fee and enjoy the PDNE services provided by NEOT device nodes. 
+* *PDNE Developers* develop the PDNE services, if the services are functional and fair enough, consumers will employ the device nodes via their services, and *PDNE Developers* can profit with the royalty.
+* *Providers* shares their resource by the devices they owned, and profit by the service fee.
+* *Adapter Developers*, in many cases the device manufacturers, develop the adapters to access the devices to NEOT's network, and attract more people to buy their devices to run the business.
+
+#### 2. Flexibility
+
+
+
+
 
 
 
