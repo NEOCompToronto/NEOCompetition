@@ -315,7 +315,7 @@ The structure of NEOT powered by PDNE standard services will have following feat
 
 #### 2. Motivate all parties
 
-![valueflow](PlantUML/out/Roles/Value Flow.png "Picture 3-1 NEOT Network Basic Node Structure")
+![valueflow](PlantUML/out/Roles/ValueFlow.png "Picture 3-1 NEOT Network Basic Node Structure")
 
 
 
