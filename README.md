@@ -170,7 +170,7 @@ The future of IoT will very much have to depend on decentralizing IoT networks. 
 
 Other solutions involve the use of peer-to-peer communications, where devices identify and authenticate each other directly and exchange information without the involvement of a broker.
 
-![struBasic](pics/standards.png "Picture 1-3 Standard Protocol")
+![struBasic](pics/standards.PNG "Picture 1-3 Standard Protocol")
 
 3. IoT networking constraints: 
 
