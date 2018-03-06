@@ -261,7 +261,7 @@ Blockchain will transform the transparency and assurance of transactions, and wh
 
 ### 2.1 Key components
 
-![struBasic](PlantUML/out/Components/NEOT Components.png "Picture 3-1 NEOT Network Basic Node Structure")
+![struBasic](PlantUML/out/Components/Components.png "Picture 3-1 NEOT Network Basic Node Structure")
 
 Key components in NEOT's network includes:
 
