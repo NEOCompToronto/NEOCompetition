@@ -1,0 +1,70 @@
+@startuml
+
+title How it Works - An Example 
+
+(*) --> ===BStart=== 
+partition Manufacturer #CCCCEE{
+    --> "Enable NEOT\n by developing Adapter\n for 'AwsSSD'"
+    note right
+    to develop Adapter,
+    only standardized
+    Data&Signal I/O
+    is required
+    end note
+}
+
+partition Provider {
+    --> Buy AwsSSD1 
+    note bottom
+    I want NEOT 
+    powered devices
+    with flexibility
+    of choosing services
+    end note
+    --> ===BManuDeploy===
+    -->"Enable 'SrvRMTDisk' \non 'AwsSSD1'"
+    note right
+    Recognizes 
+    BestRemoteDisk
+    the most profitable
+    end note
+    
+}
+
+--> ===BService===
+
+partition "Service DevA" #TECHNOLOGY{
+    ===BStart=== --> "Develop service:\n 'SrvRMTDisk'"
+    note top
+    DevA makes the
+    best balance between
+    Consumer/Provider
+    end note
+}
+
+--> ===BDev=== 
+--> ===BManuDeploy===
+===BStart=== --> "Other devs:\n 'OtherRMTDisk' services"
+--> ===BDev=== 
+
+
+
+partition Consumer #LightSkyBlue{
+    ===BDev===  -->Enable NEOT node
+    --> "Start Instance\n'SrvRMTDisk1'"
+}
+--> ===BService===
+--> "PDNE auto-picks\nAwsSSD1 as provider"
+--> "AwsSSD1 finished\n SrvRMTDisk1"
+--> ===BSuccess===
+
+partition Provider #TAN{
+    ===BSuccess=== --> Earn Service Fee
+}
+partition "Service DevA" {
+    ===BSuccess=== --> Earn royalty
+}
+
+===BSuccess=== --> (*)
+
+@enduml

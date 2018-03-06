@@ -259,13 +259,15 @@ Blockchain will transform the transparency and assurance of transactions, and wh
 
 
 
-### 2.1 Key components
+### 2.1 Components
+
+The following figure demonstrates the key components in NEOT's network and their relationships.
 
 ![struBasic](PlantUML/out/Components/Components.png "Picture 3-1 NEOT Network Basic Node Structure")
 
-Key components in NEOT's network includes:
 
-#### Sensor 
+
+#### i. Sensor 
 
 *Sensor* is the ultimate information capturer of the really world and the devices of existing IoT networks. A typical *sensor*:
 
@@ -279,15 +281,15 @@ One NEOT node is capable to attach multiple *sensors*. A node attached with at l
 
 *Sensor nodes* act as the service provider in *Private Data* user cases, while the consumer in *Public Data* user cases. Check session 2.5 for the details of these user cases. 
 
-#### Nest
+#### ii. Host
 
-*Nest* is a device equiped with significant computational power (a.k.a. **Computation Nest**) or huge storage capacity (a.k.a. **Storage Nest**), or simply providing human-computer interface (a.k.a **HCI Nest**). *Nest* interact with the rest of NEOT node with very similar way as the *sensors* in *Sensor Nodes* except that the data flow can be bidirectional. *Nest* Nodes acts as the service provider in *Private Data* user cases, while the consumer in *Public Data* user cases. Check session 2.5 for the details of these user cases. 
+*Host* is a device equiped with significant computational power (a.k.a. **Computation Host**) or huge storage capacity (a.k.a. **Storage Host**), or simply providing human-computer interface (a.k.a **HCI Host**). *Host* interact with the rest of NEOT node with very similar way as the *sensors* in *Sensor Nodes* except that the data flow can be bidirectional. *Host* nodes acts as the service provider in *Private Data* user cases, while the consumer in *Public Data* user cases. Check session 2.5 for the details of these user cases. 
 
-One NEOT node can attach multiple *nests*. There could be **Nest Delegates** but we see them as *nests* with the same reason on *sensor delegates*.  A node with at least one *nest* attached is called a NEOT **Nest Node**. In the rest of this article, we also call *sensor* and *nest* the **Devices**. 
+One NEOT node can attach multiple *hosts*. There could be **Host Delegates** but we see them as *hosts* with the same reason on *sensor delegates*.  A node with at least one *nest* attached is called a NEOT **Host Node**. In the rest of this article, we also call *sensor* and *host* the **Devices**. 
 
-#### Tunneo
+#### iii. Tunneo
 
-*Tunneo* (a.k.a TN) is a PDNE compatible layer open to serivce developers. 
+*Tunneo* (a.k.a TN) is a PDNE compatible layer open to **Serivce Developers**. 
 
 NEOT developer team will participate partially by providing some toolset SDK used for standalized *data* and *signal* I/O portal and encapsulate common on-chain and off-chain tasks. 
 
@@ -295,7 +297,7 @@ NEOT developer team will upgrade the SDK regularly to fix the defects and enhanc
 
 For more information about what PDNE protocol can do, please refer to {TODO}
 
-#### Adapter
+#### iv. Adapter
 
 *Adapter* is a customizable component connecting *devices* and *Tunneo*. *Adapter* implements **NEOT Interfaces**, and provides standardized *data* and *signal* with NEOT node via *Tunneo*.
 
@@ -305,15 +307,67 @@ Once released, *NEOT Protocol* will be kept fixed except serious issue founded, 
 
 
 
-### 2.2 NEOT Features   
+### 2.2 Roles   
 
-The structure of NEOT powered by PDNE standard services will have following features:
+Unlike most IoT projects involving only the parties of Platform, Manufacturer, Provider and Consumers, one of the key difference of NEOT project is that we introduce a new role called **Service Developer**. 
 
-#### 1. Open 3-layer developers
+#### i. Manufacturer
+
+Manufacturer produces the devices like sensors, hosts, etc. Many of them provide remote access interfaces and some even developed their own IoT platforms. But the services are usually limited to manufacturer's own production lines and it's really hard to make inter-manufacturer standards. 
+
+In NEOT, manufacturers, or the developers who have access to device APIs, in order to provide the IoT resource sharing solution, only need to develop an adapter to adapt with NEOT's data/signal formats, leave the service to service developers and the platform to blockchain.
+
+#### ii. Provider
+
+Providers, by purchasing devices from manufacturers, run the business of renting the resources powered by their own software and even payment systems (cloud hosting, remote camera, etc.). Small size businesses are hard to support such systems since they are usually very complex and expensive. Providers also have incentive to set the barrier to prevent consumers from toggling to other providers. 
+
+
+
+#### iii. Platform
+The platform provides the basic insfrastracture and communication protocol for the nodes running upon. In most IoT projects, platform is managed by Manufacturers or Providers. 
+
+In NEOT, Platform is managed by NEOT team, empowered by NEO blockchain and the services provided by service developers.
+
+#### iv. Consumers
+
+In NEOT, consumers who come up with a particular task just need to initiate a service they want to run, never care about which manufacturer or providers they should choose anymore. 
+
+
+#### v. Service Developer
+
+Service developers in NEOT, as the new role of IoT platform, write and deploy new services to NEOT by providing just four functions Provision, Definition, Negotiation and Evaluation. Nevertheless, only when they can design the services by carefully balancing the benefits between consumers and providers that their service can be widely supported by providers and initiated by the consumers. 
+
+### 2.3 How it Works     
+
+We take the example of **remote storage** demonstrated in the following diagram to show case NEOT's typical work flow.
+
+
+
+![Example](/Users/liqingpan/Code/NEOCompetition/PlantUML/out/Example/Example.png)
+
+In the above example,
+
+* Manufacturer has a new server called AwsSSD. 
+
+#### i. Open service layer to  developers
+
+Conventional IoT projects only involve four roles in the scenarios of sharing resources: Platform, Manufacturer, Provider and Consumers. 
+
+
+
+
+
+|                              | Manufacturer Oriented                 | Platform Oriented | NEOT |
+| ---------------------------- | ------------------------------------- | ----------------- | ---- |
+| Description                  | Device Manufacturer build everything. |                   |      |
+| Compatibility: cross devices |                                       |                   |      |
+|                              |                                       |                   |      |
+
+
 
 ####  
 
-#### 2. Motivate all parties
+#### ii. Motivate all parties
 
 ![valueflow](PlantUML/out/Roles/ValueFlow.png "Picture 3-1 NEOT Network Basic Node Structure")
 
@@ -327,12 +381,6 @@ Leveraging the power of PDNE standard, there are mainly four parties in NEOT's n
 * *Adapter Developers*, in many cases the device manufacturers, develop the adapters to access the devices to NEOT's network, and attract more people to buy their devices to run the business.
 
 #### 2. Flexibility
-
-
-
-
-
-
 
 Manufacturers and indie developers who want to connect their IoT devices to NEOT can implement the 
 

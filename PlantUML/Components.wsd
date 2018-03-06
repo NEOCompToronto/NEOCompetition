@@ -19,18 +19,19 @@ node "Sensor Node I" as NN1 {
     interface "NEOT D/S Standard" as ProtNEOT1
     interface "NEP-5" as NEP1
     [Tunneo] as TN1
+    interface "PDNE" as PDNE1
 }
     
-    interface "PDNE" as PDNE1
+    
 
 node "Sensor Node II" as NN2 {
     [Adapter2] as A2
     interface "NEOT D/S Standard" as ProtNEOT2
-    [Tunneo] as TN2
-
     interface "NEP-5" as NEP2
-}
+    [Tunneo] as TN2
     interface "PDNE" as PDNE2
+}
+    
 
 S1 -d- SD: Raw D/S
 S2 -d- SD: Raw D/S
@@ -47,16 +48,17 @@ TN2 -u- ProtNEOT2
 TN2 -d-( PDNE2
 TN2 -( NEP2
 
-database "Storage" as SR1
+database "Host" as SR1
 
-node "Nest Node" as NN3 {
+node "Host Node" as NN3 {
     [Adapter3] as A3
     interface "NEOT D/S Standard" as ProtNEOT3
     [Tunneo] as TN3
     interface "NEP-5" as NEP3
+    interface "PDNE" as PDNE3
 }
 
-interface "PDNE" as PDNE3
+
 
 SR1 -d- A3: Raw D/S
 A3 -r-( ProtNEOT3
@@ -67,6 +69,7 @@ TN3 -r-( NEP3
 PDNE1 -down- Internet
 PDNE2 -down- Internet
 PDNE3 -down- Internet
+
 
 NEP1 -down- Blockchain
 NEP2 -down- Blockchain

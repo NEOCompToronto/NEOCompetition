@@ -111,10 +111,10 @@ Say service $S$ has  $\vec{r} = \{\vec{\gamma},\vec{\tau}\}$ where each element 
 
 When consumer $c$ is creating the new service instance $s$, $D_S$ with input  $\vec{r}$ goes through following steps:
 
-   	1. use the same algorithm of $N_s$ to calculate $Vol_s$ and pick $p$ with an algorithm pseudo-randomized by timestamp $t$.  
-   	2. checks if *SSK* (See Chapter 1) between $p$ and $c$ is already created. If not, create it. 
-   	3. encrypt $\vec{\tau'} = E(\vec{\tau}, SSK(s,p))$. Post $\vec{\tau'} $ with $p$'s off-chain API, $p$ returns $id'_s$ to track $ \vec{\tau'} $ . If error happens, go to step 1 and another provider will be picked.
-   	4. Calculate $\vec{d_s} = \{N'_s(\vec{\gamma}),  id'_s, \epsilon, t\}$.  $N'_s$ is used to process small size parameter $\vec{\gamma}$.  $\epsilon = CS(\vec{\tau'})$ is checksum.
+1. use the same algorithm of $N_s$ to calculate $Vol_s$ and pick $p$ with an algorithm pseudo-randomized by timestamp $t$.  
+2. checks if *SSK* (See Chapter 1) between $p$ and $c$ is already created. If not, create it. 
+3. encrypt $\vec{\tau'} = E(\vec{\tau}, SSK(s,p))$. Post $\vec{\tau'} $ with $p$'s off-chain API, $p$ returns $id'_s$ to track $ \vec{\tau'} $ . If error happens, go to step 1 and another provider will be picked.
+4. Calculate $\vec{d_s} = \{N'_s(\vec{\gamma}),  id'_s, \epsilon, t\}$.  $N'_s$ is used to process small size parameter $\vec{\gamma}$.  $\epsilon = CS(\vec{\tau'})$ is checksum.
 
 $c$ sends $M_{service}$ out. When bookkeepers verify $M_{service}$, they query $p$'s off-chain API with parameter $id_s'$ and its signiture, and get back  $\vec{\tau'}$, check if the checksum matches with $\epsilon$. Record the $M_{service}$ into blockchain then. If any error, just ignore it. The next bookkeepers will try verify $M_{service}$ until $h_0+ h_e$ reached. If so,  $c$ can reinitiate $s$ again.
 
