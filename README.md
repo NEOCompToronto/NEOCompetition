@@ -253,6 +253,8 @@ Blockchain will transform the transparency and assurance of transactions, and wh
 
 
 
+
+
 ## 2 NEOT: The 1st Practical IoT Blockchain Solution
 
 
