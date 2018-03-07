@@ -343,7 +343,7 @@ We take the example of **remote storage** demonstrated in the following diagram 
 
 
 
-![Example](/Users/liqingpan/Code/NEOCompetition/PlantUML/out/Example/Example.png)
+![Example](PlantUML/out/Example/Example.png)
 
 In the above example,
 
