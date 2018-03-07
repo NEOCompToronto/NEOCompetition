@@ -162,7 +162,7 @@ Challenges facing the adoptions of standards within IoT:
 
 1. Standard for handling unstructured data: Structured data are stored in relational databases and queried through SQL for example. Unstructured data are stored in different types of NoSQL databases without a standard querying approach.
 
-2. Standard for handling IoT networking protocols:Connecting so many devices will be one of the biggest challenges of the future of IoT, and it will defy the very structure of current communication models and the underlying technologies [2]. At present we rely on the centralized, server/client paradigm to authenticate, authorize and connect different nodes in a network.
+2. Standard for handling IoT networking protocols:Connecting so many devices will be one of the biggest challenges of the future of IoT, and it will defy the very structure of current communication models and the underlying technologies. At present we rely on the centralized, server/client paradigm to authenticate, authorize and connect different nodes in a network.
 
 
 
