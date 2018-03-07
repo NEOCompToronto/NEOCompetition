@@ -1,4 +1,4 @@
-# General Proof of Work and Share Economy
+# PROV Service and Share Economy
 
 
 
@@ -19,69 +19,72 @@ To reset SSK due to key leakage or version upgrade, $N_A$ can simple repeat the 
 
 
 
-## 2. Service: Provision, Definition, Negotiation and Evaluation 
+## 2. PROV Service: Provision, Representation, Orientation and Verification 
 
 ### 2.1 Brief
 
-Any service, no matter the consumer and provider parties comes from human community or computer network, can be incontestably processed only when four predefined interactive components achieved accurate consensus. These components are Provision, Definition, Negotiation, Evaluation. 
+Any service, no matter the consumer and provider parties comes from human community or computer network, can be incontestably processed only when four __predefined__ phases achieved accurate consensus: Provision, Representation, Orientation, Verification.
 
-**Provision**: 
+**Provision**: Providers announce the their capacities of handling the services with the rate they can offer, after rational estimation. 
 
-**Definition**: Consumer abstracts and refines the requirement from its raw demond,  and 
+**Representation**: Consumer abstracts and refines the requirement from its raw demond, comes up with the standard representation of the task. A good representation should:
 
 1. avoid any functional or qualitative dispution caused by indistinction or obscuration.
 2. expose enough and just enough information to support the provider's service, in order to maximize privacy protection and minimize the cost of processing.
 
-**Negotiation**: Consumer and the network should be isolated from the complexibility of the service. Since
+**Orientation**: Consumer compares the providers' offers, picks up the ones with his best interest and assigns the service to them. 
 
-1. these roles are not required to be professional,
-2. providers keep their tactic and resource private unless it's required in *Definition*. In this way, providers can maintain their competitiveness and are couraged to innovate to increase the profit space.
+After  orientation, the providers can untilize any resource and tactic to accomplish the mission. In the service's point of view, there's no interaction, no regulation, no even suggestion. In this way, providers are couraged to maintain competitiveness and innovate to increase the profit space.
 
-In free market scheme, Consumers negotiate the price by comparing the bidding from all providers who claim capable to handle the *Definition*. 
+**Verification**: After the providers believe the mission is accomplished, an predefined verification should be performed. Similar as Representation, verification should avoid any functional or qualitative dispution caused by indistinction or obscuration. The evalution also decides how to dispense the commission.
 
-**Evaluation**: 
+In a mature market model, the phases of P*rovision, Representation* and *Evaluation* are standardized between participated parties, leaving *Orientation* to consumer. In the following chapters, you'll see that in a distributed ledger network, it's better to get *Orientation* process standardized as well, in order to the on chain traffic and protect the providers from Attacks. 
 
-
-
-A distributed consensus network is **PDNE compatiable**, if
+A distributed consensus network is **PROV compatiable**, if
 
 1. every node  $k$ in this network has an asynmmetric key pair ($PU_k, PV_k$), where $PU_k$ is the public key (address) and $PV_k$ is the private key used for signiture. 
-2. There's a universial currency to measure the value of service. There's a way to calculate its balance of each account. Denote the balance as $B_k$ for node $k$. 
-3. this network has $n$ types of predefined or later registered services {$S_n$}, $n \ge 1$. For any $i \in [1, n]$, define $S_i \equiv$  {$P_{S_i},D_{S_i}, N_{S_i}, E_{S_i} , PU_{a_i}, \vec{\psi_{S_i}}$}, where $P_{S_i},D_{S_i}, N_{S_i}$ and $E_{S_i} $ are the Provision, Definition, Negotiation and Evaluation functions developed to support the particular type of service $S_i$. $PU_{a_i}$ is $S_i$'s auther's address. $\vec{\psi_{S_i}}$ is $S_i$ specific parameters. We call $S_i$ a **PDNE Service**.
+2. There's a universial currency to measure the value of service. There's a way to calculate the balance of each account. Denote the balance as $b_k$ for node $k$. 
+3. there are $n$ types registered services {$S_n$}, $n \ge 1$. For any $i \in [1, n]$, define $S_i \equiv$  {$P_{S_i},R_{S_i}, O_{S_i}, V_{S_i} , PU_{a_i}, \vec{\psi_{S_i}}$}, where $P_{S_i},R_{S_i}, O_{S_i}$ and $V_{S_i} $ are the Provision, Representation, Orientation and Evaluation functions developed to support service $S_i$. $PU_{a_i}$ is $S_i$'s auther's address. $\vec{\psi_{S_i}}$ is $S_i$ specific parameters. We call $S_i$ a **PROV Service**.
 4. Suggest supports *Sustainable Symmetric Key* introduced in *Chapter III*, but not mandatory.
 
 
 
 
-### 2.2 PDNE Service life cycle
-A typical life cycle of service instance $s \in S_i$ in a *PDNE network* is described below:
-1. The service provider node $p$ has resource $\vec{\nu}$ (Say storage size, flops, etc), it uses $P_{S_i}$ (a.k.a. **Provision Function**) to estimate it's capacity of running $S_i$, $(\tilde{Cap}^{p}_{S_i},  \vec{\rho_{S_i}^p} ) = P_{S_i}(\vec{\nu})$. Here $\tilde{Cap}^{p}_{S_i}$ is just for $p$'s reference. $p$ then boardcasts an provision message announcing it's capacity and compensation rate, where $\vec{\rho_{S_i}^p} $ is service specific parameters. For each type of service $S_i$,  $Cap^{p}_{Si}$  along with its unit compensation $Rate^{p}_{Si}$ respectively. The message is $M_{provision}(PU_{p},Cap^{p}_{S_i},Rate^{p}_{S_i}, \vec{\rho_{S_i}^p} | PV_p) $.
+### 2.2 PROV Service life cycle
+In *PROV compatiable network*, A typical life cycle of instance $s \in S_i$ is described below:
 
-2. Consumer node $c$ creates the service instance $s$ by excuting $D_{S_i}$(a.k.a. **Definition Function**). $(id_s,\vec{d_s},\vec{\alpha_s})=D_{S_i}(\vec{r_s})$, which preprocess $c$'s raw input $\vec{r_s}$ to encrypt sensitive data, standalize the format to generate $\vec{d_s}$. $id_s$ is $s$'s universal id, $\vec{\alpha_s}$ is the answer vector, which can be used in evaluation period later.
+1. The service provider node $p$ has resource $\vec{\nu}$ (Say storage size, flops, etc.), it estimates it's capacity of running $S_i$ by running $(\tilde{Cap}^{p}_{S_i},  \vec{\rho_{S_i}^p} ) = P_{S_i}(\vec{\nu})$. Here $\tilde{Cap}^{p}_{S_i}$ is calculated for $p$'s reference. $p$ boardcasts an provision message with it's capacity and rate, where $\vec{\rho_{S_i}^p} $ is service specific parameters. With $Cap^{p}_{Si} $( $\le\tilde{Cap}^{p}_{S_i}$ ) along with rate $Rate^{p}_{Si}$, the message is like: $M_{P}(PU_{p},Cap^{p}_{S_i},Rate^{p}_{S_i}, \vec{\rho_{S_i}^p} | PV_p) $.
 
-3. $c$ then calculate $(Vol_s, h_e, \{PU_{l_p}\}) = N_{S_i}(\vec{d_s}) $, where $Vol_s$ is the common estimation of $s$'s volume, $h_e$(a.k.a. **Evaluation Height**) is the block height deadline for evaluation, and $\{PU_{l_p}\}$ is a list (length $l_p$) of  recommended provider's address selected by an algorithm powered by a pseudo-randomizer with the seed generated by $\vec{d_s}$. In most cases, $N_{S_i}$(a.k.a. **Negotiation Function**) create a list $L_{P}^{S_i}$ with the addresses of all the providers of $S_i$ by filtering the nodes with $Cap_{Si} \gt 0$, then iterate every provider $p_j$ with following steps:
+2. Consumer node $c$ creates the service instance $s$ by excuting $R_{S_i}$. $(id_s,\vec{d_s},\vec{\alpha_s})=D_{S_i}(\vec{r_s})$, which preprocesses $c$'s raw input $\vec{r_s}$ to encrypt sensitive data, standalize the format to generate $\vec{d_s}$. $id_s$ is $s$'s universal id, $\vec{\alpha_s}$ is the answer vector, which can be used for evaluation later.
+
+3. $c$ then calculate $(Vol_s, h_e, \{PU_{l_p}\}) = O_{S_i}(\vec{d_s}) $, where $Vol_s$ is the common estimation of $s$'s volume, $h_v$(a.k.a. **Verification Height**) is the block height deadline for evaluation, and $\{PU_{l_p}\}$ is a list (length $l_p$) of  recommended provider's address selected by an algorithm powered by a pseudo-randomizer with the seed generated by $\vec{d_s}$. In most cases, $O_{S_i}$create a list $L_{P}^{S_i}$ with the addresses of all the providers of $S_i$ by filtering the nodes with $Cap_{Si} \gt 0$, then iterate every provider $p_j$ with following steps:
 
    * Filter out $p_j$ if it's available capacity is less than $Vol_s$. Concretely, say $p_j$ is already working on $l_j$ instances of $S_i$ with the volumes of $\{Vol_{l_j}\}$,  filter it out if  $ Cap^{p_j}_{Si} - \Sigma Vol_{k} \lt Vols $ 
-   * The fee $p_j$ required for task $s$ is calculated by $F(s,p_j) = Rate_{S_i}^{p_j} \cdot Vol_s$. Filter out $p_j$ if $F(s,p_j) \gt B_c$, since $c$ doesn't have enough balance to pay $p_j$ to run $s$.
-   * one straightforward practise is to pick $\{p_j\}$ where $F(s,p_j)$ has the minimum values (The cheapest ones). Actually, there are other tactics to make more reasonable $N_{S_i}$ utilizing other information recorded on chain. *e.g.* taking the evaluation result (retrievable by calling $E_{S_i}$) of $p_j$'s last 10 services into account, or weight $p_j$'s experience history, etc.
-   * However, $N_{S_i}$ must be sure to utilize a pseudo-randomizer, otherwise it will be easy for the hackers to launch DDoS attack to $p$. 
 
-   After all these, $c$ boardcasts the message $M_{service}(PU_c,id_s, \vec{d_s}, \vec{\alpha_s}|PV_c)$. After confirmation, other nodes including selected providers (such as $p$) will get to know $s$ is assigned by calculating $N_{S_i}(\vec{d_s}) $. ~~$c$ also have the option to boardcast $M_{service}'(PU_c,id_s, \vec{d_s},\vec{\alpha_s},p'|PV_c)$ instead of $M_{service}$ to manually assign the provider $p'$.~~
+   * The fee $p_j​$ required for task $s​$ is calculated by $f(s,p_j) = Rate_{S_i}^{p_j} \cdot Vol_s​$. Filter out $p_j​$ if $f(s,p_j) \gt _c​$,b since $c​$ doesn't have enough balance to pay $p_j​$ to run $s​$.
 
-   To verify $M_{service}$ during confirmation (say $p$ is selected as provider) , bookkeeper nodes should:
+   * one straightforward practise is to pick $\{p_j\}$ where $f(s,p_j)$ has the minimum values (The cheapest ones). Actually, there are other tactics to make more reasonable $O_{S_i}$ utilizing other information recorded on chain. *e.g.* taking the evaluation result from the blockchain of $p_j$'s last 10 services into account, or weight $p_j$'s experience history, etc.
+
+   * $O_{S_i}$ must utilize a pseudo-randomizer, otherwise it will be easy for the hackers to launch DDoS attack to $p$. If the developer failed to follow this practise, the service is vulnerable and no provider would mount it.
+
+   After all these, $c$ boardcasts the orientation message $M_{O}(PU_c,id_s, \vec{d_s}, \vec{\alpha_s}|PV_c)$. Other nodes including selected providers (such as $p$) will get to know $s$ is assigned by calculating $O_{S_i}(\vec{d_s}) $. 
+
+   To verify $M_{O}$ during confirmation, bookkeeper nodes should:
 
    * Check the signiture. If invalid, return false.
-   * Run $(Vol_s, \{PU_p\}, h_e) = N_{S_i}(\vec{d_s}) $, check if $p$ has enough available capacity. If not, return false.
+   * Run $(Vol_s, \{PU_p\}, h_e) = O_{S_i}(\vec{d_s}) $, check if $p$ has enough available capacity. If not, return false.
    * Check if $c$ has enough balance. if not, return false.
    * Check if $\vec{d_s}$ is valid. This is a service specific process.
 
-    If everything goes right, $M_{service}$ is recorded into ledger (Say on the height $h_0$). $F(s,p)$ is frozen from $c$'s account immediately.
+   If everything goes right, $M_{O}$ is recorded into ledger (Say on the height $h_0$). $f(s,p)$ is frozen from $c$'s account immediately.
 
-4. $p$ is supposed to give out a result vector $\vec{z_s}$  before $h_0+h_e$ reached. $p$ can evaluate it's temporary $\vec{\zeta}$ anytime by running $({\upsilon}_s, c_{p_s},c_{a_s} )= E_{S_i}(\vec{d_s},\vec{\zeta}, \vec{\alpha_s} )$, where ${\upsilon}_s \in [0,1]$ represents the score of $p$'s service. $c_{p_s}$ and $c_{p_s}$ are the presumed service fee deposit to $p$ and $a_i$ 's account. The author $a_i$ can design $E_{S_i}$ to support boolean output 0 and 1 to represent only the status of success and failure. 
+4. Then it comes to "B" phase. $p$ works on the mission by whatever practise, out of the topic' scope here.
 
-   There's no fixed function to restrict what should $p$ process to get $\vec{z_s}$, It's free for $p$ to leverge any offchain solution or resource on $s$. But since lack of knowledge of  $\vec{r}$, $p$ cannot leverage $D_{S_i}$. 
+5. $p$ is supposed to give out a result vector $\vec{z_s}$  before $h_0+h_e$ reached. $p$ can evaluate it's temporary $\vec{\zeta}$ anytime by running $({\upsilon}_s, c_{p_s},c_{a_s} )= E_{S_i}(\vec{d_s},\vec{\zeta}, \vec{\alpha_s} )$, where ${\upsilon}_s \in [0,1]$ represents the score of $p$'s service. $c_{p_s}$ and $c_{p_s}$ are the presumed service fee deposit to $p$ and $a_i$ 's account. The author $a_i$ can design $E_{S_i}$ to support boolean output 0 and 1 to represent only the status of success and failure. 
 
-   Once $p$ thinks $\vec{z}$ is OK, it boardcasts the message $M_{resolve}(id_s, \vec{z}|PV_p) $. 
+   There's no fixed function to restrict what should $p$ process to get $\vec{z_s}$, It's free for $p$ to leverge any offchain solution or resource on $s$. But since lack of knowledge of  $\vec{r}$, $p$ cannot leverage $R_{S_i}$. 
+
+   Once $p$ thinks $\vec{z}$ is OK, it boardcasts the message $M_{E}(id_s, \vec{z}|PV_p) $. 
 
    Then bookkeepers should check 
 
@@ -92,8 +95,7 @@ A typical life cycle of service instance $s \in S_i$ in a *PDNE network* is desc
 
    The whole life cycle of $s$ is finished.
 
-
-### 2.3 Features of PDNE network
+### 2.3 Features of PROBE network
 
 
 

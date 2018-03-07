@@ -255,7 +255,7 @@ Blockchain will transform the transparency and assurance of transactions, and wh
 
 
 
-## 2 NEOT: The 1st Practical IoT Blockchain Solution
+## 2 NEOT: The 1st Practical IoT Distributed Ledger Solution
 
 
 
@@ -287,9 +287,9 @@ One NEOT node is capable to attach multiple *sensors*. A node attached with at l
 
 One NEOT node can attach multiple *hosts*. There could be **Host Delegates** but we see them as *hosts* with the same reason on *sensor delegates*.  A node with at least one *nest* attached is called a NEOT **Host Node**. In the rest of this article, we also call *sensor* and *host* the **Devices**. 
 
-#### iii. Tunneo
+#### iii. PROBE Service
 
-*Tunneo* (a.k.a TN) is a PDNE compatible layer open to **Serivce Developers**. 
+This is the PROBE compatible layer open to **Serivce Developers**. 
 
 NEOT developer team will participate partially by providing some toolset SDK used for standalized *data* and *signal* I/O portal and encapsulate common on-chain and off-chain tasks. 
 
@@ -347,7 +347,25 @@ We take the example of **remote storage** demonstrated in the following diagram 
 
 In the above example,
 
-* Manufacturer has a new server called AwsSSD. 
+* Manufacturer M has a new high performance storge solution called AwsSSD. He developed an adapter to adapt AwsSSD's data and control interfaces to NEOT.
+
+* Indie developer D released a PDNE compatiable service called "SrvRMTDisk" to enable remote storage sharing. Other developers also released similiar services. 
+
+* After scrutinizing all the remote storage services, provider P believed the combination of AwsSSD + SrvRMTDisk would be best profitable. So he bought AwsSSD1 from M and enabled SrvRMTDisk on them, configured it with a reasonable fee rate.
+
+* Consumer C loved OtherRMTDisk better. but since SrvRMTDisk was supported by most providers, he chose to creates an instance of SrvRMTDisk to store his large video remotely for 1 month. NEOT network, as D wrote into the Negotiation method, picked AwsSSD1 as the provider with the following algorithim:
+
+  1. AwsSSD1 had SrvRMTDisk enabled with enough idle resource
+
+  2. C's wallet balance was enough to afford the service
+
+  3. AwsSSD1 had good history of successfully  running SrvRMTDisk: 120 times and 92% successful rate. Thos information are publically recorded on blockchain.
+
+  Since the algorithim is open without any randomization, all nodes including AwsSSD1 itself got to know that AwsSSD1 was chosen, right after the service was created on blockchain. Related fund is frozen on C's wallet immediately.
+
+* After service finished, according to Evaluation method, 95% of fund was deposited to P's wallet, and P only takes 5% - That's the rate for senior providers. If this was AwsSSD1's 1st time or if it has only 20% successful rate, P would have take 90% instead.  This strategy makes provider stick on their quality of service, and also makes customer trust this service more. 
+
+### 2.4 Features 
 
 #### i. Open service layer to  developers
 
