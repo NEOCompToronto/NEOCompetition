@@ -253,6 +253,21 @@ Blockchain will transform the transparency and assurance of transactions, and wh
 
 
 
+### 1.10 References
+
+1. [Three Major Challengs Facing IoT (Ahmed Banafa March 14, 2017)]: https://iot.ieee.org/newsletter/march-2017/three-major-challenges-facing-iot.html
+
+2. [Connecting all the things in the Internet of Things (Anna Gerber May 23, 2017)]: https://www.ibm.com/developerworks/library/iot-lp101-connectivity-network-protocols/index.html
+
+3. [Light client protocol (Ethereum WiKi)]: https://github.com/ethereum/wiki/wiki/Light-client-protocol
+
+4. [A Lightweight Scalable BlockChain for IoT Security and Privacy (Ali Dorri, Salil S. Kanhere, Raja Jurdak, and Praveen Gauravaram)]: https://arxiv.org/pdf/1712.02969.pdf
+
+5. [IoT Trends in 2018: AI, Blockchain, and the Edge (Bret Greenstein January 9, 2018)]: https://iot.ieee.org/newsletter/january-2018/iot-trends-in-2018-ai-blockchain-and-the-edge.html
+
+6. [IoT and Blockchain Convergence: Benefits and Challenges (Ahmed Banafa January 10, 2017)]: https://iot.ieee.org/newsletter/january-2017/iot-and-blockchain-convergence-benefits-and-challenges.html
+   ​
+
 
 
 ## 2 NEOT: The 1st Practical IoT Distributed Ledger Solution
