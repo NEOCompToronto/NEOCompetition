@@ -496,12 +496,14 @@ Here is several ideal use case which use blockchain technology with smart city i
 
 #### 3.2.1 Administrative Area:
 
-Registration and Documentation: for public services in city, governments are responsible for governance, the economy, social issues, mobility, security, culture and the environment. These activities consist of a huge number of different processes that require a high frequency of registration and documentation, and their transparency and security are essential.
+##### Registration and Documentation: 
+for public services in city, governments are responsible for governance, the economy, social issues, mobility, security, culture and the environment. These activities consist of a huge number of different processes that require a high frequency of registration and documentation, and their transparency and security are essential.
 
 Blockchain offers a technology to establish this process, as one of its main characteristics is a neutral, non-hierarchical, accessible and secure information database in environments where there is currently no confidence among the actors. This makes it ideal for avoiding corruption and creating transparency in dealings with the government.
  
 
-Unified citizen service:  Many government records (laws, expenses, income, contracts, permits, properties, etc.) also correspond to other areas of service. With a blockchain record, they are naturally interconnected, reinforcing the value of cross-cutting coordination of the services. 
+##### Unified citizen service:  
+Many government records (laws, expenses, income, contracts, permits, properties, etc.) also correspond to other areas of service. With a blockchain record, they are naturally interconnected, reinforcing the value of cross-cutting coordination of the services. 
 
 Those blockchain implementation will be a huge save of mantainance cost for the KYC based services, such as banks, insurance company etc. who need to check individual's related history. They just need to temporary ask users to provide the prove of the ownership of the account and retrieve information from blockchain.
 
