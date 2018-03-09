@@ -17,16 +17,16 @@ partition Provider {
     --> Buy AwsSSD1 
     note bottom
     Love NEOT powered
-    devices, coz I don't
-    need to manage much
-    about what services
-    my consumers prefer
+    devices, coz we don't
+    need to research or 
+    develop consumers 
+    preferred services
     end note
     --> ===BManuDeploy===
     -->"Enable 'SrvRMTDisk' \non 'AwsSSD1'"
     note right
     Recognizes 
-    BestRemoteDisk
+    SrvRMTDisk
     the most profitable
     end note
     
@@ -60,8 +60,8 @@ partition Consumer #LightSkyBlue{
 --> ===BService===
 --> "PROV auto-picks\nAwsSSD1 as provider"
 note top
-    Consumer has
-    no idea who's
+    Consumers don't
+    need to know who's
     provider
 end note
 --> "AwsSSD1 finished\n SrvRMTDisk1"
