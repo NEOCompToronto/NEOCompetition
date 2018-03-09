@@ -485,24 +485,52 @@ Further expansion {TODO: Describe the below picture}
 
 
 
+### 3.2 Smart City Use case
 
-### 3.2 Smart Traffic
+According the research, More than 67% of the global population will be lived in the city at 2035. with growing population, the public resouce utlization will be more and more challenge for city’s administrative and organization
 
-3.1 is just one corner of the whole picture. 
+This bring the solution of smart cities, a concept that refers to using digit information (open data) in city administration and services to improve aspects such as efficiency, security, the environment, citizen participation, the economy and others.
 
-{Some people suggests the Smart City and Sharing Economy [LINK](https://www.springeropen.com/track/pdf/10.1186/s40854-016-0040-y?site=jfin-swufe.springeropen.com)}
+The detail of implementation will leverage the Internet and the Internet of Things (IoT) and make city into a hyper-connected society, both among people and machines. after data is collected, other technologies such as blockchain, artificial intelligence and big data will play a heavy role to use those data in various way for smart city implementation
 
-{TODO: Tiger, retrieve some idea from the article I shared to you on weChat}
+ 
+Here is several ideal use case which use blockchain technology with smart city implementation:
 
-Further, we can  {TODO: Tiger can refer to our wechat conversation to complete this part}
+#### 3.2.1 Administrative Area:
 
-1. The scoring and incident history of the addresses are public on blockchain with standard format. big data experts can use these data for free and help improve our traffic system. 
-2. Meanwhile, since the relationship between the blockchain node and real world car is confidential, it will be transparent that individuals' privacy is ensured. 
-3. It'll also be a huge save of mantainance cost for the KYC based services, such as banks, insurance company etc. who need to check individual's related history. They just need to temporary ask users to provide the prove of the ownership of the account and retrieve information from blockchain.
-4. …. 
+Registration and Documentation: for public services in city, governments are responsible for governance, the economy, social issues, mobility, security, culture and the environment. These activities consist of a huge number of different processes that require a high frequency of registration and documentation, and their transparency and security are essential.
 
-{TODO: Tiger, add more content if necessary}
+Blockchain offers a technology to establish this process, as one of its main characteristics is a neutral, non-hierarchical, accessible and secure information database in environments where there is currently no confidence among the actors. This makes it ideal for avoiding corruption and creating transparency in dealings with the government.
+ 
 
-​**Better Consider as the proposal of "Smart City"** {TODO}
+Unified citizen service:  Many government records (laws, expenses, income, contracts, permits, properties, etc.) also correspond to other areas of service. With a blockchain record, they are naturally interconnected, reinforcing the value of cross-cutting coordination of the services. 
 
-1. Use figures to demonstrate the add-on parts upon current system. So city could understand we are trying reduce the cost.  
+Those blockchain implementation will be a huge save of mantainance cost for the KYC based services, such as banks, insurance company etc. who need to check individual's related history. They just need to temporary ask users to provide the prove of the ownership of the account and retrieve information from blockchain.
+
+#### 3.2.2 Integrated Blockchain Platform:
+
+In addition to the purely administrative areas, blockchain can also be very relevant to urban planning and the management of public resource, sustainable transportation, public safety, the environment, the circular economy, smart buildings, etc.
+
+Although each service (economy, transportation, environment ...) can be modernized, the major revolution that smart cities provide over the innovation of each individual service is the horizontal integration of all of them into a single, cross-cutting system. the blockchain could be a very appropriate alternative for information exchange in smart cities with its a secure, transparent, decentralized native feature.
+
+ 
+the blockchain platform can be an open, sustainable ecosystem around public, private and implementation-driven software platform standards that will ease the development of new Smart Applications in multiple sectors.
+
+it will provide the benefit of the government management, the urban planning,  the collaborative economy and sustainability policies, in the framework of smart cities
+
+#### 3.2.3 Smart Traffic System
+
+With Internet of Vehicles, all the vehicles are connected into internet, same as traffic light.Each car had an electronic car plate which uniquely identify the car with plate information, sticker information, car information, driver information and so on.
+Those information is captured and integrated into blockchain and can be used for the following scenarios:
+ 
+##### a.	ownership/sticker management  
+##### b.	traffic ticketing/accident management 
+##### c.	car plat fraud detecting
+##### d.	parking management
+##### e.	criminal prevention
+##### f. 	...
+
+With blockchain platform support, other organization such as insurance company can eaily get the full driving record from driver. Meanwhile, since the relationship between the blockchain node and real world car is confidential, it will be transparent that individuals' privacy is ensured. 
+
+Also the data of blockchain are public and easily ingested into big data platform (digit platform). big data experts can use these historic pattern of data to feed into traffic light system to improve the traffic performance. in another way, with data analysis, it will provide the support for decision making such as city planning, budget allocation, construction planning, road servicing and so on.
+
