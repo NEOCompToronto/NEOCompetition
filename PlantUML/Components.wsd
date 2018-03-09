@@ -1,6 +1,6 @@
 @startuml
 
-skinparam componentStyle uml2
+
 
 title NEOT Components
 
@@ -9,27 +9,25 @@ component [Sensor2] as S2
 component [Sensor Delegate] as SD
 component [Sensor3] as S3
 
-cloud Internet {
+cloud "Offchain P2P network" as Internet {
 }
 cloud Blockchain {
 }
 
 node "Sensor Node I" as NN1 {
     [Adapter1] as A1
-    interface "NEOT D/S Standard" as ProtNEOT1
-    interface "NEP-5" as NEP1
-    [Tunneo] as TN1
-    interface "PDNE" as PDNE1
+    interface "NEOT Interface" as ProtNEOT1
+    [NEP5] as NEP1
+    [PROV1] as TN1
 }
     
     
 
 node "Sensor Node II" as NN2 {
     [Adapter2] as A2
-    interface "NEOT D/S Standard" as ProtNEOT2
-    interface "NEP-5" as NEP2
-    [Tunneo] as TN2
-    interface "PDNE" as PDNE2
+    interface "NEOT Interface" as ProtNEOT2
+    [NEP5] as NEP2
+    [PROV2] as TN2
 }
     
 
@@ -38,24 +36,21 @@ S2 -d- SD: Raw D/S
 SD -d- A1: Raw D/S
 A1 -r-( ProtNEOT1
 TN1 -u- ProtNEOT1
-TN1 -d-( PDNE1
 TN1 -( NEP1
 
 
 S3 -d- A2: Raw D/S
 A2 -r-( ProtNEOT2
 TN2 -u- ProtNEOT2
-TN2 -d-( PDNE2
 TN2 -( NEP2
 
 database "Host" as SR1
 
 node "Host Node" as NN3 {
     [Adapter3] as A3
-    interface "NEOT D/S Standard" as ProtNEOT3
-    [Tunneo] as TN3
-    interface "NEP-5" as NEP3
-    interface "PDNE" as PDNE3
+    interface "NEOT Interface" as ProtNEOT3
+    [PROV3] as TN3
+    [NEP5] as NEP3
 }
 
 
@@ -63,16 +58,24 @@ node "Host Node" as NN3 {
 SR1 -d- A3: Raw D/S
 A3 -r-( ProtNEOT3
 TN3 -u- ProtNEOT3
-TN3 -d-( PDNE3
 TN3 -r-( NEP3
 
-PDNE1 -down- Internet
-PDNE2 -down- Internet
-PDNE3 -down- Internet
+TN1 -down- Internet
+TN2 -down- Internet
+TN3 -down- Internet
 
 
 NEP1 -down- Blockchain
 NEP2 -down- Blockchain
 NEP3 -down- Blockchain
+
+node "User Node" as User {
+    [PROV4] as TN4
+    [NEP5] as NEP4
+}
+TN4 -r-( NEP4
+
+TN4 -up- Internet
+NEP4 -up- Blockchain
 
 @enduml

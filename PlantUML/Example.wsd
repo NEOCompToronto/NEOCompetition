@@ -16,10 +16,11 @@ partition Manufacturer #CCCCEE{
 partition Provider {
     --> Buy AwsSSD1 
     note bottom
-    I want NEOT 
-    powered devices
-    with flexibility
-    of choosing services
+    Love NEOT powered
+    devices, coz I don't
+    need to manage much
+    about what services
+    my consumers prefer
     end note
     --> ===BManuDeploy===
     -->"Enable 'SrvRMTDisk' \non 'AwsSSD1'"
@@ -33,7 +34,7 @@ partition Provider {
 
 --> ===BService===
 
-partition "Service DevA" #TECHNOLOGY{
+partition "PROV Indie DevA" #TECHNOLOGY{
     ===BStart=== --> "Develop service:\n 'SrvRMTDisk'"
     note top
     DevA makes the
@@ -50,18 +51,26 @@ partition "Service DevA" #TECHNOLOGY{
 
 
 partition Consumer #LightSkyBlue{
-    ===BDev===  -->Enable NEOT node
-    --> "Start Instance\n'SrvRMTDisk1'"
+    ===BDev===  --> "Start Instance\n'SrvRMTDisk1'\n on NEOT node"
+    note top
+    Go host my
+    pics for 1yr.
+    end note
 }
 --> ===BService===
---> "PDNE auto-picks\nAwsSSD1 as provider"
+--> "PROV auto-picks\nAwsSSD1 as provider"
+note top
+    Consumer has
+    no idea who's
+    provider
+end note
 --> "AwsSSD1 finished\n SrvRMTDisk1"
 --> ===BSuccess===
 
 partition Provider #TAN{
     ===BSuccess=== --> Earn Service Fee
 }
-partition "Service DevA" {
+partition "PROV Indie DevA" {
     ===BSuccess=== --> Earn royalty
 }
 
