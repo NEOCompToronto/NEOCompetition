@@ -67,7 +67,7 @@ Understanding the different layers of IoT, identifying the areas of vulnerabilit
 
 
 
-### 1.1 Chanlleges
+### 1.1 Challenges
 
 #### Node capability
 
@@ -96,8 +96,6 @@ Some of major issues even found in current blockchain based model.
 - Lastly, in a typical blockchain implementation, all blocks are broadcast to and verified by all nodes. This leads to significant scalability issues since the broadcast traffic and processing overheads would increase  with the number of nodes in network
 
 
-
-
 Here are some of proposed solutions in the industry to the issues above:
 
 - 
@@ -123,9 +121,7 @@ Here are some of proposed solutions in the industry to the issues above:
   Ethereum Light client protocol is under development, which is to allow users in low-capacity environments (embedded smart property environments, smartphones, browser extensions, some desktops, etc) to maintain a high-security assurance about the current state of some particular part of the Ethereum state or verify the execution of a transaction
 
 
-
-
-####  DDoS attack
+####  DDoS and Security
 
 The normal IoT model is based on a centralized paradigm where IoT devices usually connect with a cloud infrastructure or central servers in order to report and process the relevant data back. This centralization poses certain possibilities of exploitation including hacking and data theft which can produce DDoS attacks. The attackers can cripple our infrastructure, systems, and way of life
 
@@ -140,8 +136,6 @@ Peer-to-peer networks in the blockchain are notoriously hard to stop or even dis
 
 The cryptographic algorithms used by blockchains would make consumer data more private.
 
-
-
 #### Connection stability
 
 Connecting so many devices will be one of the biggest challenges of the future of IoT, and it will defy the very structure of current communication models and the underlying technologies. At present we rely on the centralized, server/client paradigm to authenticate, authorize and connect different nodes in a network.
@@ -150,14 +144,14 @@ The future of IoT will very much have to depend on decentralizing IoT networks. 
 
 Other solutions involve the use of peer-to-peer communications, where devices identify and authenticate each other directly and exchange information without the involvement of a broker.
 
+Current IoT ecosystems rely on centralized, brokered communication models, otherwise known as the server/client paradigm. All devices are identified, authenticated and connected through cloud servers that sport huge processing and storage capacities. cloud servers will remain a bottleneck and point of failure that can disrupt the entire network.
 
+A blockchain-based IoT model differs from the traditional IoT network paradigm. decentralization, which is at the very core of blockchain technology, can eliminate single points of failure in an IoT network and create a more resilient ecosystem for devices to run on.  For example, a central server perhaps is not able to cope with the amount of data that billions of IoT devices (things) are producing at high frequency
 
 
 #### Compatibility
 
 Technology standards which include network protocols, communication protocols, and data-aggregation standards, are the sum of all activities of handling, processing and storing the data collected from the  sensors. This aggregation increases the value of data by increasing, the scale, scope, and frequency of data available for analysis.
-
-
 
 Challenges facing the adoptions of standards within IoT:
 
@@ -185,25 +179,12 @@ Other solutions involve the use of peer-to-peer communications, where devices id
 4. Technical skills to leverage newer aggregation tools: Companies that are keen on leveraging big-data tools often face a shortage of talent to plan, execute, and maintain systems.
 
 
-
-
-#### Cost is expensive 
+#### Affordability 
 
 Existing IoT solutions are expensive because of the high infrastructure and maintenance cost associated with centralized clouds, large server farms, and networking equipment. The sheer amount of communications that will have to be handled when there are tens of billions of IoT devices will increase those costs substantially.
 
 Blockchain based IoT can result in cost saving which is due to easier device management by using a
-blockchain based decentralized approach. The IoT network can be optimized for performance by using blockchain. The peer-to-peer communication model provided by blockchain can help to reduce costs because there is no need to store IoT data centrally for millions of devices or implementation of complex public key infrastructure for security, the storage and processing requirements can also be distributed to all IoT devices on the blockchain. Devices can communicate with each other directly or via routers as well
-
-
-
-
-#### Single points of failure 
-
-Current IoT ecosystems rely on centralized, brokered communication models, otherwise known as the server/client paradigm. All devices are identified, authenticated and connected through cloud servers that sport huge processing and storage capacities. cloud servers will remain a bottleneck and point of failure that can disrupt the entire network.
-
-A blockchain-based IoT model differs from the traditional IoT network paradigm. decentralization, which is at the very core of blockchain technology, can eliminate single points of failure in an IoT network and create a more resilient ecosystem for devices to run on.  For example, a central server perhaps is not able to cope with the amount of data that billions of IoT devices (things) are producing at high frequency
-
-
+blockchain based decentralized approach. The IoT network can be optimized for performance by using blockchain. The peer-to-peer communication model provided by blockchain can help to reduce costs because there is no need to store IoT data centrally for millions of devices or implementation of complex public key infrastructure for security, the storage and processing requirements can also be distributed to all IoT devices on the blockchain. Devices can communicate with each other directly or via routers as well.
 
 #### Maintenance
 
@@ -237,7 +218,7 @@ But Some of then are experimenting other decentralized topology.
 
 
 
-- Steemr, providing beautiful user interface, is targeted to provide a market for offchain stream data. It's also based on Ethereum. Their network is so far running totally offchain with nothing about the their ERC20 token. 
+- Steemr, providing beautiful user interface, is targeted to provide a market for offchain stream data. It's also based on Ethereum. Their network is so far running totally offchain with barely relationship with ERC20 token. 
 
 
 
@@ -266,7 +247,7 @@ The following figure demonstrates the key components in NEOT's network and their
 
 
 
-#### i. Sensor 
+#### Sensor 
 
 *Sensor* is the ultimate information capturer of the really world and the devices of existing IoT networks. A typical *sensor*:
 
@@ -280,13 +261,13 @@ One NEOT node is capable to attach multiple *sensors*. A node attached with at l
 
 *Sensor nodes* act as the service provider in *Private Data* user cases, while the consumer in *Public Data* user cases. Check session 2.5 for the details of these user cases. 
 
-#### ii. Host
+#### Host
 
 *Host* is a device equiped with significant computational power (a.k.a. **Computation Host**) or huge storage capacity (a.k.a. **Storage Host**), or simply providing human-computer interface (a.k.a **HCI Host**). *Host* interact with the rest of NEOT node with very similar way as the *sensors* in *Sensor Nodes* except that the data flow can be bidirectional. *Host* nodes acts as the service provider in *Private Data* user cases, while the consumer in *Public Data* user cases. Check session 2.5 for the details of these user cases. 
 
 One NEOT node can attach multiple *hosts*. There could be **Host Delegates** but we see them as *hosts* with the same reason on *sensor delegates*.  A node with at least one *nest* attached is called a NEOT **Host Node**. In the rest of this article, we also call *sensor* and *host* the **Devices**. 
 
-#### iii. PROV
+#### PROV Service
 
 NEOT developer team will participate partially by providing some toolset SDK used for standalized *data* and *signal* I/O portal and encapsulate common on-chain and off-chain tasks. 
 
@@ -294,7 +275,7 @@ NEOT developer team will upgrade the SDK regularly to fix the defects and enhanc
 
 For more information about what PDNE protocol can do, please refer to {TODO}
 
-#### iv. Adapter
+#### Adapter
 
 *Adapter* is a customizable component connecting *devices* and *Tunneo*. *Adapter* implements **NEOT Interfaces**, and provides standardized *data* and *signal* with NEOT node via *Tunneo*.
 
@@ -308,35 +289,35 @@ Once released, *NEOT Protocol* will be kept fixed except serious issue founded, 
 
 Unlike most IoT projects involving only the parties of Platform, Manufacturer, Provider and Consumers, one of the key difference of NEOT project is that we introduce a new role called **Service Developer**. 
 
-#### i. Manufacturer
+#### Manufacturer
 
 Manufacturer produces the devices like sensors, hosts, etc. Many of them provide remote access interfaces and some even developed their own IoT platforms. But the services are usually limited to manufacturer's own production lines and it's really hard to make inter-manufacturer standards. 
 
 In NEOT, manufacturers, or the developers who have access to device APIs, in order to provide the IoT resource sharing solution, only need to develop an adapter to adapt with NEOT's data/signal formats, leave the service to service developers and the platform to blockchain.
 
-#### ii. Provider
+#### Provider
 
 Providers, by purchasing devices from manufacturers, run the business of renting the resources powered by their own software and even payment systems (cloud hosting, remote camera, etc.). Small size businesses are hard to support such systems since they are usually very complex and expensive. Providers also have incentive to set the barrier to prevent consumers from toggling to other providers. 
 
 
 
-#### iii. Platform
+#### Platform
 The platform provides the basic insfrastracture and communication protocol for the nodes running upon. In most IoT projects, platform is managed by Manufacturers or Providers. 
 
 In NEOT, Platform is managed by NEOT team, empowered by NEO blockchain and the services provided by service developers.
 
-#### iv. Consumers
+#### Consumers
 
 In NEOT, consumers who come up with a particular task just need to initiate a service they want to run, never care about which manufacturer or providers they should choose anymore. 
 
 
-#### v. PROV Developer
+#### PROV Developer
 
-Service developers in NEOT, as the new role of IoT platform, write and deploy new services to NEOT by providing just four functions Provision, Definition, Negotiation and Evaluation. Nevertheless, only when they can design the services by carefully balancing the benefits between consumers and providers that their service can be widely supported by providers and initiated by the consumers. 
+Service developers in NEOT, as the new role of IoT platform, write and deploy new services to NEOT by providing just four functions **Provision**, **Representation**, **Orientation** and **Verification**. Nevertheless, only when they can design the services by carefully balancing the benefits between consumers and providers that their service can be widely supported by providers and initiated by the consumers. 
 
 ### 2.3 How it Works     
 
-We take the example of **remote storage** demonstrated in the following diagram to show case NEOT's typical work flow.
+We take the example of **remote storage** demonstrated in the following diagram to show NEOT's typical work flow.
 
 
 
@@ -344,23 +325,23 @@ We take the example of **remote storage** demonstrated in the following diagram 
 
 In the above example,
 
-* Manufacturer M has a new high performance storge solution called AwsSSD. He developed an adapter to adapt AwsSSD's data and control interfaces to NEOT.
+* Manufacturer M has a new high performance storge solution called AwsSSD. He developed an adapter to adapt AwsSSD's data and control interfaces to access NEOT.
 
-* Indie developer D released a PDNE compatiable service called "SrvRMTDisk" to enable remote storage sharing. Other developers also released similiar services. 
+* Indie developer D released a PROV compatiable service called "SrvRMTDisk" to enable remote storage sharing. At the meantime, other developers also released similiar services. 
 
-* After scrutinizing all the remote storage services, provider P believed the combination of AwsSSD + SrvRMTDisk would be best profitable. So he bought AwsSSD1 from M and enabled SrvRMTDisk on them, configured it with a reasonable fee rate.
+* After scrutinizing all the remote storage services, provider P believed the combination of AwsSSD + SrvRMTDisk would be best profitable. So he bought AwsSSD1 from M and enabled SrvRMTDisk on it, configured it with a reasonable fee rate.
 
-* Consumer C loved OtherRMTDisk better. but since SrvRMTDisk was supported by most providers, he chose to creates an instance of SrvRMTDisk to store his large video remotely for 1 month. NEOT network, as D wrote into the Negotiation method, picked AwsSSD1 as the provider with the following algorithim:
+* Consumer C loved the service OtherRMTDisk better. but since SrvRMTDisk was supported by most providers, he chose to create an instance of SrvRMTDisk to store his large video remotely for 1 month. NEOT network, as D wrote into the Orientation method, picked AwsSSD1 as the provider with the following algorithm:
 
   1. AwsSSD1 had SrvRMTDisk enabled with enough idle resource
 
-  2. C's wallet balance was enough to afford the service
+  2. C's wallet balance was enough to afford the service P offered.
 
-  3. AwsSSD1 had good history of successfully  running SrvRMTDisk: 120 times and 92% successful rate. Thos information are publically recorded on blockchain.
+  3. AwsSSD1 had good history of successfully running SrvRMTDisk: 120 times with 92% successful rate. This information is publicly recorded on blockchain.
 
-  Since the algorithim is open without any randomization, all nodes including AwsSSD1 itself got to know that AwsSSD1 was chosen, right after the service was created on blockchain. Related fund is frozen on C's wallet immediately.
+  Since the algorithim is open without any randomization, all nodes including AwsSSD1 itself got to know that AwsSSD1 was chosen right after the service instance was created on blockchain. Related fund is frozen from C's wallet immediately.
 
-* After service finished, according to Evaluation method, 95% of fund was deposited to P's wallet, and P only takes 5% - That's the rate for senior providers. If this was AwsSSD1's 1st time or if it has only 20% successful rate, P would have take 90% instead.  This strategy makes provider stick on their quality of service, and also makes customer trust this service more. 
+* After service finished, according to Verification method, 95% of fund was deposited to P's wallet, and D takes 5% - That's the rate D wrote into SrvRMTDisk, the rate for senior providers. If this was AwsSSD1's 1st time or if it has only 20% successful rate, P would have taken 80% instead.  This strategy makes providers stick on their quality of service, and also makes customer trust the service more. 
 
 ### 2.4 Features 
 
