@@ -8,32 +8,13 @@ The IoT Infrastracture powered by NEO
 
 
 
-## 0. Abstract
+## Abstract
 
-As the Submission of NEO's competiton, we have:
+Internet of Things (IoT), has recently gained much traction due to its potential for transforming business applications and everyday life. However, it's encountering many practical problems such as security, privacy, compatibility and statability. Distributed ledger technology emergying recently brings the hope of enhancing IoT network in many aspects. Some projects are under developing but still could not satisfy the requirement of performance. 
 
-### 0.1 The proposal of NEOT 
-This article itself. The project of NEO of Things (a.k.a NEOT ) initiated by [Norchain](www.norchain.io) team aimed to … {TODO}
-### 0.2 A prototype of NEOT NEP-5 smart contract 
-{TODO: Need discribe what's in there}
+In this paper, we first discuss the common challenge of distributed ledger based IoT projects, then introduce a new blockchain based service model PROV to help overcome some practical problems. NEO as the best blockchain platform for IoT services, will be leveraged as the infrastructure of PROV, forming the project NEOT (NEO of Things). 
 
-### 0.3 A demo of NEO based UBI 
-
-{TODO: Build by Unity} the senario …  
-
-### 0.4 A video 
-
-{TODO}
-
-### 0.5 Intro of the team
-
-Norchain team ….
-
-We are contact with Marham government to do ….
-
-We have relationship with Huawei to utilize NB-IoT … 
-
-We contacted with China mobile ...
+In the last part of this paper, we'll describe some NEOT user cases. The team of norchain.io has widely launched conversation with City of Marham, CGI Group, China Mobile, regarding to blockchain opportunities of contributing smart economy. We believe NEOT as the 1st practical IoT distributed ledger solution, will find it's chance to land very soon.
 
 
 
@@ -267,7 +248,13 @@ In the next section, we'll see what can introducing a new role make the change.
 
 ### 2.2 PROV: How it works?
 
-We would like to introduce a new business model, where a new role called PROV developer is added to the conventional one. Let's take the example of **remote storage** demonstrated in the following diagram to show NEOT's typical work flow.
+We would like to introduce a new business model, where a new role called PROV developer is added to the conventional one. 
+
+PROV is a service interface based on distributed ledger. It stands for four main phases of a service incident: **Provision**, **Representation**, **Orientation** and **Verification**. PROV developers need to implement these four functions to release a service on blockchain.  
+
+PROV developers can be anybody, PROV services can hold any logic. But only the reasonable ones with great provider/consumer interest balance can be supported by these parites.
+
+Let's take the example of **remote storage** demonstrated in the following diagram to show PROV's typical work flow.
 
 
 
@@ -291,13 +278,32 @@ In the above example,
 
 - After service finished, according to Verification method, 95% of fund was deposited to P's wallet, and D takes 5% - That's the rate D wrote into SrvRMTDisk, the rate for senior providers. If this was AwsSSD1's 1st time or if it has only 20% successful rate, P would have taken 80% instead.  This strategy makes providers stick on their quality of service, and also makes customer trust the service more. 
 
-### 2.3 PROV: What's changed?
+### 2.3 PROV: What will be changed?
 
-By adding this extra role, let's go over the problems mentioned in section 2.1 again.
+As we can see from previous example, by adding the extra role PROV developer, let's go over the problems mentioned in section 2.1 again.
 
-1. ​
+1. Problem 3,4,5: Providers are no longer expected to develop the services. PROV services are shared with everybody and there will be fewer redundancy. 
+2. Problem 6: If a group of consumers really want some new service, there would always be some indie developers smell it and make it happen.
+3. Problem 7: On blockchain, we have unique payment currency globally.
+4. Problem 8: If a service setup a barrier to avoid consumers from leaving, consumers would find there before subsciption. There will be many better choices.
+5. Problem 1&2: With so many benefits listed above, manufactuerers will be happy to adapt to PROV service.   
 
-### Components
+
+
+![valueflow](PlantUML/out/Roles/ValueFlow.png "Picture 3-1 NEOT Network Basic Node Structure")
+
+The flow of the value is changed to be like this.
+
+Leveraging the power of PROV standard, all parties are motivated to improve the ecosystem. The above figure demonstrates the flow of the value following the arrow's direction:
+
+- *Consumers* pay the fee and enjoy the PROV services provided by NEOT device nodes. 
+- *PROV Developers* develop the PROV services, if the services are functional and fair enough, consumers will employ the device nodes via their services, and *PDNE Developers* can profit with the royalty.
+- *Providers* shares their resource by the devices they owned, and profit by the service fee.
+- *Adapter Developers*, in many cases the device manufacturers, develop the adapters to access the devices to NEOT's network, and attract more people to buy their devices to run the business.
+
+For more technology details about how to implement PROV, please read our yellow paper [HERE](https://github.com/NEOCompToronto/NEOCompetition/blob/master/PROV.ipynb). 
+
+### 2.4 NEOT: Components
 
 The following figure demonstrates the key components in NEOT's network and their relationships.
 
@@ -331,7 +337,7 @@ NEOT developer team will participate partially by providing some toolset SDK use
 
 NEOT developer team will upgrade the SDK regularly to fix the defects and enhance it's functionality.
 
-For more information about what PDNE protocol can do, please refer to {TODO}
+For more information about what PROV protocol can do, please refer to {TODO}
 
 #### Adapter
 
@@ -341,87 +347,13 @@ For more information about what PDNE protocol can do, please refer to {TODO}
 
 Once released, *NEOT Protocol* will be kept fixed except serious issue founded, providing *adapter developers* the best flexibility and reduce their cost of forced updates or re-deployment.
 
-
-
-### 2.2 Roles   
-
-Unlike most IoT projects involving only the parties of Platform, Manufacturer, Provider and Consumers, one of the key difference of NEOT project is that we introduce a new role called **Service Developer**. 
-
-#### Manufacturer
-
-Manufacturer produces the devices like sensors, hosts, etc. Many of them provide remote access interfaces and some even developed their own IoT platforms. But the services are usually limited to manufacturer's own production lines and it's really hard to make inter-manufacturer standards. 
-
-In NEOT, manufacturers, or the developers who have access to device APIs, in order to provide the IoT resource sharing solution, only need to develop an adapter to adapt with NEOT's data/signal formats, leave the service to service developers and the platform to blockchain.
-
-#### Provider
-
-Providers, by purchasing devices from manufacturers, run the business of renting the resources powered by their own software and even payment systems (cloud hosting, remote camera, etc.). Small size businesses are hard to support such systems since they are usually very complex and expensive. Providers also have incentive to set the barrier to prevent consumers from toggling to other providers. 
-
-
-
-#### Platform
-The platform provides the basic insfrastracture and communication protocol for the nodes running upon. In most IoT projects, platform is managed by Manufacturers or Providers. 
-
-In NEOT, Platform is managed by NEOT team, empowered by NEO blockchain and the services provided by service developers.
-
-#### Consumers
-
-In NEOT, consumers who come up with a particular task just need to initiate a service they want to run, never care about which manufacturer or providers they should choose anymore. 
-
-
-#### PROV Developer
-
-Service developers in NEOT, as the new role of IoT platform, write and deploy new services to NEOT by customizing just four functions **Provision**, **Representation**, **Orientation** and **Verification**. However, they must design the services by carefully tradeoff the benefits between consumers and providers. Because that's the only way that their services can be widely supported by providers and consumers. 
-
-### 2.3 PROV: How it Works     
-
-* ​
-
-### 2.4 PROV: Features 
-
-#### i. Bring new business model
-
-
-
-
-
-
-
-####  
-
-#### ii. Motivate all parties
-
-![valueflow](PlantUML/out/Roles/ValueFlow.png "Picture 3-1 NEOT Network Basic Node Structure")
-
-
-
-Leveraging the power of PDNE standard, there are mainly four parties in NEOT's network: Providers, Consumers, Adapter Developers, PDNE Developers. All parties are motivated to improve the ecosystem. The above figure demonstrates the flow of the value following the arrow's direction:
-
-* *Consumers* pay the fee and enjoy the PDNE services provided by NEOT device nodes. 
-* *PDNE Developers* develop the PDNE services, if the services are functional and fair enough, consumers will employ the device nodes via their services, and *PDNE Developers* can profit with the royalty.
-* *Providers* shares their resource by the devices they owned, and profit by the service fee.
-* *Adapter Developers*, in many cases the device manufacturers, develop the adapters to access the devices to NEOT's network, and attract more people to buy their devices to run the business.
-
-#### 2. Flexibility
-
-Manufacturers and indie developers who want to connect their IoT devices to NEOT can implement the 
-
-
-
-Although it's a great aspiration that we put all the *signal* or even *data* generated throughout the network into blockchain, we must admit that it's impratical today due to the reasons discussed in session 1.5, even many chain consensus algorthims partcially sacrifice the character of decentralization to enhance the speed and to reduce the ledger size. The problem is especially serious for IoT applications because of the node capacity limitations.
-
-Nevertheless, we agree that the blockchain performance and IoT node capacity will continue improve in the further. So why not migrate the business onto the chain gradually?
-
-With this approarch, the work of inital versions of *tunneo* will tend to support the less frequent and small sized user cases. Such as transaction and scoring. 
-
-
-
 ### 2.5 Blockchain: Why NEO
 
 See following table comparing Ethereum, IOTA and NEO, by the means of IoT application.
 
 |                                        | Ethereum                                                     | IOTA                                                         | NEO                        | Comment                                                      |
 | -------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | -------------------------- | :----------------------------------------------------------- |
+| Consensus                              | POW                                                          | A Little POW                                                 | dBFT                       | POW is eco-unfriendly. Concerns of IoT device’s battery life and computational overhead. |
 | Light Node                             | [Developing](https://github.com/ethereum/wiki/wiki/Light-client-protocol) | Supported                                                    | Supported                  | *Light Node* stands for the nodes run without keeping ledger copies or PoW computation, which is suitable for IoT devices. |
 | Connection between Light and Full Node | N/A                                                          | [Can Manually Assign](https://www.iotasupport.com/lightwallet.shtml) | Randomly Chosen            | The more connections randomized and decentralized, the more the IoT network can be DDoS resistant. |
 | DApp support                           | Supported: Solicity                                          | N/A                                                          | Supported: Major languages | Open and developer-friendly eco-systems can attract more allies, by the means of both technology and investment. Also provides more flexibility to fit particular IoT scenarios. |
@@ -430,7 +362,7 @@ See following table comparing Ethereum, IOTA and NEO, by the means of IoT applic
 | Number System                          | Binary                                                       | Ternary                                                      | Binary                     | Ternary could be the future of computing [LINK](https://iota.stackexchange.com/questions/8/why-does-iota-use-a-ternary-number-system) rather than just extra computational overhead, only if manifacturers rewrite their binary architectures. However, even the IoT communication standardization couldn't get aligned in the past decades. |
 | Bookkeeper Incentive                   | Mining/Transaction reward                                    | No Incentive                                                 | Most by Dev team           | Incentive makes the network more stable                      |
 
-As conclusion, we see NEO has the advantages as...{TODO: A summary of the table above to describe NEO's advantage in implementing IOT}. 
+Obviously, NEO has the advantages as a DAPP platform with high transaction speed and reasonable incentvies. It's features of light nodes and non-POW consensus are also very beneficial for IoT projects. That's the reason why we choose it as the infrastructure of PROV services.
 
 
 
@@ -508,8 +440,6 @@ Those information is captured and integrated into blockchain and can be used for
 ##### c.	car plat fraud detecting
 ##### d.	parking management
 ##### e.	criminal prevention
-##### f. 	...
-
 With blockchain platform support, other organization such as insurance company can eaily get the full driving record from driver. Meanwhile, since the relationship between the blockchain node and real world car is confidential, it will be transparent that individuals' privacy is ensured. 
 
 Also the data of blockchain are public and easily ingested into big data platform (digit platform). big data experts can use these historic pattern of data to feed into traffic light system to improve the traffic performance. in another way, with data analysis, it will provide the support for decision making such as city planning, budget allocation, construction planning, road servicing and so on.

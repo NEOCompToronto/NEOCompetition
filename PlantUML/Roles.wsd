@@ -4,11 +4,11 @@ title Value Flow
 top to bottom direction
 actor TermOwner as "Provider"
 actor AdaDev as "Adapter Dev (Manufacturer)"
-actor SerDev as "PDNE Developer"
+actor SerDev as "PROV Developer"
 actor User as "Consumer"
 
 usecase NEOT as "Sensor Node | Nest Node" <<NEOT Node>>
-usecase Service as "Service instance" << PDNE Service>>
+usecase Service as "Service instance" << PROV Service>>
 
 
 AdaDev -left-> NEOT: Develop adapters
