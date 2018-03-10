@@ -1,0 +1,650 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+\documentclass[11pt]{article}
+
+    
+    
+    \usepackage[T1]{fontenc}
+    % Nicer default font (+ math font) than Computer Modern for most use cases
+    \usepackage{mathpazo}
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % We will generate all images so they have a width \maxwidth. This means
+    % that they will get their normal width if they fit onto the page, but
+    % are scaled down if they would overflow the margins.
+    \makeatletter
+    \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
+    \else\Gin@nat@width\fi}
+    \makeatother
+    \let\Oldincludegraphics\includegraphics
+    % Set max figure width to be 80% of text width, for now hardcoded.
+    \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=.8\maxwidth]{#1}}
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionLabelFormat{nolabel}{}
+    \captionsetup{labelformat=nolabel}
+
+    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    
+
+    
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatability definitions
+    \def\gt{>}
+    \def\lt{<}
+    % Document parameters
+    \title{PROV}
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@fm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sa\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@dl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ch\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cpf\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+    \begin{document}
+    
+    
+    \maketitle
+    
+    
+
+    
+    \section{PROV Service and Share Economy
+{[}Beta{]}}\label{prov-service-and-share-economy-beta}
+
+\subsection{1. Prerequisite}\label{prerequisite}
+
+\subsubsection{1.1 Sustainable Symmetric
+Key}\label{sustainable-symmetric-key}
+
+By leverage the power of distributed ledger, the conventional secured
+connection techniques such as HTTPS/SSL can be drastically simplified.
+
+Say we have \(N_A\) and \(N_B\) with the public key and private key to
+be (\(PU_A\),\(PV_A\)) and (\(PU_B\), \(PV_B\)) respectively, the below
+steps are only required to be excuted only once for all.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(N_A\) generate a symmetric key \(K_S\) (a.k.a. \textbf{Sustainable
+  Symmetric Key} or \textbf{SSK} ).
+\item
+  \(N_A\) uses asymmetric algorithm \(E\), \(PU_B\), metadata
+  \(\lambda\) and signiture function \(Sig\) to generate the message
+  \(M = Sig(E(PU_B, \lambda),PV_A)\) , then boardcasts \(M\) to
+  blockchain.
+\end{enumerate}
+
+After that, \(N_A\) and \(N_B\) can use \(K_S\) to secure the traffic
+for unlimited times, without asymmetric handshake, no matter the traffic
+is onchain or offchain.
+
+To reset SSK due to key leakage or version upgrade, \(N_A\) can simple
+repeat the above steps. \(N_B\) always take the latest one.
+
+\subsection{2. PROV Service: Provision, Representation, Orientation and
+Verification}\label{prov-service-provision-representation-orientation-and-verification}
+
+\subsubsection{2.1 Brief}\label{brief}
+
+Any service, no matter the consumer and provider parties comes from
+human community or computer network, can be incontestably processed only
+when four \textbf{predefined} phases achieved accurate consensus:
+Provision, Representation, Orientation, Verification.
+
+\textbf{Provision}: Providers announce the their capacities of handling
+the services with the rate they can offer, after rational estimation.
+
+\textbf{Representation}: Consumer abstracts and refines the requirement
+from its raw demond, comes up with the standard representation of the
+task. A good representation should:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  avoid any functional or qualitative dispution caused by indistinction
+  or obscuration.
+\item
+  expose enough and just enough information to support the provider's
+  service, in order to maximize privacy protection and minimize the cost
+  of processing.
+\end{enumerate}
+
+\textbf{Orientation}: Consumer compares the providers' offers, picks up
+the ones with his best interest and assigns the service to them.
+
+After orientation, the providers can untilize any resource and tactic to
+accomplish the mission. In the service's point of view, there's no
+interaction, no regulation, no even suggestion. In this way, providers
+are couraged to maintain competitiveness and innovate to increase the
+profit space.
+
+\textbf{Verification}: After the providers believe the mission is
+accomplished, an predefined verification should be performed. Similar as
+Representation, verification should avoid any functional or qualitative
+dispution caused by indistinction or obscuration. The evalution also
+decides how to dispense the commission.
+
+In a mature market model, the phases of P\emph{rovision, Representation}
+and \emph{Evaluation} are standardized between participated parties,
+leaving \emph{Orientation} to consumer. In the following chapters,
+you'll see that in a distributed ledger network, it's better to get
+\emph{Orientation} process standardized as well, in order to the on
+chain traffic and protect the providers from Attacks.
+
+A distributed consensus network is \textbf{PROV compatiable}, if
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  every node \(k\) in this network has an asynmmetric key pair
+  (\(PU_k, PV_k\)), where \(PU_k\) is the public key (address) and
+  \(PV_k\) is the private key used for signiture.
+\item
+  There's a universial currency to measure the value of service. There's
+  a way to calculate the balance of each account. Denote the balance as
+  \(b_k\) for node \(k\).
+\item
+  there are \(n\) types registered services \{\(S_n\)\}, \(n \ge 1\).
+  For any \(i \in [1, n]\), define \(S_i \equiv\)
+  \{\(P_{S_i},R_{S_i}, O_{S_i}, V_{S_i} , PU_{a_i}, \vec{\psi_{S_i}}\)\},
+  where \(P_{S_i},R_{S_i}, O_{S_i}\) and \$V\_\{S\_i\} \$ are the
+  Provision, Representation, Orientation and Evaluation functions
+  developed to support service \(S_i\). \(PU_{a_i}\) is \(S_i\)'s
+  auther's address. \(\vec{\psi_{S_i}}\) is \(S_i\) specific parameters.
+  We call \(S_i\) a \textbf{PROV Service}.
+\item
+  Suggest supports \emph{Sustainable Symmetric Key} introduced in
+  \emph{Chapter III}, but not mandatory.
+\end{enumerate}
+
+\subsubsection{2.2 PROV Service life
+cycle}\label{prov-service-life-cycle}
+
+In \emph{PROV compatiable network}, A typical life cycle of instance
+\(s \in S_i\) is described below:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  The service provider node \(p\) has resource \(\vec{\nu}\) (Say
+  storage size, flops, etc.), it estimates it's capacity of running
+  \(S_i\) by running
+  \((\tilde{Cap}^{p}_{S_i}, \vec{\rho_{S_i}^p} ) = P_{S_i}(\vec{\nu})\).
+  Here \(\tilde{Cap}^{p}_{S_i}\) is calculated for \(p\)'s reference.
+  \(p\) boardcasts an provision message with it's capacity and rate,
+  where \$\vec{\rho_{S_i}^p} \$ is service specific parameters. With
+  \$Cap\textsuperscript{\{p\}\emph{\{Si\} \$(
+  \(\le\tilde{Cap}^{p}_{S_i}\) ) along with rate \(Rate^{p}_{Si}\), the
+  message is like:
+  \$M}\{P\}(PU\_\{p\},Cap}\{p\}\emph{\{S\_i\},Rate\^{}\{p\}}\{S\_i\},
+  \vec{\rho_{S_i}^p} \textbar{} PV\_p) \$.
+\item
+  Consumer node \(c\) creates the service instance \(s\) by excuting
+  \(R_{S_i}\). \((id_s,\vec{d_s},\vec{\alpha_s})=D_{S_i}(\vec{r_s})\),
+  which preprocesses \(c\)'s raw input \(\vec{r_s}\) to encrypt
+  sensitive data, standalize the format to generate \(\vec{d_s}\).
+  \(id_s\) is \(s\)'s universal id, \(\vec{\alpha_s}\) is the answer
+  vector, which can be used for evaluation later.
+\item
+  \(c\) then calculate \$(Vol\_s, h\_e, \{PU\_\{l\_p\}\}) =
+  O\_\{S\_i\}(\vec{d_s}) \$, where \(Vol_s\) is the common estimation of
+  \(s\)'s volume, \(h_v\)(a.k.a. \textbf{Verification Height}) is the
+  block height deadline for evaluation, and \(\{PU_{l_p}\}\) is a list
+  (length \(l_p\)) of recommended provider's address selected by an
+  algorithm powered by a pseudo-randomizer with the seed generated by
+  \(\vec{d_s}\). In most cases, \(O_{S_i}\)create a list \(L_{P}^{S_i}\)
+  with the addresses of all the providers of \(S_i\) by filtering the
+  nodes with \(Cap_{Si} \gt 0\), then iterate every provider \(p_j\)
+  with following steps:
+\end{enumerate}
+
+\begin{itemize}
+\item
+  Filter out \(p_j\) if it's available capacity is less than \(Vol_s\).
+  Concretely, say \(p_j\) is already working on \(l_j\) instances of
+  \(S_i\) with the volumes of \(\{Vol_{l_j}\}\), filter it out if \$
+  Cap\^{}\{p\_j\}\emph{\{Si\} - \Sigma Vol}\{k\} \lt Vols \$
+\item
+  The fee \(p_j​\) required for task \(s​\) is calculated by
+  \(f(s,p_j) = Rate_{S_i}^{p_j} \cdot Vol_s​\). Filter out \(p_j​\) if
+  \(f(s,p_j) \gt _c​\),b since \(c​\) doesn't have enough balance to pay
+  \(p_j​\) to run \(s​\).
+\item
+  one straightforward practise is to pick \(\{p_j\}\) where \(f(s,p_j)\)
+  has the minimum values (The cheapest ones). Actually, there are other
+  tactics to make more reasonable \(O_{S_i}\) utilizing other
+  information recorded on chain. \emph{e.g.} taking the evaluation
+  result from the blockchain of \(p_j\)'s last 10 services into account,
+  or weight \(p_j\)'s experience history, etc.
+\item
+  \(O_{S_i}\) must utilize a pseudo-randomizer, otherwise it will be
+  easy for the hackers to launch DDoS attack to \(p\). If the developer
+  failed to follow this practise, the service is vulnerable and no
+  provider would mount it.
+\end{itemize}
+
+After all these, \(c\) boardcasts the orientation message
+\(M_{O}(PU_c,id_s, \vec{d_s}, \vec{\alpha_s}|PV_c)\). Other nodes
+including selected providers (such as \(p\)) will get to know \(s\) is
+assigned by calculating \$O\_\{S\_i\}(\vec{d_s}) \$.
+
+To verify \(M_{O}\) during confirmation, bookkeeper nodes should:
+
+\begin{itemize}
+\tightlist
+\item
+  Check the signiture. If invalid, return false.
+\item
+  Run \$(Vol\_s, \{PU\_p\}, h\_e) = O\_\{S\_i\}(\vec{d_s}) \$, check if
+  \(p\) has enough available capacity. If not, return false.
+\item
+  Check if \(c\) has enough balance. if not, return false.
+\item
+  Check if \(\vec{d_s}\) is valid. This is a service specific process.
+\end{itemize}
+
+If everything goes right, \(M_{O}\) is recorded into ledger (Say on the
+height \(h_0\)). \(f(s,p)\) is frozen from \(c\)'s account immediately.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\item
+  Then it comes to "B" phase. \(p\) works on the mission by whatever
+  practise, out of the topic' scope here.
+\item
+  \(p\) is supposed to give out a result vector \(\vec{z_s}\) before
+  \(h_0+h_e\) reached. \(p\) can evaluate it's temporary \(\vec{\zeta}\)
+  anytime by running
+  \(({\upsilon}_s, c_{p_s},c_{a_s} )= E_{S_i}(\vec{d_s},\vec{\zeta}, \vec{\alpha_s} )\),
+  where \({\upsilon}_s \in [0,1]\) represents the score of \(p\)'s
+  service. \(c_{p_s}\) and \(c_{p_s}\) are the presumed service fee
+  deposit to \(p\) and \(a_i\) 's account. The author \(a_i\) can design
+  \(E_{S_i}\) to support boolean output 0 and 1 to represent only the
+  status of success and failure.
+\end{enumerate}
+
+There's no fixed function to restrict what should \(p\) process to get
+\(\vec{z_s}\), It's free for \(p\) to leverge any offchain solution or
+resource on \(s\). But since lack of knowledge of \(\vec{r}\), \(p\)
+cannot leverage \(R_{S_i}\).
+
+Once \(p\) thinks \(\vec{z}\) is OK, it boardcasts the message
+\$M\_\{E\}(id\_s, \vec{z}\textbar{}PV\_p) \$.
+
+Then bookkeepers should check
+
+\begin{itemize}
+\tightlist
+\item
+  if latest block height is lower than \(h_0+ h_e\). If yes, record the
+  message into ledger. Otherwise just ignore it.
+\item
+  if 51\% \(l_{p}\) of the selected providers return same \(\vec{z}\).
+\end{itemize}
+
+By calculating \$(v\_s, c\_\{p\_s\},c\_\{a\_s\}
+)=E\_\{S\_i\}(\vec{d_s},\vec{z_s}, \vec{\alpha_s} ) \$, the amount of
+\(F(s,p)\) is unfrozen in \(c\)'s account, and \$ c\_\{p\_s\}\$ and
+\(c_{a_s}\) are transfered to \(p\) and \(a_i\) respectively.
+
+The whole life cycle of \(s\) is finished.
+
+\subsection{3. Solutions of some common
+scenarios}\label{solutions-of-some-common-scenarios}
+
+\subsubsection{3.1 Large input}\label{large-input}
+
+One common challenge is that many types of services requires the
+consumer to pass large size data to provider to process. Distributed
+ledger network with the nature of being a "ledger", is neither expected
+nor feasible to keep large size data. Some off-chain assisted mechanism
+should be introduced to insure such data is successfully transferred.
+
+Say service \(S\) has \(\vec{r} = \{\vec{\gamma},\vec{\tau}\}\) where
+each element of \(\vec{\tau}\) contains large size data, while each
+element of \(\vec{\gamma}\) has small size data. \(S\) should:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Design \(D_S\) and \(N_S\) to calculate \(Vol_s\) irrelative with
+  \(\vec{\tau}\). If \(Vol_s\) is related with some features of
+  \(\vec{\tau}\) (say the size), just put the feature values as elements
+  of \(\vec{\gamma}\)
+\item
+  \(S\) is better not to support manually provider pick up to avoid
+  DDoS.
+\item
+  Providers should put it's off-chain server addresses into
+  \$\vec{\rho_{S}} \$ in \(M_{provision}\).
+\end{enumerate}
+
+When consumer \(c\) is creating the new service instance \(s\), \(D_S\)
+with input \(\vec{r}\) goes through following steps:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  use the same algorithm of \(N_s\) to calculate \(Vol_s\) and pick
+  \(p\) with an algorithm pseudo-randomized by timestamp \(t\).\\
+\item
+  checks if \emph{SSK} (See Chapter 1) between \(p\) and \(c\) is
+  already created. If not, create it.
+\item
+  encrypt \(\vec{\tau'} = E(\vec{\tau}, SSK(s,p))\). Post \$\vec{\tau'}
+  \$ with \(p\)'s off-chain API, \(p\) returns \(id'_s\) to track \$
+  \vec{\tau'} \$ . If error happens, go to step 1 and another provider
+  will be picked.
+\item
+  Calculate \(\vec{d_s} = \{N'_s(\vec{\gamma}), id'_s, \epsilon, t\}\).
+  \(N'_s\) is used to process small size parameter \(\vec{\gamma}\).
+  \(\epsilon = CS(\vec{\tau'})\) is checksum.
+\end{enumerate}
+
+\(c\) sends \(M_{service}\) out. When bookkeepers verify
+\(M_{service}\), they query \(p\)'s off-chain API with parameter
+\(id_s'\) and its signiture, and get back \(\vec{\tau'}\), check if the
+checksum matches with \(\epsilon\). Record the \(M_{service}\) into
+blockchain then. If any error, just ignore it. The next bookkeepers will
+try verify \(M_{service}\) until \(h_0+ h_e\) reached. If so, \(c\) can
+reinitiate \(s\) again.
+
+\(p\) only opens the GET API to the chain node (verified via
+signatures), and limit the number of queries for particular \(id'_s\)
+with the maxmium confirmations necessary (say 6 for Bitcoin and 12 for
+Ethereum), except \(c\).
+
+Since \(\vec{\tau'}\) is encrypted, bookkeepers can do nothing with it
+except validation. \(p\) can decrypt the data and excute the service.
+
+\subsubsection{3.2 Privacy with the service
+provider}\label{privacy-with-the-service-provider}
+
+From 3.1 we can see SSK can provide good protection from the parites
+other than \(c\) and \(p\). But the question is: Is it possible to even
+protect the privacy from \(p\)? The answer is yes if the author of the
+service have a good design to split \(\vec{r}\) into subsets, create a
+set of service instances, and none of the providers can see the whole
+picture.
+
+\subsubsection{3.3 Endurance}\label{endurance}
+
+{[}TODO: Sharding verification. Order and answer already in
+\(\vec{a}\){]}
+
+Many services requires the providers to keep serving for a particular
+long time. e.g. \(c\) wants to rent \(p\)'s storage to hold his video
+for one whole month.
+
+In this case, by defining extra parameter in \(E_S\), we can have
+bookkeepers to
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Verify \(M_{resolve}\) whenever need to
+\end{enumerate}
+
+\subsection{4. Example Scenarios}\label{example-scenarios}
+
+\#\#\# 4.1 Cloud mining
+
+\(c\) wants to mine POW cryptocurrency \(\Gamma\), whose block cycle is
+larger than that of our network. \(c\) finds there's a service called
+\(S_{mine}\) to provide general mining service. So
+\(\vec{r_s} = (\Gamma, B_h)\), while \(\Gamma\) is the symbol and
+\(B_{h0}\) is the block content of height \(h\). \(D_{S_{mine}}\)
+returns standard hash function request, and \(\vec{a}\) is the nounce.
+
+\subsubsection{4.2 Gradient descent}\label{gradient-descent}
+
+\(c\) is researching deep learning and has a neural network to train.
+This is a typical Large Input scenario. \(c\) pass the encrypted NN
+structure and training/testing set to \(p\) through offchain channel.
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+    \end{document}

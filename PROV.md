@@ -1,4 +1,4 @@
-# PROV Service and Share Economy
+# PROV Service and Share Economy [Beta]
 
 
 
@@ -95,7 +95,7 @@ In *PROV compatiable network*, A typical life cycle of instance $s \in S_i$ is d
 
    The whole life cycle of $s$ is finished.
 
-### 2.3 Features of PROBE network
+
 
 
 
@@ -131,6 +131,8 @@ Since $\vec{\tau'}$ is encrypted, bookkeepers can do nothing with it except vali
 From 3.1 we can see SSK can provide good protection from the parites other than $c$ and $p$. But the question is: Is it possible to even protect the privacy from $p$? The answer is yes if the author of the service have a good design to split $\vec{r}$ into subsets, create a set of service instances, and none of the providers can see the whole picture.
 
 ### 3.3 Endurance
+
+[TODO: Sharding verification. Order and answer already in $\vec{a}$]
 
 Many services requires the providers to keep serving for a particular long time. e.g. $c$ wants to rent $p$'s storage to hold his video for one whole month. 
 
