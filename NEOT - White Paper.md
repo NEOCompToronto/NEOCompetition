@@ -237,9 +237,67 @@ Blockchain will transform the transparency and assurance of transactions, and wh
 
 ## 2 NEOT: The 1st Practical IoT Distributed Ledger Solution
 
+### 2.1 The Problems
+
+Sharing economy, as one of IoT's most important application, has three major players.
+
+IoT **Manufacturer** produces the devices like sensors, hosts, etc. Many of them provide remote access interfaces and even developed their own IoT services. But the services are usually limited to manufacturer's own production lines and lack of standards. 
+
+ **Provider**, by purchasing devices from manufacturers, run the business of renting the resources powered by their own software and even payment systems (cloud hosting, remote camera, etc.). 
+
+**Consumers** speed money to subscript the service from providers. 
+
+The value flow of convensional sharing economy service model is like this: 
+
+![Services](pics/Services.jpg)
+
+As the example shown in the figure above, conventional service model has following problems:
+
+1. Provider1 purchase Device1 and Device2 but manufactuerers doesn't provide unified interface. Provider1 has to develop adapters to make them compatiable with his system. Similiar thing happens to other providers and it caused a lot of redundancy. It's ideal if manufactuerers can provide standardized interface. However, they don't have such incentive unless standards setup and supported by enough strong parites.
+2. For the same reason in problem 1, weaker provder (Provider2) who's running only Device1 finds it's unaffordable to adapt Device2. A loss for both parties.
+3. as the dinosaur of the market, Provider1 spends huge money to develop new services, but only some of those can becomes successful. Service 1 has few subscribers and leaves a huge waste.
+4.  Provider2 also want to run popular Service2. But he can only develop his own copy rather than shared by Provider1. Redundancy in the society's point of view.
+5.  For the same reason, weaker provider (Provider3) can not afford developing Service2, then fade out of the market. It accelerates monopoly and in long term bad for consumers.
+6. A lot of people like Consumer4 find that it would be fantastic if there's Service3. But unfortunately no provider knows this idea. 
+7. Consumer6 wants to subscript Service2, however Provider2 cannot support his countries' currency or payment method.
+8. Consumer2 wants to toggle from Provider1's Service1 to Provider2's Service2. This can never be for free and would cost a lot of time.
 
 
-### 2.1 Components
+In the next section, we'll see what can introducing a new role make the change. 
+
+### 2.2 PROV: How it works?
+
+We would like to introduce a new business model, where a new role called PROV developer is added to the conventional one. Let's take the example of **remote storage** demonstrated in the following diagram to show NEOT's typical work flow.
+
+
+
+![Example](PlantUML/out/Example/Example.png)
+
+In the above example,
+
+- Manufacturer M has a new high performance storge solution called AwsSSD. He developed an adapter to adapt AwsSSD's data and control interfaces to access NEOT.
+
+- Indie developer D released a PROV compatiable service called "SrvRMTDisk" to enable remote storage sharing. At the meantime, other developers also released similiar services. 
+
+- After scrutinizing all the remote storage services, provider P believed the combination of AwsSSD + SrvRMTDisk would be best profitable. So he bought AwsSSD1 from M and enabled SrvRMTDisk on it, configured it with a reasonable fee rate.
+
+- Consumer C loved the service OtherRMTDisk better. but since SrvRMTDisk was supported by most providers, he chose to create an instance of SrvRMTDisk to store his large video remotely for 1 month. NEOT network, as D wrote into the Orientation method, picked AwsSSD1 as the provider with the following algorithm:
+
+  1. AwsSSD1 had SrvRMTDisk enabled with enough idle resource
+  2. C's wallet balance was enough to afford the service P offered.
+  3. AwsSSD1 had good history of successfully running SrvRMTDisk: 120 times with 92% successful rate. This information is publicly recorded on blockchain.
+
+  Since the algorithim is open without any randomization, all nodes including AwsSSD1 itself got to know that AwsSSD1 was chosen right after the service instance was created on blockchain. Related fund is frozen from C's wallet immediately.
+
+- After service finished, according to Verification method, 95% of fund was deposited to P's wallet, and D takes 5% - That's the rate D wrote into SrvRMTDisk, the rate for senior providers. If this was AwsSSD1's 1st time or if it has only 20% successful rate, P would have taken 80% instead.  This strategy makes providers stick on their quality of service, and also makes customer trust the service more. 
+
+### 2.3 PROV: What's changed?
+
+By adding this extra role, let's go over the problems mentioned in section 2.1 again.
+
+1. ​
+
+### Components
 
 The following figure demonstrates the key components in NEOT's network and their relationships.
 
@@ -313,41 +371,19 @@ In NEOT, consumers who come up with a particular task just need to initiate a se
 
 #### PROV Developer
 
-Service developers in NEOT, as the new role of IoT platform, write and deploy new services to NEOT by providing just four functions **Provision**, **Representation**, **Orientation** and **Verification**. Nevertheless, only when they can design the services by carefully balancing the benefits between consumers and providers that their service can be widely supported by providers and initiated by the consumers. 
+Service developers in NEOT, as the new role of IoT platform, write and deploy new services to NEOT by customizing just four functions **Provision**, **Representation**, **Orientation** and **Verification**. However, they must design the services by carefully tradeoff the benefits between consumers and providers. Because that's the only way that their services can be widely supported by providers and consumers. 
 
-### 2.3 How it Works     
+### 2.3 PROV: How it Works     
 
-We take the example of **remote storage** demonstrated in the following diagram to show NEOT's typical work flow.
+* ​
+
+### 2.4 PROV: Features 
+
+#### i. Bring new business model
 
 
 
-![Example](PlantUML/out/Example/Example.png)
 
-In the above example,
-
-* Manufacturer M has a new high performance storge solution called AwsSSD. He developed an adapter to adapt AwsSSD's data and control interfaces to access NEOT.
-
-* Indie developer D released a PROV compatiable service called "SrvRMTDisk" to enable remote storage sharing. At the meantime, other developers also released similiar services. 
-
-* After scrutinizing all the remote storage services, provider P believed the combination of AwsSSD + SrvRMTDisk would be best profitable. So he bought AwsSSD1 from M and enabled SrvRMTDisk on it, configured it with a reasonable fee rate.
-
-* Consumer C loved the service OtherRMTDisk better. but since SrvRMTDisk was supported by most providers, he chose to create an instance of SrvRMTDisk to store his large video remotely for 1 month. NEOT network, as D wrote into the Orientation method, picked AwsSSD1 as the provider with the following algorithm:
-
-  1. AwsSSD1 had SrvRMTDisk enabled with enough idle resource
-
-  2. C's wallet balance was enough to afford the service P offered.
-
-  3. AwsSSD1 had good history of successfully running SrvRMTDisk: 120 times with 92% successful rate. This information is publicly recorded on blockchain.
-
-  Since the algorithim is open without any randomization, all nodes including AwsSSD1 itself got to know that AwsSSD1 was chosen right after the service instance was created on blockchain. Related fund is frozen from C's wallet immediately.
-
-* After service finished, according to Verification method, 95% of fund was deposited to P's wallet, and D takes 5% - That's the rate D wrote into SrvRMTDisk, the rate for senior providers. If this was AwsSSD1's 1st time or if it has only 20% successful rate, P would have taken 80% instead.  This strategy makes providers stick on their quality of service, and also makes customer trust the service more. 
-
-### 2.4 Features 
-
-#### i. Accelerate standardization by introducing PROV developer
-
-Conventional IoT projects only involve four roles in the scenarios of sharing resources: Platform, Manufacturer, Provider and Consumers. 
 
 
 
