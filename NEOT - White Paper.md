@@ -10,11 +10,11 @@ The IoT Infrastracture powered by NEO
 
 ## Abstract
 
-Internet of Things (IoT), has recently gained much traction due to its potential for transforming business applications and everyday life. However, it's encountering many practical problems such as security, privacy, compatibility and statability. Distributed ledger technology emergying recently brings the hope of enhancing IoT network in many aspects. Some projects are under developing but still could not satisfy the requirement of performance. 
+Internet of Things (IoT), has recently gained much traction due to its potential for transforming business applications and everyday life. However, it's encountering many practical problems such as security, privacy, compatibility and statability. Distributed ledger technology emerging recently brings the hope of enhancing IoT network in many aspects. Some projects are under developing but still could not satisfy the requirement of performance. 
 
 In this paper, we first discuss the common challenge of distributed ledger based IoT projects, then introduce a new blockchain based service model PROV to help overcome some practical problems. NEO as the best blockchain platform for IoT services, will be leveraged as the infrastructure of PROV, forming the project NEOT (NEO of Things). 
 
-In the last part of this paper, we'll describe some NEOT user cases. The team of norchain.io has widely launched conversation with City of Marham, CGI Group, China Mobile, regarding to blockchain opportunities of contributing smart economy. We believe NEOT as the 1st practical IoT distributed ledger solution, will find it's chance to land very soon.
+In the last part of this paper, we'll describe some NEOT user cases. The team of norchain.io has widely launched conversation with City of Marham, CGI Group, China Mobile, regarding to blockchain opportunities of contributing smart economy. We believe NEOT as the 1st practical IoT distributed ledger solution, will find its chance to land very soon.
 
 
 
