@@ -1,22 +1,26 @@
 @startuml
 
-title Value Flow
+title PROV Model Value Flow
 top to bottom direction
 actor TermOwner as "Provider"
-actor AdaDev as "Adapter Dev (Manufacturer)"
+actor AdaDev as "Manufacturer (Adapter Dev)"
 actor SerDev as "PROV Developer"
+note bottom
+bridging provider and consumer 
+with customizable services
+end note
+
 actor User as "Consumer"
 
-usecase NEOT as "Sensor Node | Nest Node" <<NEOT Node>>
+usecase NEOT as "IoT Devices" <<NEOT Node>>
 usecase Service as "Service instance" << PROV Service>>
 
-
-AdaDev -left-> NEOT: Develop adapters
+AdaDev -l-> NEOT: Develop adapters
 TermOwner -> AdaDev: Purchase devices
 SerDev -> Service: Develop services
 
 Service -right-> SerDev: Royalty
-NEOT -> Service: Resource
+NEOT -down-> Service: Resource
 NEOT -left..> TermOwner: Ownership
 Service -up-> TermOwner: Service Fee
 Service -left-> User: Service

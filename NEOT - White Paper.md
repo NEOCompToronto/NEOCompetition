@@ -301,7 +301,7 @@ Leveraging the power of PROV standard, all parties are motivated to improve the 
 - *Providers* shares their resource by the devices they owned, and profit by the service fee.
 - *Adapter Developers*, in many cases the device manufacturers, develop the adapters to access the devices to NEOT's network, and attract more people to buy their devices to run the business.
 
-For more technology details about how to implement PROV, please read our yellow paper [HERE](https://github.com/NEOCompToronto/NEOCompetition/blob/master/PROV.ipynb). 
+For more technology details about how to implement PROV, please read our yellow paper [HERE](https://github.com/NEOCompToronto/NEOCompetition/blob/master/PROV%20Service%20and%20Share%20Economy.ipynb). 
 
 ### 2.4 NEOT: Components
 
@@ -366,38 +366,7 @@ Obviously, NEO has the advantages as a DAPP platform with high transaction speed
 
 
 
-## 3 User Cases 
-
-### 3.1 Usage-based insurance 
-
-Intro of conventional UBI {TODO} [LINK](https://en.wikipedia.org/wiki/Usage-based_insurance) 
-
-
-
-Brief user case decription {TODO: Describe the user case in below picture}
-
-1. NEOT node is embeded in the car hooking with sensor 1,2,3,...
-2. Algorthim of scoring is coded in Tunneo, the calculation process...
-3. Charge through blockchain
-
-![carSensors](pics/carSensors.JPG)
-
-Technique explaination of how blockchain works in these scenario {TODO: Describe the below picture}
-
-1. Multiple nodes via vehicle, mobile, difficult carrier provider, insurance company
-2. Use bluetooth, LTE network, NB-IoT chip, fiber network,etc.. 
-
-![charge](pics/charge.JPG)
-
-Further expansion {TODO: Describe the below picture}
-
-1. Sensors can be outside of the vehicle. eg. POS machines of repair shop, NFC with traffic camera, etc.
-2. Following above bullet, auto payment of the bill and tickets.
-
-![incentive](pics/incentive.JPG)
-
-
-### 3.2 Smart City
+## 3 User Case: Smart Traffic 
 
 According the research, More than 67% of the global population will be lived in the city at 2035. with growing population, the public resouce utlization will be more and more challenge for city’s administrative and organization
 
@@ -408,7 +377,7 @@ The detail of implementation will leverage the Internet and the Internet of Thin
 
 Here is several ideal use case which use blockchain technology with smart city implementation:
 
-#### 3.2.1 Administrative Area:
+### 3.1 Administrative Area:
 
 Registration and Documentation: for public services in city, governments are responsible for governance, the economy, social issues, mobility, security, culture and the environment. These activities consist of a huge number of different processes that require a high frequency of registration and documentation, and their transparency and security are essential.
 
@@ -419,7 +388,7 @@ Unified citizen service:  Many government records (laws, expenses, income, contr
 
 Those blockchain implementation will be a huge save of mantainance cost for the KYC based services, such as banks, insurance company etc. who need to check individual's related history. They just need to temporary ask users to provide the prove of the ownership of the account and retrieve information from blockchain.
 
-#### 3.2.2 Integrated Blockchain Platform:
+### 3.2 Integrated Blockchain Platform:
 
 In addition to the purely administrative areas, blockchain can also be very relevant to urban planning and the management of public resource, sustainable transportation, public safety, the environment, the circular economy, smart buildings, etc.
 
@@ -430,19 +399,46 @@ the blockchain platform can be an open, sustainable ecosystem around public, pri
 
 it will provide the benefit of the government management, the urban planning,  the collaborative economy and sustainability policies, in the framework of smart cities
 
-#### 3.2.3 Smart Traffic System
+### 3.3 Smart Traffic System
 
 With Internet of Vehicles, all the vehicles are connected into internet, same as traffic light.Each car had an electronic car plate which uniquely identify the car with plate information, sticker information, car information, driver information and so on.
 Those information is captured and integrated into blockchain and can be used for the following scenarios:
 
-##### a.	ownership/sticker management  
-##### b.	traffic ticketing/accident management 
-##### c.	car plat fraud detecting
-##### d.	parking management
-##### e.	criminal prevention
+**a.	ownership/sticker management**  
+**b.	traffic ticketing/accident management** 
+**c.	car plat fraud detecting**
+**d.	parking management**
+**e.	criminal prevention**
+
 With blockchain platform support, other organization such as insurance company can eaily get the full driving record from driver. Meanwhile, since the relationship between the blockchain node and real world car is confidential, it will be transparent that individuals' privacy is ensured. 
 
 Also the data of blockchain are public and easily ingested into big data platform (digit platform). big data experts can use these historic pattern of data to feed into traffic light system to improve the traffic performance. in another way, with data analysis, it will provide the support for decision making such as city planning, budget allocation, construction planning, road servicing and so on.
+
+
+![SmartTraffic](pics/SmartTraffic.jpg)
+
+Brief user case decription {TODO: Describe the user case in below picture}
+
+1. NEOT node is embeded in the car hooking with sensor 1,2,3,...
+2. Algorthim of scoring is coded in Tunneo, the calculation process...
+3. Charge through blockchain
+
+
+
+Technique explaination of how blockchain works in these scenario {TODO: Describe the below picture}
+
+1. Multiple nodes via vehicle, mobile, difficult carrier provider, insurance company
+2. Use bluetooth, LTE network, NB-IoT chip, fiber network,etc.. 
+
+Further expansion {TODO: Describe the below picture}
+
+1. Sensors can be outside of the vehicle. eg. POS machines of repair shop, NFC with traffic camera, etc.
+2. Following above bullet, auto payment of the bill and tickets.
+
+
+### 3.5 Ongoing Cooperation
+
+
 
 
 
