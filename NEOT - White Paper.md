@@ -10,11 +10,11 @@ The IoT Infrastracture powered by NEO
 
 ## Abstract
 
-Internet of Things (IoT), has recently gained much traction due to its potential for transforming business applications and everyday life. However, it's encountering many practical problems such as security, privacy, compatibility and statability. Distributed ledger technology emerging recently brings the hope of enhancing IoT network in many aspects. Some projects are under developing but still could not satisfy the requirement of performance. 
+Internet of Things (IoT), has recently gained much traction due to its potential for transforming business applications and everyday life. However, it's encountering many practical problems such as security, privacy, compatibility and statability. Distributed ledger technology emerging recently brings the new appoarches of enhancing IoT network in many aspects.
 
-In this paper, we first discuss the common challenge of distributed ledger based IoT projects, then introduce a new blockchain based service model PROV to help overcome some practical problems. NEO as the best blockchain platform for IoT services, will be leveraged as the infrastructure of PROV, forming the project NEOT (NEO of Things). 
+In this paper, we first discuss the common challenge of distributed ledger based IoT projects. Then introduce a new blockchain based service model PROV. The project NEOT (NEO of Things) is proposed to leverage PROV service model and NEO blockchain, aiming to overcome some most critial IoT practical problems, especially in the scenario of sharing economy. 
 
-In the last part of this paper, we'll describe some NEOT user cases. The team of norchain.io has widely launched conversation with City of Marham, CGI Group, China Mobile, regarding to blockchain opportunities of contributing smart economy. We believe NEOT as the 1st practical IoT distributed ledger solution, will find its chance to land very soon.
+In the last, we discuss some NEOT user cases in the smart traffic scenario. The team of norchain.io has widely launched conversation with City of Marham, CGI Group, China Mobile, regarding to blockchain opportunities of contributing smart economy. We believe NEOT as the 1st practical IoT distributed ledger solution, will find its chance to benefit society very soon.
 
 
 
@@ -22,11 +22,9 @@ In the last part of this paper, we'll describe some NEOT user cases. The team of
 
 
 
-### 1.0 IoT Background	
+### 1.1 IoT Background	
 
-The Internet of Things or IoT for short has recently gained much traction due to its potential for transforming business applications and everyday life. IoT can be defined as a network of computationally intelligent physical objects that are capable of connecting to the Internet, sensing real-world events or environments, reacting to those events, collecting relevant data, and communicating it over the Internet. This simple definition has huge implications and has led to exciting concepts, such as wearable's, smart homes, smart grids, smart connected cars, and smart cities, that are all based on this basic concept of an IoT device.
-
-Sensing, reacting, collecting, and communicating are four functions that come to light as being performed by an IoT device which are performed by using various components on the IoT device.
+The Internet of Things or IoT for short has recently gained much traction due to its potential for transforming business applications and everyday life. Sensing, reacting, collecting, and communicating are four functions that come to light as being performed by an IoT device which are performed by using various components on the IoT device.
 
 Generally, a five layer model can be used to describe IoT, which contains a physical object layer, device layer, network layer, services layer, and application layer. Each layer or level is responsible for various functions and includes various components.
 
@@ -48,74 +46,17 @@ Understanding the different layers of IoT, identifying the areas of vulnerabilit
 
 
 
-### 1.1 Challenges
+### 1.2 Challenges
 
 #### Node capability
 
-As an estimate from various researchers and companies, by 2020 there will be roughly 22 billion devices connected to the Internet. With this explosion of billions of devices connecting to the Internet, it is hard to imagine that centralized infrastructures will be able to cope with the high demands of bandwidth, services, and availability
+As an estimate from various researchers and companies, by 2020 there will be roughly 22 billion devices connected to the Internet. With this explosion of billions of devices connecting to the Internet, it is hard to imagine that centralized infrastructures will be able to cope with the high demands of bandwidth, services, and availability. Even in current blockchain based model, there are also experiencing uneven processing power and time required to perform encryption for all the objects involved in a blockchain-based ecosystem because not all of devices will be capable of running the same encryption algorithms at the desired speed.
 
-Furthermore, most of IoT nodes have limited storage and calculation power. Since IoT ecosystems are very diverse. In contrast to generic computing networks, IoT networks are comprised of devices that have very different computing capabilities
+####  DDoS and security
 
-Even in current blockchain based model, there are also experiencing uneven processing power and time required to perform encryption for all the objects involved in a blockchain-based ecosystem because not all of devices will be capable of running the same encryption algorithms at the desired speed. 
-
-Some of major issues even found in current blockchain based model. 
-
-- Firstly, the consensus algorithms employed in BC (POW or POS) require significant computational resources which are far beyond the capabilities of most IoT devices. 
-
-
-- Secondly, Storage will be a hurdle. Blockchain eliminates the need for a central server to store transactions and device IDs, but the ledger has to be stored on the nodes themselves. And the ledger will increase in size as time passes. That is beyond the capabilities of a wide range of smart devices such as sensors, which have very low storage capacity.
-
-
-- Thirdly, the throughput in blockchain is defined as the number of transactions that can be stored. Classical instantiations of Blockchain have limited throughput.
-
-
-
-- Fourthly, there is a non-trivial delay associated with ensuring that a transaction is confirmed by nodes participating in the Blockchain. However most IoT applications have stricter delay requirements 
-
-
-
-- Lastly, in a typical blockchain implementation, all blocks are broadcast to and verified by all nodes. This leads to significant scalability issues since the broadcast traffic and processing overheads would increase  with the number of nodes in network
-
-
-Here are some of proposed solutions in the industry to the issues above:
-
-- 
-  A Lightweight Scalable Blockchain for IoT, which owns an IoT friendly consensus algorithm that eliminates the need for solving any puzzle prior to appending a block to the BC. A distributed trust method whereby the processing time for validating new blocks by the OBMs gradually decreases as they build up trust in each other. A distributed throughput management strategy adjusts certain system parameters to ensure that the network utilization is within a prescribed operating range.
-
-
-
-- 
-  BC-based multi-tier architecture to share data from IoT devices with organizations and people. This proposed architecture has three main components namely: data management protocol, data store system, and message service.
-
-
-
-- A new consensus algorithm for BC known as Proof of Elapsed Time (POET) which is integrated with Hyperledger
-
-
-
-- 
-  A new ledger based cryptocurrency called IoTA. By eliminating the notion of blocks and mining, IoTA ensures that the transactions are free and verification is fast.
-
-
-
-- 
-  Ethereum Light client protocol is under development, which is to allow users in low-capacity environments (embedded smart property environments, smartphones, browser extensions, some desktops, etc) to maintain a high-security assurance about the current state of some particular part of the Ethereum state or verify the execution of a transaction
-
-
-####  DDoS and Security
-
-The normal IoT model is based on a centralized paradigm where IoT devices usually connect with a cloud infrastructure or central servers in order to report and process the relevant data back. This centralization poses certain possibilities of exploitation including hacking and data theft which can produce DDoS attacks. The attackers can cripple our infrastructure, systems, and way of life
+The normal IoT model is based on a centralized paradigm where IoT devices usually connect with a cloud infrastructure or central servers in order to report and process the relevant data back. This centralization poses certain possibilities of exploitation including hacking and data theft which can produce DDoS attacks. 
 
 Moreover, not having control of personal data on a single, centralized service provider also increases the possibility of security and privacy issues. the attackers can directly exploit a device and use it as a gateway to deeper levels of a network where they gather sensitive and valuable private data.
-
-
-Blockchain technology leveraging randomlized peers brings the potiential of DDoS-resistant. 
-
-Blockchain, a truly distributed system, has built-in protections against losing communication with nodes to ensure transactions can continue even if several nodes go offline. The nodes in the blockchain can run consensus algorithms – if several nodes are offline, others continue – even if they were taken offline by a DDoS attack. 
-
-Peer-to-peer networks in the blockchain are notoriously hard to stop or even disrupt. Also, attacking the transactions is also close to impossible because they are stored in everyone’s copy of the blockchain and cryptographically verified by the mining process. hackers can target a centralized server or data center more easily but with blockchain's distributed and decentralized nature, such attacks are no longer possible. 
-
-The cryptographic algorithms used by blockchains would make consumer data more private.
 
 #### Connection stability
 
@@ -124,10 +65,6 @@ Connecting so many devices will be one of the biggest challenges of the future o
 The future of IoT will very much have to depend on decentralizing IoT networks. Part of it can become possible by moving some of the tasks to the edge, such as using fog computing models where smart devices such as IoT hubs take charge of mission-critical operations and cloud servers take on data gathering and analytical responsibilities
 
 Other solutions involve the use of peer-to-peer communications, where devices identify and authenticate each other directly and exchange information without the involvement of a broker.
-
-Current IoT ecosystems rely on centralized, brokered communication models, otherwise known as the server/client paradigm. All devices are identified, authenticated and connected through cloud servers that sport huge processing and storage capacities. cloud servers will remain a bottleneck and point of failure that can disrupt the entire network.
-
-A blockchain-based IoT model differs from the traditional IoT network paradigm. decentralization, which is at the very core of blockchain technology, can eliminate single points of failure in an IoT network and create a more resilient ecosystem for devices to run on.  For example, a central server perhaps is not able to cope with the amount of data that billions of IoT devices (things) are producing at high frequency
 
 
 #### Compatibility
@@ -175,7 +112,23 @@ Blockchain based IoT can provide a solution to this problem by allowing devices 
 
 
 
-### 1.2 Recent IoT distributed ledger projects  
+### 1.3 IoT distributed ledger projects  
+
+Some of major issues even found in current blockchain based model. 
+
+- Firstly, the consensus algorithms employed in BC (POW or POS) require significant computational resources which are far beyond the capabilities of most IoT devices. 
+
+
+- Secondly, Storage will be a hurdle. Blockchain eliminates the need for a central server to store transactions and device IDs, but the ledger has to be stored on the nodes themselves. And the ledger will increase in size as time passes. That is beyond the capabilities of a wide range of smart devices such as sensors, which have very low storage capacity.
+
+
+- Thirdly, the throughput in blockchain is defined as the number of transactions that can be stored. Classical instantiations of Blockchain have limited throughput.
+
+
+- Fourthly, there is a non-trivial delay associated with ensuring that a transaction is confirmed by nodes participating in the Blockchain. However most IoT applications have stricter delay requirements 
+
+
+- Lastly, in a typical blockchain implementation, all blocks are broadcast to and verified by all nodes. This leads to significant scalability issues since the broadcast traffic and processing overheads would increase  with the number of nodes in network
 
 There are various projects already proposed providing blockchain-based IoT solutions. 
 
@@ -201,18 +154,7 @@ But Some of then are experimenting other decentralized topology.
 
 - Steemr, providing beautiful user interface, is targeted to provide a market for offchain stream data. It's also based on Ethereum. Their network is so far running totally offchain with barely relationship with ERC20 token. 
 
-
-
-
-### 1.3 IoT Trend  
-
-IoT is continuing to evolve away from just connected devices, and converging with new technologies like AI and blockchain to help us be more productive.
-
-The convergence of AI and IoT means that these physical devices can now see, hear and understand the world around them. They can make sense of the vast amount of unstructured data that is being produced and then provide businesses with more intelligent insights that enable more innovative uses which 
-will directly benefit all of us - both professionally at work, and personally at home.
-
-Blockchain will transform the transparency and assurance of transactions, and when you marry this with IoT, it enables IoT devices to share critical data across businesses and across processes.  This will help businesses across all industries to have a powerful tool to transform their business and ecosystem.
-
+  ​
 
 
 
@@ -405,9 +347,13 @@ With Internet of Vehicles, all the vehicles are connected into internet, same as
 Those information is captured and integrated into blockchain and can be used for the following scenarios:
 
 **a.	ownership/sticker management**  
+
 **b.	traffic ticketing/accident management** 
+
 **c.	car plat fraud detecting**
+
 **d.	parking management**
+
 **e.	criminal prevention**
 
 With blockchain platform support, other organization such as insurance company can eaily get the full driving record from driver. Meanwhile, since the relationship between the blockchain node and real world car is confidential, it will be transparent that individuals' privacy is ensured. 
@@ -450,3 +396,48 @@ Further expansion {TODO: Describe the below picture}
 4. [A Lightweight Scalable BlockChain for IoT Security and Privacy - Ali Dorri, Salil S. Kanhere, Raja Jurdak, and Praveen Gauravaram](https://arxiv.org/pdf/1712.02969.pdf)
 5. [IoT Trends in 2018: AI, Blockchain, and the Edge - Bret Greenstein January 9, 2018](https://iot.ieee.org/newsletter/january-2018/iot-trends-in-2018-ai-blockchain-and-the-edge.html)
 6. [IoT and Blockchain Convergence: Benefits and Challenges - Ahmed Banafa January 10, 2017](https://iot.ieee.org/newsletter/january-2017/iot-and-blockchain-convergence-benefits-and-challenges.html)
+
+
+
+
+
+
+
+Bck
+
+
+
+Blockchain technology leveraging randomlized peers brings the potiential of DDoS-resistant. 
+
+Blockchain, a truly distributed system, has built-in protections against losing communication with nodes to ensure transactions can continue even if several nodes go offline. The nodes in the blockchain can run consensus algorithms – if several nodes are offline, others continue – even if they were taken offline by a DDoS attack. 
+
+Peer-to-peer networks in the blockchain are notoriously hard to stop or even disrupt. Also, attacking the transactions is also close to impossible because they are stored in everyone’s copy of the blockchain and cryptographically verified by the mining process. hackers can target a centralized server or data center more easily but with blockchain's distributed and decentralized nature, such attacks are no longer possible. 
+
+The cryptographic algorithms used by blockchains would make consumer data more private.
+
+
+
+----------
+
+Here are some of proposed solutions in the industry to the issues above:
+
+- A Lightweight Scalable Blockchain for IoT, which owns an IoT friendly consensus algorithm that eliminates the need for solving any puzzle prior to appending a block to the BC. A distributed trust method whereby the processing time for validating new blocks by the OBMs gradually decreases as they build up trust in each other. A distributed throughput management strategy adjusts certain system parameters to ensure that the network utilization is within a prescribed operating range.
+
+- BC-based multi-tier architecture to share data from IoT devices with organizations and people. This proposed architecture has three main components namely: data management protocol, data store system, and message service.
+
+- A new consensus algorithm for BC known as Proof of Elapsed Time (POET) which is integrated with Hyperledger
+
+- A new ledger based cryptocurrency called IoTA. By eliminating the notion of blocks and mining, IoTA ensures that the transactions are free and verification is fast.
+
+- Ethereum Light client protocol is under development, which is to allow users in low-capacity environments (embedded smart property environments, smartphones, browser extensions, some desktops, etc) to maintain a high-security assurance about the current state of some particular part of the Ethereum state or verify the execution of a transaction
+
+
+
+
+----------
+
+Current IoT ecosystems rely on centralized, brokered communication models, otherwise known as the server/client paradigm. All devices are identified, authenticated and connected through cloud servers that sport huge processing and storage capacities. cloud servers will remain a bottleneck and point of failure that can disrupt the entire network.
+
+A blockchain-based IoT model differs from the traditional IoT network paradigm. decentralization, which is at the very core of blockchain technology, can eliminate single points of failure in an IoT network and create a more resilient ecosystem for devices to run on.  For example, a central server perhaps is not able to cope with the amount of data that billions of IoT devices (things) are producing at high frequency
+----------
+
