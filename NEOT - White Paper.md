@@ -361,7 +361,7 @@ With blockchain platform support, other organization such as insurance company c
 Also the data of blockchain are public and easily ingested into big data platform (digit platform). big data experts can use these historic pattern of data to feed into traffic light system to improve the traffic performance. in another way, with data analysis, it will provide the support for decision making such as city planning, budget allocation, construction planning, road servicing and so on.
 
 
-![SmartTraffic](pics/SmartTraffic.jpg)
+![SmartTraffic](pics/SmartTransportation.png)
 
 Brief user case decription {TODO: Describe the user case in below picture}
 
