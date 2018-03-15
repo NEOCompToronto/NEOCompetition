@@ -1,8 +1,6 @@
 # NEO of Things (NEOT) 
 
-The IoT Infrastracture powered by NEO
-
-
+The 1st practical IoT distributed ledger solution, powered by NEO
 
 [TOC]
 
@@ -119,7 +117,7 @@ Some of major issues even found in current blockchain based model.
 - Firstly, the consensus algorithms employed in BC (POW or POS) require significant computational resources which are far beyond the capabilities of most IoT devices. 
 
 
-- Secondly, Storage will be a hurdle. Blockchain eliminates the need for a central server to store transactions and device IDs, but the ledger has to be stored on the nodes themselves. And the ledger will increase in size as time passes. That is beyond the capabilities of a wide range of smart devices such as sensors, which have very low storage capacity.
+- Secondly, storage will be a hurdle. Blockchain eliminates the need for a central server to store transactions and device IDs, but the ledger has to be stored on the nodes themselves. And the ledger will increase in size as time passes. That is beyond the capabilities of a wide range of smart devices such as sensors, which have very low storage capacity.
 
 
 - Thirdly, the throughput in blockchain is defined as the number of transactions that can be stored. Classical instantiations of Blockchain have limited throughput.
@@ -141,7 +139,7 @@ There are various projects already proposed providing blockchain-based IoT solut
 
 
 
-But Some of then are experimenting other decentralized topology. 
+But some of then are experimenting other decentralized topology. 
 
 - The most famous one is IOTA. However, its light nodes rely on manual assigning public nodes as servers, which recently practially failed to resist DDoS attacks. Despite its impressive performance speed, several security concerns have been raised over its inherent nature and exact implementation of the tangle.
 
@@ -168,7 +166,7 @@ IoT **Manufacturer** produces the devices like sensors, hosts, etc. Many of them
 
  **Provider**, by purchasing devices from manufacturers, run the business of renting the resources powered by their own software and even payment systems (cloud hosting, remote camera, etc.). 
 
-**Consumers** speed money to subscript the service from providers. 
+**Consumers** speed money to subscribe the services from providers. 
 
 The value flow of convensional sharing economy service model is like this: 
 
@@ -176,14 +174,14 @@ The value flow of convensional sharing economy service model is like this:
 
 As the example shown in the figure above, conventional service model has following problems:
 
-1. Provider1 purchase Device1 and Device2 but manufactuerers doesn't provide unified interface. Provider1 has to develop adapters to make them compatiable with his system. Similiar thing happens to other providers and it caused a lot of redundancy. It's ideal if manufactuerers can provide standardized interface. However, they don't have such incentive unless standards setup and supported by enough strong parites.
-2. For the same reason in problem 1, weaker provder (Provider2) who's running only Device1 finds it's unaffordable to adapt Device2. A loss for both parties.
-3. as the dinosaur of the market, Provider1 spends huge money to develop new services, but only some of those can becomes successful. Service 1 has few subscribers and leaves a huge waste.
-4.  Provider2 also want to run popular Service2. But he can only develop his own copy rather than shared by Provider1. Redundancy in the society's point of view.
-5.  For the same reason, weaker provider (Provider3) can not afford developing Service2, then fade out of the market. It accelerates monopoly and in long term bad for consumers.
-6. A lot of people like Consumer4 find that it would be fantastic if there's Service3. But unfortunately no provider knows this idea. 
-7. Consumer6 wants to subscript Service2, however Provider2 cannot support his countries' currency or payment method.
-8. Consumer2 wants to toggle from Provider1's Service1 to Provider2's Service2. This can never be for free and would cost a lot of time.
+1. Provider1 purchase Device1 and Device2 but manufactuerers doesn't provide unified interface. Provider1 has to develop adapters to make them compatiable with his system. Similiar situations happen to other providers and it caused a lot of redundancy in development. It's ideal if manufactuerers can provide standardized interface. However, they don't have such incentive unless standards setup and supported by enough strong parites.
+2. For the same reason in problem 1, weaker provder (Provider2) who's running only Device1 finds it's unaffordable to adapt Device2, which causes the lost for both Provider2 and Manufacturer2.
+3. As the dinosaur of the market, Provider 1 spends huge money in developing new services, but only some of those end up successful. Service 1 has few subscribers and leaves a huge waste.
+4.  Provider2 also wants to run popular Service2. But he can only develop his own copy rather than be shared by Provider1, resulting another redundancy.
+5.  For the same reason, weaker provider (Provider3) can not afford developing Service2, and fade out of the market. It accelerates monopoly and a long term loss for consumers.
+6. A lot of consumers like Consumer4 find that it would be nice if there's Service3. But unfortunately no provider knows this idea. 
+7. Consumer6 wants to subscribe Service2, however Provider2 does support his currency or payment method.
+8. Consumer2 wants to migrate from Provider1's Service1 to Provider2's Service2. Usually barriers are there and it can never be for free or convenient.
 
 
 In the next section, we'll see what can introducing a new role make the change. 
@@ -192,9 +190,11 @@ In the next section, we'll see what can introducing a new role make the change.
 
 We would like to introduce a new business model, where a new role called PROV developer is added to the conventional one. 
 
-PROV is a service interface based on distributed ledger. It stands for four main phases of a service incident: **Provision**, **Representation**, **Orientation** and **Verification**. PROV developers need to implement these four functions to release a service on blockchain.  
+In the following discussion, we'll see that being empowered by distributed ledger technology, the performance and reputation of a particular service and its PROV developer comes to be traceable and transparent. the cooperation between each parties can also be automated and motivated with much less complicated human interactions such as contract negotiation and registeration.
 
-PROV developers can be anybody, PROV services can hold any logic. But only the reasonable ones with great provider/consumer interest balance can be supported by these parites.
+The term PROV stands for four main phases of a service instance: **Provision**, **Representation**, **Orientation** and **Verification**. PROV developers need to implement these four functions to release a service on blockchain. PROV is a service interface based on distributed ledger. With NEO as the distributed ledger infrastructure, we have NEOT. 
+
+PROV developers can be any party, PROV services can hold any logic. But only the reasonable ones with great provider-consumer interest balance would be supported by these parites.
 
 Let's take the example of **remote storage** demonstrated in the following diagram to show PROV's typical work flow.
 
@@ -208,9 +208,9 @@ In the above example,
 
 - Indie developer D released a PROV compatiable service called "SrvRMTDisk" to enable remote storage sharing. At the meantime, other developers also released similiar services. 
 
-- After scrutinizing all the remote storage services, provider P believed the combination of AwsSSD + SrvRMTDisk would be best profitable. So he bought AwsSSD1 from M and enabled SrvRMTDisk on it, configured it with a reasonable fee rate.
+- After scrutinizing all the remote storage services, provider P believes the combination of AwsSSD + SrvRMTDisk would be best profitable. So he bought AwsSSD1 from M and enabled SrvRMTDisk on it, configured it with a reasonable fee rate.
 
-- Consumer C loved the service OtherRMTDisk better. but since SrvRMTDisk was supported by most providers, he chose to create an instance of SrvRMTDisk to store his large video remotely for 1 month. NEOT network, as D wrote into the Orientation method, picked AwsSSD1 as the provider with the following algorithm:
+- Consumer C loved the service OtherRMTDisk better. but since SrvRMTDisk was supported by most providers, he chose to create an instance of SrvRMTDisk to store his video remotely for 1 month. NEOT network, as D wrote into the Orientation method, picked AwsSSD1 as the provider with the following algorithm:
 
   1. AwsSSD1 had SrvRMTDisk enabled with enough idle resource
   2. C's wallet balance was enough to afford the service P offered.
@@ -399,45 +399,4 @@ Further expansion {TODO: Describe the below picture}
 
 
 
-
-
-
-
-Bck
-
-
-
-Blockchain technology leveraging randomlized peers brings the potiential of DDoS-resistant. 
-
-Blockchain, a truly distributed system, has built-in protections against losing communication with nodes to ensure transactions can continue even if several nodes go offline. The nodes in the blockchain can run consensus algorithms – if several nodes are offline, others continue – even if they were taken offline by a DDoS attack. 
-
-Peer-to-peer networks in the blockchain are notoriously hard to stop or even disrupt. Also, attacking the transactions is also close to impossible because they are stored in everyone’s copy of the blockchain and cryptographically verified by the mining process. hackers can target a centralized server or data center more easily but with blockchain's distributed and decentralized nature, such attacks are no longer possible. 
-
-The cryptographic algorithms used by blockchains would make consumer data more private.
-
-
-
-----------
-
-Here are some of proposed solutions in the industry to the issues above:
-
-- A Lightweight Scalable Blockchain for IoT, which owns an IoT friendly consensus algorithm that eliminates the need for solving any puzzle prior to appending a block to the BC. A distributed trust method whereby the processing time for validating new blocks by the OBMs gradually decreases as they build up trust in each other. A distributed throughput management strategy adjusts certain system parameters to ensure that the network utilization is within a prescribed operating range.
-
-- BC-based multi-tier architecture to share data from IoT devices with organizations and people. This proposed architecture has three main components namely: data management protocol, data store system, and message service.
-
-- A new consensus algorithm for BC known as Proof of Elapsed Time (POET) which is integrated with Hyperledger
-
-- A new ledger based cryptocurrency called IoTA. By eliminating the notion of blocks and mining, IoTA ensures that the transactions are free and verification is fast.
-
-- Ethereum Light client protocol is under development, which is to allow users in low-capacity environments (embedded smart property environments, smartphones, browser extensions, some desktops, etc) to maintain a high-security assurance about the current state of some particular part of the Ethereum state or verify the execution of a transaction
-
-
-
-
-----------
-
-Current IoT ecosystems rely on centralized, brokered communication models, otherwise known as the server/client paradigm. All devices are identified, authenticated and connected through cloud servers that sport huge processing and storage capacities. cloud servers will remain a bottleneck and point of failure that can disrupt the entire network.
-
-A blockchain-based IoT model differs from the traditional IoT network paradigm. decentralization, which is at the very core of blockchain technology, can eliminate single points of failure in an IoT network and create a more resilient ecosystem for devices to run on.  For example, a central server perhaps is not able to cope with the amount of data that billions of IoT devices (things) are producing at high frequency
-----------
 
