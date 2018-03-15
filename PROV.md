@@ -1,21 +1,21 @@
-# PROV Service and Share Economy [Beta]
+# PROV Service and Sharing Economy [Beta]
 
-
+norchain.io
 
 ## 1. Prerequisite
 
 ### 1.1 Sustainable Symmetric Key
 
-By leverage the power of distributed ledger, the conventional secured connection techniques such as HTTPS/SSL can be drastically simplified. 
+By leveraging the power of distributed ledger, the conventional secured connection techniques such as HTTPS/SSL can be drastically simplified. 
 
 Say we have $N_A$ and $N_B$ with the public key and private key to be ($PU_A$,$PV_A$) and ($PU_B$, $PV_B$) respectively,  the below steps are only required to be excuted only once for all. 
 
 1. $N_A$ generate a symmetric key $K_S$ (a.k.a. **Sustainable Symmetric Key** or **SSK** ). 
 2. $N_A$ uses asymmetric algorithm $E$,  $PU_B$, metadata $\lambda$ and signiture function $Sig$ to generate the message $M = Sig(E(PU_B, \lambda),PV_A)$ , then boardcasts $M$ to blockchain. 
 
-After that, $N_A$ and  $N_B$ can use $K_S$ to secure the traffic for unlimited times, without asymmetric handshake, no matter the traffic is onchain or offchain.
+After that, $N_A$ and  $N_B$ can use $K_S$ to secure the traffic for unlimited times, without asymmetric handshake, no matter the traffic is onchain or offchain. 
 
-To reset SSK due to key leakage or version upgrade, $N_A$ can simple repeat the above steps. $N_B$ always take the latest one.
+To reset SSK due to key leakage or version upgrade, $N_A$ can simple repeat the above steps. $N_B$ always takes the latest one.
 
 
 
@@ -23,27 +23,27 @@ To reset SSK due to key leakage or version upgrade, $N_A$ can simple repeat the 
 
 ### 2.1 Brief
 
-Any service, no matter the consumer and provider parties comes from human community or computer network, can be incontestably processed only when four __predefined__ phases achieved accurate consensus: Provision, Representation, Orientation, Verification.
+Any service, no matter the consumer and provider parties come from human community or computer network, can be incontestably processed only when four __predefined__ phases achieved accurate consensus: Provision, Representation, Orientation and Verification.
 
-**Provision**: Providers announce the their capacities of handling the services with the rate they can offer, after rational estimation. 
+**Provision**: Provider announces its capacities of handling particular services with the fee rates respectively. 
 
-**Representation**: Consumer abstracts and refines the requirement from its raw demond, comes up with the standard representation of the task. A good representation should:
+**Representation**: Consumer abstracts and refines the requirement from its raw demond, coming up with the standard representation of the task. A good representation should:
 
 1. avoid any functional or qualitative dispution caused by indistinction or obscuration.
 2. expose enough and just enough information to support the provider's service, in order to maximize privacy protection and minimize the cost of processing.
 
-**Orientation**: Consumer compares the providers' offers, picks up the ones with his best interest and assigns the service to them. 
+**Orientation**: Consumer compares the providers' offers, picks up the ones (can be shard) with his best interest and assigns the service to them. 
 
-After  orientation, the providers can untilize any resource and tactic to accomplish the mission. In the service's point of view, there's no interaction, no regulation, no even suggestion. In this way, providers are couraged to maintain competitiveness and innovate to increase the profit space.
+After orientation, the providers can untilize any resource and tactic to accomplish the task. In the service's point of view, there's no interaction, no regulation, no even suggestion. In this manner, providers are couraged to maintain competitiveness and innovate to increase profit.
 
-**Verification**: After the providers believe the mission is accomplished, an predefined verification should be performed. Similar as Representation, verification should avoid any functional or qualitative dispution caused by indistinction or obscuration. The evalution also decides how to dispense the commission.
+**Verification**: After the providers believe the task is accomplished, an predefined verification should be performed. Similar as Representation, verification should avoid any functional or qualitative dispution caused by indistinction or obscuration. The evaluation also decides how to dispense the commission.
 
-In a mature market model, the phases of P*rovision, Representation* and *Evaluation* are standardized between participated parties, leaving *Orientation* to consumer. In the following chapters, you'll see that in a distributed ledger network, it's better to get *Orientation* process standardized as well, in order to the on chain traffic and protect the providers from Attacks. 
+Need to mention, in a mature market model, the phases of P*rovision, Representation* and *Evaluation* are standardized between participated parties, leaving *Orientation* a dynamic process to consumer. In the following chapters, you'll see that in many user cases in a distributed ledger network, it's better to get *Orientation* process standardized and as well, in order to simplify the whole process, reduce on chain traffic and protect the providers from attacks. 
 
 A distributed consensus network is **PROV compatiable**, if
 
 1. every node  $k$ in this network has an asynmmetric key pair ($PU_k, PV_k$), where $PU_k$ is the public key (address) and $PV_k$ is the private key used for signiture. 
-2. There's a universial currency to measure the value of service. There's a way to calculate the balance of each account. Denote the balance as $b_k$ for node $k$. 
+2. There's an universial currency to measure the value of service. There's a way to calculate the balance of each account. Denote the balance as $b_k$ for node $k$. 
 3. there are $n$ types registered services {$S_n$}, $n \ge 1$. For any $i \in [1, n]$, define $S_i \equiv$  {$P_{S_i},R_{S_i}, O_{S_i}, V_{S_i} , PU_{a_i}, \vec{\psi_{S_i}}$}, where $P_{S_i},R_{S_i}, O_{S_i}$ and $V_{S_i} $ are the Provision, Representation, Orientation and Evaluation functions developed to support service $S_i$. $PU_{a_i}$ is $S_i$'s auther's address. $\vec{\psi_{S_i}}$ is $S_i$ specific parameters. We call $S_i$ a **PROV Service**.
 4. Suggest supports *Sustainable Symmetric Key* introduced in *Chapter III*, but not mandatory.
 
@@ -151,6 +151,8 @@ $c$ wants to mine POW cryptocurrency $\Gamma$, whose block cycle is larger than 
 ### 4.2 Gradient descent
 
 $c$ is researching deep learning and has a neural network to train. This is a typical Large Input scenario. $c$ pass the encrypted NN structure and training/testing set to $p$ through offchain channel. 
+
+[TODO]
 
 
 
