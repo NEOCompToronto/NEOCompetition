@@ -25,7 +25,7 @@ The project NEOT (NEO of Things), powered by both NEO's blockchain platform and 
 
 
 
-![SmartTraffic](pics/SmartTraffic.jpg)
+![SmartTraffic](pics/SmartTransportation.PNG)
 
 The team of [norchain.io](http://www.norchain.io/) has widely launched conversation with City of Marham, CGI Group, China Mobile, regarding to blockchain opportunities of contributing smart economy. Such as the Smart Traffic model proposed to City of Marham as showing in the above picture.
 
