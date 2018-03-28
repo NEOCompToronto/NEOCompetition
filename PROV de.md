@@ -6,11 +6,11 @@ liqing.pan@norchain.io
 
 Projects are targeting to share remote resources. 
 
-When blockchain technology emerges, projects starts to issue the onchain payments via token (Storj). 
+When blockchain technology emerges, projects start to issue the proof-of-retrievability (Storj), but few discussion regarding to the case if malicious consumer nodes deny the quality of service. SIA host nodes send shards and hash periodically to chain, but not necessary to hold the whole original copy.
 
 But few projects provide reasonable trustless verification for the quality of services, leaving either consumer nodes or provider nodes the chances for cheeting.
 
-Classic PoW of hash calculation is hard to collide but easy to verify.  
+Classic PoW of the task of hash calculation is hard to collide but easy to verify.  
 
 
 
