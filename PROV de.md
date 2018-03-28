@@ -4,7 +4,7 @@ liqing.pan@norchain.io
 
 ## Abstract
 
-Articles are discussing about sharing remote resources. 
+Projects are targeting to share remote resources. 
 
 When blockchain technology emerges, projects starts to issue the onchain payments via token (Storj). 
 
@@ -12,20 +12,41 @@ But few projects provide reasonable trustless verification for the quality of se
 
 Classic PoW of hash calculation is hard to collide but easy to verify.  
 
-## 1. Prerequisite
 
-### 1.1 Sustainable Symmetric Key
 
-By leveraging the power of distributed ledger, the conventional secured connection techniques such as HTTPS/SSL can be drastically simplified. 
+## 1. Problem
 
-Say we have $N_A$ and $N_B$ with the public key and private key to be ($PU_A$,$PV_A$) and ($PU_B$, $PV_B$) respectively,  the below steps are only required to be excuted only once for all. 
+P2P based distributed ledgers are designed to provide the platform for the nodes to arguelessly transfer currencies (or tokens) and meta messages without centralized validators. In some partial 
 
-1. $N_A$ generate a symmetric key $K_S$ (a.k.a. **Sustainable Symmetric Key** or **SSK** ). 
-2. $N_A$ uses asymmetric algorithm $E$,  $PU_B$, metadata $\lambda$ and signiture function $Sig$ to generate the message $M = Sig(E(PU_B, \lambda),PV_A)$ , then boardcasts $M$ to blockchain. 
+In this model, nodes are identical  
 
-After that, $N_A$ and  $N_B$ can use $K_S$ to secure the traffic for unlimited times, without asymmetric handshake, no matter the traffic is onchain or offchain. 
+This capacity of handling differences between 
 
-To reset SSK due to key leakage or version upgrade, $N_A$ can simple repeat the above steps. $N_B$ always takes the latest one.
+the action between nodes are   
+
+## 1. Terminology
+
+#### Service
+
+In instance of service means the action of A to help or do work for B. 
+
+In convensional bussiness model, a
+
+Service means 
+
+#### Roles
+
+
+
+In the model of PROV, we basically have three key roles, 
+
+#### Provider
+
+
+
+#### Consumer
+
+
 
 
 
@@ -168,6 +189,23 @@ $c$ is researching deep learning and has a neural network to train. This is a ty
 [TODO]
 
 
+
+
+
+## 5. Prerequisite
+
+### 1.1 Sustainable Symmetric Key
+
+By leveraging the power of distributed ledger, the conventional secured connection techniques such as HTTPS/SSL can be drastically simplified. 
+
+Say we have $N_A$ and $N_B$ with the public key and private key to be ($PU_A$,$PV_A$) and ($PU_B$, $PV_B$) respectively,  the below steps are only required to be excuted only once for all. 
+
+1. $N_A$ generate a symmetric key $K_S$ (a.k.a. **Sustainable Symmetric Key** or **SSK** ). 
+2. $N_A$ uses asymmetric algorithm $E$,  $PU_B$, metadata $\lambda$ and signiture function $Sig$ to generate the message $M = Sig(E(PU_B, \lambda),PV_A)$ , then boardcasts $M$ to blockchain. 
+
+After that, $N_A$ and  $N_B$ can use $K_S$ to secure the traffic for unlimited times, without asymmetric handshake, no matter the traffic is onchain or offchain. 
+
+To reset SSK due to key leakage or version upgrade, $N_A$ can simple repeat the above steps. $N_B$ always takes the latest one.
 
 
 
