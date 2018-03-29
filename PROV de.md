@@ -1,4 +1,4 @@
-# PROV: General Proof-of-Work and decentralized service verification
+# PROV: General Proof-of-Work and decentralized service validation
 
 liqing.pan@norchain.io
 
@@ -6,9 +6,9 @@ liqing.pan@norchain.io
 
 Projects are targeting to share remote resources. 
 
-When blockchain technology emerges, projects start to issue the proof-of-retrievability (Storj), but few discussion regarding to the case if malicious consumer nodes deny the quality of service. SIA host nodes send shards and hash periodically to chain, but not necessary to hold the whole original copy.
+When blockchain technology emerges, projects start to issue the proof-of-retrievability (Storj), but few discussion regarding to the case if malicious consumer nodes deny the quality of such service. SIA host nodes send shards and hash periodically to chain, but not necessary to hold the whole original copy.
 
-But few projects provide reasonable trustless verification for the quality of services, leaving either consumer nodes or provider nodes the chances for cheeting.
+Few projects provide reasonable decentralized validation for the quality of services, leaving either consumer nodes or provider nodes the chances for cheeting.
 
 Classic PoW of the task of hash calculation is hard to collide but easy to verify.  
 
@@ -16,13 +16,21 @@ Classic PoW of the task of hash calculation is hard to collide but easy to verif
 
 ## 1. Problem
 
-P2P based distributed ledgers are designed to provide the platform for the nodes to arguelessly transfer currencies (or tokens) and meta messages without centralized validators. In some partial 
+One essential feature of distributed ledger technology is to vest digital asset transactions an undisputed manner with decentralized censensus rather than centralized validators. In this model, digital assets are highly abstracted symbols.
 
-In this model, nodes are identical  
 
-This capacity of handling differences between 
 
-the action between nodes are   
+In real world, nodes have different capacities and demonds,  To enable the transactions more 
+
+
+
+![ROV_Model_T](PlantUML/out/PROV_Model_Tx.png)![PROV_Model_service](PlantUML/out/PROV_Model_service.png)
+
+
+
+
+
+Some projects are also proposing  
 
 ## 1. Terminology
 
@@ -47,6 +55,8 @@ In the model of PROV, we basically have three key roles,
 #### Consumer
 
 
+
+## 2. Decentralized service validation
 
 
 

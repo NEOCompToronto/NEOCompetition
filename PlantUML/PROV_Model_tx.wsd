@@ -1,0 +1,18 @@
+@startuml
+
+title Decentralized validation \nof Transactions
+
+
+node sender as "Sender"
+
+node receiver as "Receiver"
+
+cloud blockchain
+
+sender -d-> blockchain: Tx:asset
+blockchain -u-> receiver: Tx:asset
+
+node v as "validators"
+v -u-> blockchain: Validate Tx
+
+@enduml

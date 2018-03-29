@@ -1,0 +1,28 @@
+@startuml
+
+title Decentralized Validation of\n Transactions & Services
+
+
+node sender [
+<b>Consumer
+....
+Sender
+]
+
+node receiver[
+<b>Provider
+....
+Receiver
+]
+
+cloud blockchain
+
+sender -d-> blockchain: Tx:asset
+blockchain -u-> receiver: Tx:asset
+blockchain .u.> sender: Service
+receiver .d.> blockchain: Service
+
+node v as "validators"
+v -u-> blockchain: Validate Tx
+v .u.> blockchain: <b>Validate Service</b>
+@enduml
