@@ -6,7 +6,7 @@ liqing.pan@norchain.io
 
 Projects are targeting to share remote resources. 
 
-When blockchain technology emerges, projects start to issue the proof-of-retrievability (Storj), but few discussion regarding to the case if malicious consumer nodes deny the quality of such service. SIA host nodes send shards and hash periodically to chain, but not necessary to hold the whole original copy.
+Few discussion regarding to the case if malicious consumer nodes deny the quality of such service. 
 
 Few projects provide reasonable decentralized validation for the quality of services, leaving either consumer nodes or provider nodes the chances for cheeting.
 
@@ -18,9 +18,29 @@ Classic PoW of the task of hash calculation is hard to collide but easy to verif
 
 One of the most important features of distributed ledger technology is to ensure incontestable transactions utilizing decentralized censensus algorithms. Cryptocurrency, acting as abstracted symbol of "value", has already widely flourished in the financial applications such as Bitcoin, ICOs and cryptocurrency exchanges in recent years. 
 
-However, to further explore distribute ledger technology's potential, returning to the essential meaning of economy, **the flow of currency should accompany with the flow of resources and services, both with the decentralized validatable manner**. Many projects 
+However, to further explore distribute ledger technology's potential, returning to the meaning of market economy, **the flow of currency should always accompanies with the flow of resources and services on the reversed direction**. In this case, the scenario comes to be more general in the following aspects:
+
+|               | Current Projects | PROV                                   |
+| ------------- | ---------------- | -------------------------------------- |
+| Node Types    | Equivalent       | Different capacities and demands       |
+| Message Types | Transaction      | Provision<br>Orientation<br>Validation |
+|               |                  |                                        |
+
+**Unequivalent Nodes** 
+
+In conventional blockchain model, nodes are equivalent in capacity. 
+
+
+
+Many projects try to make match the offchain decentralized services and use onchain transactions as the method of payment. Storj issues the proof-of-retrievability with service receipts posted on chain, but the procedure of validation are provided by centralized parties (the consumer). SIA host nodes send shards and hash periodically to chain, but not necessary to hold the whole original copy. 
+
+
+
+ both with the decentralized validatable manner 
 
 In real world, nodes have different capacities and demonds,  To enable the transactions more 
+
+
 
 
 
