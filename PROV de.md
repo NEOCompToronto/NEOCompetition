@@ -16,9 +16,9 @@ Classic PoW of the task of hash calculation is hard to collide but easy to verif
 
 ## 1. Problem
 
-One essential feature of distributed ledger technology is to vest digital asset transactions an undisputed manner with decentralized censensus rather than centralized validators. In this model, digital assets are highly abstracted symbols.
+One of the most important features of distributed ledger technology is to ensure incontestable transactions utilizing decentralized censensus algorithms. Cryptocurrency, acting as abstracted symbol of "value", has already widely flourished in the financial applications such as Bitcoin, ICOs and cryptocurrency exchanges in recent years. 
 
-
+However, to further explore distribute ledger technology's potential, returning to the essential meaning of economy, **the flow of currency should accompany with the flow of resources and services, both with the decentralized validatable manner**. Many projects 
 
 In real world, nodes have different capacities and demonds,  To enable the transactions more 
 
