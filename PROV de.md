@@ -18,25 +18,31 @@ Classic PoW of the task of hash calculation is hard to collide but easy to verif
 
 One of the most important features of distributed ledger technology is to ensure incontestable transactions utilizing decentralized censensus algorithms. Cryptocurrency, acting as abstracted symbol of "value", has already widely flourished in the financial applications such as Bitcoin, ICOs and cryptocurrency exchanges in recent years. 
 
-However, to further explore distribute ledger technology's potential, returning to the meaning of market economy, **the flow of currency should always accompanies with the flow of resources and services on the reversed direction**. In this case, the scenario comes to be more general in the following aspects:
+However, to further explore distribute ledger technology's potential, returning to the meaning of market economy, **the flow of currency should always accompanies with the flow of resources and services on the reversed direction**. 
 
-|               | Current Projects | PROV                                   |
-| ------------- | ---------------- | -------------------------------------- |
-| Node Types    | Equivalent       | Different capacities and demands       |
-| Message Types | Transaction      | Provision<br>Orientation<br>Validation |
-|               |                  |                                        |
+In this case, the scenario comes to be more general in the following aspects:
+
+|               | Current Projects | PROV                                                 |
+| ------------- | ---------------- | ---------------------------------------------------- |
+| Node Types    | Equivalent       | Different capacities and demands                     |
+| Message Types | Transaction      | Provision<br>Orientation<br>Validation (Transaction) |
+|               |                  |                                                      |
 
 **Unequivalent Nodes** 
 
 In conventional blockchain model, nodes are equivalent in capacity. 
 
+**Expanded Message Types**
 
 
-Many projects try to make match the offchain decentralized services and use onchain transactions as the method of payment. Storj issues the proof-of-retrievability with service receipts posted on chain, but the procedure of validation are provided by centralized parties (the consumer). SIA host nodes send shards and hash periodically to chain, but not necessary to hold the whole original copy. 
 
 
 
- both with the decentralized validatable manner 
+Many projects try to make match the offchain decentralized services and use onchain transactions as the method of payment. Storj issues the proof-of-retrievability with service receipts posted on chain, but the procedure of validation are provided by centralized parties (the consumer). SIA host nodes send shards and hash periodically to chain, but not necessary to hold the whole original copy. [TODO: need to study more projects as examples]
+
+
+
+
 
 In real world, nodes have different capacities and demonds,  To enable the transactions more 
 
