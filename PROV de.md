@@ -14,6 +14,13 @@ Classic PoW of the task of hash calculation is hard to collide but easy to verif
 
 
 
+## 1. Introduction
+
+1. Transaction of currencies (or tokens) are only the representation of the flow of value. The value (or say, the authentic meaning of transaction) in real world ecomonic system is built upon the flow of services. The procedure of "Serve" means the relationship generated between two parties, in which the party Provider utilize its resource and effort to satisfy the party Consumer with its interest, and get "Reward" afterwards. 
+2. The "reward" can be either another service which the provider agree to have equal value, or a particuler amount of common currency which can exchange for another "service" in the future.
+3. In the model of bullet 3, the decentralized validation of currency transaction is mature and proven by many cryptocurrency projects already. But **unless we can provide the decentrailized validation of the service, we cannot build the genuine decentralized economy.**
+4. In this paper, we design a model for general decentralized validation of service upon existing distributed ledger infrastructure. 
+
 ## 1. Problem
 
 One of the most important features of distributed ledger technology is to ensure incontestable transactions utilizing decentralized censensus algorithms. Cryptocurrency, acting as abstracted symbol of "value", has already widely flourished in the financial applications such as Bitcoin, ICOs and cryptocurrency exchanges in recent years. 
