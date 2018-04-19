@@ -1,14 +1,19 @@
-# PROV: General Proof-of-Work and decentralized service validation
+# POV: Decentralized validation of services
 
 liqing.pan@norchain.io
 
 ## Abstract
 
-Projects are targeting to share remote resources. 
+1. Background: DLT projects provide the decentralized machanisms to validate transactions. Current efforts are focus on improve the transaction speed with different consensus algorithms. 
+2. In the model of transaction, every node has equal functionality. But in real world, nodes have different abilities. The relationships of service-demand are built upon the factor of the ability imbalance, which is the essential reason why the transactions of the value-representitive currencies are taken place.
+3. ​
+4. There are also many projects target to attach the node the abilities to share remote resources. Such as xxxx. But no project provide a general design as the platform. 
+5. They provide the decentralized validation for the service providers but not the consumers. 
+6. Just like the transactions, only when the system can provide the decentralized validation of the services for both provider and consumers, that the system can be genuinely  
 
-Few discussion regarding to the case if malicious consumer nodes deny the quality of such service. 
+ provide solution to prevent malicious consumer nodes deny the quality of such services.
 
-Few projects provide reasonable decentralized validation for the quality of services, leaving either consumer nodes or provider nodes the chances for cheeting.
+Need reasonable decentralized validation for the quality of services, leaving either consumer nodes or provider nodes the chances for cheeting. 
 
 Classic PoW of the task of hash calculation is hard to collide but easy to verify.  
 
