@@ -1,6 +1,6 @@
 # POV: Decentralized validation of services
 
-liqing.pan@norchain.io
+dprat0821@gmail.com
 
 ## Abstract
 
