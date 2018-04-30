@@ -4,12 +4,12 @@ dprat0821@gmail.com
 
 ## Abstract
 
-1. Background: DLT projects provide the decentralized machanisms to validate transactions. Current efforts are focus on improve the transaction speed with different consensus algorithms. 
+1.  
 2. In the model of transaction, every node has equal functionality. But in real world, nodes have different abilities. The relationships of service-demand are built upon the factor of the ability imbalance, which is the essential reason why the transactions of the value-representitive currencies are taken place.
 3. ​
 4. There are also many projects target to attach the node the abilities to share remote resources. Such as xxxx. But no project provide a general design as the platform. 
 5. They provide the decentralized validation for the service providers but not the consumers. 
-6. Just like the transactions, only when the system can provide the decentralized validation of the services for both provider and consumers, that the system can be genuinely  
+6. ​
 
  provide solution to prevent malicious consumer nodes deny the quality of such services.
 
@@ -21,17 +21,15 @@ Classic PoW of the task of hash calculation is hard to collide but easy to verif
 
 ## 1. Decentralized Transaction: from asset to service
 
-Core Idea:
 
-1. ​
 
-Discussion
-
-1. Transaction of currencies (or tokens) are only the representation of the flow of value. The value (or say, the authentic meaning of transaction) in real world ecomonic system is built upon the flow of services. The procedure of "Serve" means the relationship generated between two parties, in which the party Provider utilize its resource and effort to satisfy the party Consumer with its interest, and get "Reward" afterwards. 
-2. The "reward" can be either another service which the provider agree to have equal value, or a particuler amount of common currency which can exchange for another "service" in the future.
-3. In the model of bullet 3, the decentralized validation of currency transaction is mature and proven by many cryptocurrency projects already. But **unless we can provide the decentrailized validation of the service, we cannot build the genuine decentralized economy.**
-4. In this paper, we design the model POV for general decentralized validation of service upon existing distributed ledger infrastructure. POV works much like Ethereum as a blockchain infrastracture providing developers virtual machine. 
-5. ​
+1. Foundational distributed ledger projects provide the machanisms to validate the transactions of cryptocurrenies and digital assets. Most current research of such blockchain projects are focus on improve the performance, with the approarches of introducing new consensus algorithms, sharding, etc.
+2. Application layer projects then utilizes the on-chain transaction to assist off-chain P2P services. In which the validation process of the off-chain services are still replies on centralized parties. eg. Storj issues the proof-of-retrievability with service receipts posted on chain, but the procedure of validation are provided by the particular consumer which can cheat. SIA host nodes send shards and hash periodically to chain, but not necessary to hold the whole original copy. [TODO: need to study more projects as examples]
+3. No matter utilizing which public blockchain infrastracture, we should consider the necessity of decentralized validation of the services. As in the real world economy, the driving factor of  value flow of service-demand is the. Transaction of assets are only the representation of the flow of value. The value (or say, the authentic meaning of transaction) in real world ecomonic system is built upon the flow of services. The procedure of "Serve" means the relationship generated between two parties, in which the party Provider utilize its resource and effort to satisfy the party Consumer with its interest, and get "Reward" afterwards. 
+4. The "reward" can be either another service which the provider agree to have equal value, or a particuler amount of common currency which can exchange for another "service" in the future.
+5. In the model of bullet 3, the decentralized validation of currency transaction is mature and proven by many cryptocurrency projects already. But **unless we can provide the decentrailized validation of the service, we cannot build the genuine decentralized economy.**
+6. In this paper, we design the model POV for general decentralized validation of service upon existing distributed ledger infrastructure. POV works much like Ethereum as a blockchain infrastracture providing developers virtual machine. 
+7. ​
 
 ## 1. Problem
 
@@ -57,7 +55,7 @@ In conventional blockchain model, nodes are equivalent in capacity.
 
 
 
-Many projects try to make match the offchain decentralized services and use onchain transactions as the method of payment. Storj issues the proof-of-retrievability with service receipts posted on chain, but the procedure of validation are provided by centralized parties (the consumer). SIA host nodes send shards and hash periodically to chain, but not necessary to hold the whole original copy. [TODO: need to study more projects as examples]
+Many projects try to make match the offchain decentralized services and use onchain transactions as the method of payment. 
 
 
 
