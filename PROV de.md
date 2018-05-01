@@ -4,32 +4,34 @@ dprat0821@gmail.com
 
 ## Abstract
 
-1.  
-2. In the model of transaction, every node has equal functionality. But in real world, nodes have different abilities. The relationships of service-demand are built upon the factor of the ability imbalance, which is the essential reason why the transactions of the value-representitive currencies are taken place.
-3. ​
-4. There are also many projects target to attach the node the abilities to share remote resources. Such as xxxx. But no project provide a general design as the platform. 
-5. They provide the decentralized validation for the service providers but not the consumers. 
-6. ​
+DLT unveils the possibility of building up trust machines rooting on mathematics, cryptography and human nature. The potential of the trust machines is not limited on validating the transactions of symbolic digitial assets,  but more excitingly, the genuine services of digital world. 
 
- provide solution to prevent malicious consumer nodes deny the quality of such services.
+In this paper, we first introduce a 3-phase model for digitialized services. We call this model POV, standing for the three phases: Provision, Orientation and Validation, instead of the only phase of Validation for digital asset transactions. In the rest of this paper, we'll call them the service-based DLTs and asset-based DLTs respectively. 
 
-Need reasonable decentralized validation for the quality of services, leaving either consumer nodes or provider nodes the chances for cheeting. 
+After that, we'll list some typical digitialized services, and give out samples of how to map them to POV and get their instances validated with the decentralized manner. 
 
-Classic PoW of the task of hash calculation is hard to collide but easy to verify.  
+An innovative distributed ledger infrastructure is then proposed, providing POV as the smart contract standard, so the above mentioned services can be developed by developers and run on the same platform. We'll see how that would improve the overall performance.
+
+At last, we'll have discussion on many design details of the POV chain.
 
 
 
-## 1. Decentralized Transaction: from asset to service
+## 1. POV Model
 
+### 1.1 From asset to service 
 
+Distributed ledger platform projects (such as bitcoin, ethereum and NEO) provide the machanisms to validate the transactions of cryptocurrenies and digital assets. Recent researches of such projects are focusing on improve the performance, with the approaches of introducing new consensus algorithms, sharding, etc.
 
-1. Foundational distributed ledger projects provide the machanisms to validate the transactions of cryptocurrenies and digital assets. Most current research of such blockchain projects are focus on improve the performance, with the approarches of introducing new consensus algorithms, sharding, etc.
-2. Application layer projects then utilizes the on-chain transaction to assist off-chain P2P services. In which the validation process of the off-chain services are still replies on centralized parties. eg. Storj issues the proof-of-retrievability with service receipts posted on chain, but the procedure of validation are provided by the particular consumer which can cheat. SIA host nodes send shards and hash periodically to chain, but not necessary to hold the whole original copy. [TODO: need to study more projects as examples]
-3. No matter utilizing which public blockchain infrastracture, we should consider the necessity of decentralized validation of the services. As in the real world economy, the driving factor of  value flow of service-demand is the. Transaction of assets are only the representation of the flow of value. The value (or say, the authentic meaning of transaction) in real world ecomonic system is built upon the flow of services. The procedure of "Serve" means the relationship generated between two parties, in which the party Provider utilize its resource and effort to satisfy the party Consumer with its interest, and get "Reward" afterwards. 
-4. The "reward" can be either another service which the provider agree to have equal value, or a particuler amount of common currency which can exchange for another "service" in the future.
-5. In the model of bullet 3, the decentralized validation of currency transaction is mature and proven by many cryptocurrency projects already. But **unless we can provide the decentrailized validation of the service, we cannot build the genuine decentralized economy.**
-6. In this paper, we design the model POV for general decentralized validation of service upon existing distributed ledger infrastructure. POV works much like Ethereum as a blockchain infrastracture providing developers virtual machine. 
-7. ​
+Meanwhile, application layer projects utilizes the on-chain transactions to assist off-chain services. With this approach, the chain is still acting for just digital asset transactions. The validation process of the off-chain services relies on centralized parties. eg. Storj issues the proof-of-retrievability with service receipts posted on chain, but the procedure of validation are provided by the corresponding consumer which is able and could have motivation to cheat. SIA host nodes send shards and hash periodically to chain, but not necessary to hold the whole original copy. [TODO: need to study more projects as examples]. 
+
+In the real world economy, transactions of assets are only the symbol of value flow. The real driving factor of the value flow are the services introduced by the parties with the relationship 
+
+The value (or say, the authentic meaning of transaction) in real world ecomonic system is built upon the flow of services. The procedure of "Serve" means the relationship generated between two parties, in which the party Provider utilize its resource and effort to satisfy the party Consumer with its interest, and get "Reward" afterwards. 
+
+1. The "reward" can be either another service which the provider agree to have equal value, or a particuler amount of common currency which can exchange for another "service" in the future.
+2. In the model of bullet 3, the decentralized validation of currency transaction is mature and proven by many cryptocurrency projects already. But **unless we can provide the decentrailized validation of the service, we cannot build the genuine decentralized economy.**
+3. In this paper, we design the model POV for general decentralized validation of service upon existing distributed ledger infrastructure. POV works much like Ethereum as a blockchain infrastracture providing developers virtual machine. 
+4. ​
 
 ## 1. Problem
 
