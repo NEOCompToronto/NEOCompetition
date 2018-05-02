@@ -6,11 +6,11 @@ dprat0821@gmail.com
 
 DLT unveils the possibility of building up trust machines rooting on mathematics, cryptography and human nature. The potential of the trust machines is not limited on validating the transactions of symbolic digitial assets,  but more excitingly, the genuine services of digital world. 
 
-In this paper, we first introduce a 3-phase model for digitialized services. We call this model POV, standing for the three phases: Provision, Orientation and Validation, instead of the only phase of Validation for digital asset transactions. In the rest of this paper, we'll call them the service-based DLTs and asset-based DLTs respectively. 
+In this paper, we first introduce a 3-phase model for digitialized services. We call this model “POV”, standing for the mentioned three phases: Provision, Orientation and Validation, instead of the only phase of Validation for digital asset transactions. In the rest of this paper, we'll call them the service-based DLTs and asset-based DLTs respectively. 
 
 After that, we'll list some typical digitialized services, and give out samples of how to map them to POV and get their instances validated with the decentralized manner. 
 
-An innovative distributed ledger infrastructure is then proposed, providing POV as the smart contract standard, so the above mentioned services can be developed by developers and run on the same platform. We'll see how that would improve the overall performance.
+An innovative distributed ledger infrastructure providing POV as the smart contract standard is then proposed, so different types of services can be developed by community developers and run on the same platform. We'll discuss why this would improve the overall network performance.
 
 At last, we'll have discussion on many design details of the POV chain.
 
@@ -20,13 +20,25 @@ At last, we'll have discussion on many design details of the POV chain.
 
 ### 1.1 From asset to service 
 
-Distributed ledger platform projects (such as bitcoin, ethereum and NEO) provide the machanisms to validate the transactions of cryptocurrenies and digital assets. Recent researches of such projects are focusing on improve the performance, with the approaches of introducing new consensus algorithms, sharding, etc.
+Cryptocurrency, acting as symbolic digitial assets, has already widely flourished in the financial applications such as Bitcoin, ICOs and cryptocurrency exchanges in recent years. Distributed ledger projects provide the decentralized censensus machanisms to validate the transactions of cryptocurrenies and digital assets.  Recent researches of such projects are focusing on improve the performance, with the approaches of introducing new consensus algorithms, sharding, etc.
 
-Meanwhile, application layer projects utilizes the on-chain transactions to assist off-chain services. With this approach, the chain is still acting for just digital asset transactions. The validation process of the off-chain services relies on centralized parties. eg. Storj issues the proof-of-retrievability with service receipts posted on chain, but the procedure of validation are provided by the corresponding consumer which is able and could have motivation to cheat. SIA host nodes send shards and hash periodically to chain, but not necessary to hold the whole original copy. [TODO: need to study more projects as examples]. 
+In the real world economy, transactions of assets are only the symbol of value flow. The real driving factor of the value flow are the services introduced by the parties with the relationship. 
 
-In the real world economy, transactions of assets are only the symbol of value flow. The real driving factor of the value flow are the services introduced by the parties with the relationship 
+Most application layer projects utilizes the on-chain transactions to assist off-chain services. With this approach, the functionality of the blockchain is still limited for digital asset transactions. Some projects attempt to untilize on-chain information to record the service flow, but the validation process of the off-chain services relies on centralized parties, which leaves the space for malicious participates for cheeting. eg. Storj issues the proof-of-retrievability with service receipts posted on chain, but the procedure of validation are provided by the corresponding consumer which is able and could have motivation to cheat. SIA host nodes send shards and hash periodically to chain, but not necessary to hold the whole original copy. Other many projects also propose "useful proof-of-work". Some pays the remote nodes' computational power for machine learning, but it's acutally vary hard to validate since ML gradient descent tasks does not even have accurate unique answer. Those who target to resolve NP-Hard problems provide the polynomial time decentralized validation potential, but most have very limited practical usage scopes.  [TODO: need to study more projects as examples]
 
-The value (or say, the authentic meaning of transaction) in real world ecomonic system is built upon the flow of services. The procedure of "Serve" means the relationship generated between two parties, in which the party Provider utilize its resource and effort to satisfy the party Consumer with its interest, and get "Reward" afterwards. 
+
+
+
+
+### 1.2 Definitions of services-based DLT
+
+The procedure of **Service** means the relationship generated between two parties, in which the party **Provider** utilize its resource and ability to satisfy the party **Consumer** for its interest, and get **Commitment** afterwards. 
+
+ 
+
+And,
+
+1. Both the parties of Provider and Consumer can be 
 
 1. The "reward" can be either another service which the provider agree to have equal value, or a particuler amount of common currency which can exchange for another "service" in the future.
 2. In the model of bullet 3, the decentralized validation of currency transaction is mature and proven by many cryptocurrency projects already. But **unless we can provide the decentrailized validation of the service, we cannot build the genuine decentralized economy.**
@@ -34,8 +46,6 @@ The value (or say, the authentic meaning of transaction) in real world ecomonic 
 4. ​
 
 ## 1. Problem
-
-One of the most important features of distributed ledger technology is to ensure incontestable transactions utilizing decentralized censensus algorithms. Cryptocurrency, acting as abstracted symbol of "value", has already widely flourished in the financial applications such as Bitcoin, ICOs and cryptocurrency exchanges in recent years. 
 
 However, to further explore distribute ledger technology's potential, returning to the meaning of market economy, **the flow of currency should always accompanies with the flow of resources and services on the reversed direction**. 
 
